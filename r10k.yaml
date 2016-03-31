@@ -6,5 +6,5 @@
   # This will clone the git repository and instantiate an environment per
   # branch in /etc/puppet/environments
   :local:
-    remote: '/data/systems/scm/puppet'
+    remote: '/data/systems/git/puppet'
     basedir: '/etc/puppet/environments'
