@@ -5,6 +5,6 @@
 :sources:
   # This will clone the git repository and instantiate an environment per
   # branch in /etc/puppet/environments
-  :local:
-    remote: '/data/systems/git/puppet'
+  :sources:
+    remote: 'git@github.com:gameforce/puppet.git'
     basedir: '/etc/puppet/environments'
