@@ -1,4 +1,4 @@
-# The location to use for storing cached Git repos
+# The location to use for storing cached Git repos.
 :cachedir: '/var/cache/r10k'
 
 # A list of git repositories to create
