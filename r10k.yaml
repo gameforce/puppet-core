@@ -9,5 +9,5 @@
     remote: 'git@github.com:gameforce/puppet.git'
     basedir: '/etc/puppet/environments'
 
-git:
-  username: 'root'
+#git:
+# username: 'root'
