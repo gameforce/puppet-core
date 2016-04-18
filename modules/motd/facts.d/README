@@ -1,8 +1,0 @@
-#!/bin/bash
-# This directory is where external fact scripts would go, if we had any.  This
-# directory exists only because with directory environments puppet will
-# complain if there isn't a single module in an environment that doesn't have a
-# facts.d directory.
-echo "bug=https://tickets.puppetlabs.com/browse/PUP-3655"
-exit 0
-
