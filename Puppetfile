@@ -10,3 +10,5 @@ mod 'puppetlabs/postgresql', '3.2.0'
 #mod 'custom',
 #  :git => 'git://git.mydomain.com/custom.git',
 #  :ref => '1.0'
+
+# add a comment
