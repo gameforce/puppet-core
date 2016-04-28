@@ -1,7 +1,6 @@
 ---
 classes:
-    puppetdb:
-    puppetdb::master::config:
-      puppet_service_name: apache2
+  - puppetdb
+  - puppetdb::master::config
 
-  
+puppetdb::params::puppet_service_name: 'apache2'
