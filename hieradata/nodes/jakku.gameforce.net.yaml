@@ -1,7 +1,13 @@
 ---
+<<<<<<< HEAD
 classes:
   - puppetdb
   - puppetdb::master::config
 
 puppetdb::globals::version: '2.3.8'
+=======
+puppetdb::master::config:
+>>>>>>> production
 puppetdb::params::puppet_service_name: 'apache2'
+puppetdb::params::puppetdb_startup_timeout: '30'
+puppetdb::globals::version: '2.3.8-1puppetlabs1'
