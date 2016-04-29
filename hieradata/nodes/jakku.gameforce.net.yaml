@@ -3,4 +3,5 @@ classes:
   - puppetdb
   - puppetdb::master::config
 
+puppetdb::globals::version: '2.3.8'
 puppetdb::params::puppet_service_name: 'apache2'
