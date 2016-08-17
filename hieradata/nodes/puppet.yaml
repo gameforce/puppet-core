@@ -1,5 +1,4 @@
 ---
-puppetdb::master::config:
-puppetdb::params::puppet_service_name: 'apache2'
-puppetdb::params::puppetdb_startup_timeout: '30'
-puppetdb::globals::version: '2.3.8-1puppetlabs1'
+classes:
+  - puppetdb
+  - puppetdb::master::config
