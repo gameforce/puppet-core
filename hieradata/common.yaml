@@ -1,15 +1,11 @@
 ---
-classes:
-  - ntp
-
 ntp::servers:
+  - monwsdc03
   - 0.pool.ntp.org
-  - 1.pool.ntp.org
-  - 2.pool.ntp.org
-  - 3.pool.ntp.org
 
----
 site_users:
   systems:
     uid: 500
     shell: /bin/bash
+
+firewall::ensure: stopped
