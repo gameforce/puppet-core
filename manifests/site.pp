@@ -5,4 +5,6 @@ hiera_include('classes')
 node default {
   include firewall
   include ntp
+  include shell
+  include user
 }
