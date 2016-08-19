@@ -7,4 +7,5 @@ node default {
   include ntp
   include shell
   include user
+  include package
 }

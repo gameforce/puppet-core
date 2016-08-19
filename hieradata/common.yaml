@@ -3,9 +3,4 @@ ntp::servers:
   - monwsdc03
   - 0.pool.ntp.org
 
-site_users:
-  systems:
-    uid: 500
-    shell: /bin/bash
-
 firewall::ensure: stopped
