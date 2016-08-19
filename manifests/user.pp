@@ -5,9 +5,9 @@ class user {
     gid    => '52',
   }
 
-  user { 'system':
+  user { 'systems':
     ensure           => 'present',
-    home             => '/home/system',
+    home             => '/home/systems',
     password         => '!!',
     password_max_age => '99999',
     password_min_age => '0',
