@@ -5,15 +5,15 @@ class user {
     gid    => '52',
   }
 
-  user { 'darf':
+  user { 'system':
     ensure           => 'present',
-    home             => '/home/darf',
+    home             => '/home/system',
     password         => '!!',
     password_max_age => '99999',
     password_min_age => '0',
     shell            => '/bin/zsh',
     uid              => '1000',
-    comment          => 'darf',
+    comment          => 'systems',
     groups           => [ 'users','puppet' ]
   }
 
