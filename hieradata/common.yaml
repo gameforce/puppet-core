@@ -1,6 +1,1 @@
 ---
-ntp::servers:
-  - monwsdc03
-  - 0.pool.ntp.org
-
-firewall::ensure: stopped
