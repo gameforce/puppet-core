@@ -11,3 +11,4 @@ ntp::servers:
   - 0.pool.ntp.org
 
 firewall::ensure: stopped
+vmwaretools::working_dir: /usr/local/vmware
