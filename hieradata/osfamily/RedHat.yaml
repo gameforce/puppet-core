@@ -1,4 +1,11 @@
 ---
+modules_include:
+  - ntp
+  - firewall
+  - shell
+  - user
+  - package
+
 ntp::servers:
   - monwsdc03
   - 0.pool.ntp.org
