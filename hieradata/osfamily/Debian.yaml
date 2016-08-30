@@ -7,8 +7,10 @@ classes:
   - package
 
 ntp::servers:
-  - monwsdc03
-  - 0.pool.ntp.org
+  - server 0.ubuntu.pool.ntp.org
+  - server 1.ubuntu.pool.ntp.org
+  - server 2.ubuntu.pool.ntp.org
+  - server 3.ubuntu.pool.ntp.org
 
 firewall::ensure: stopped
 vmwaretools::working_dir: /usr/local/vmware
