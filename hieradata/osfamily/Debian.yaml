@@ -2,9 +2,10 @@
 classes:
   - ntp
   - firewall
-  - shell
-  - user
-  - package
+  - base
+  - base::packages
+  - base::user
+  - openvmtools
 
 ntp::servers:
   - server 0.ubuntu.pool.ntp.org
@@ -13,4 +14,3 @@ ntp::servers:
   - server 3.ubuntu.pool.ntp.org
 
 firewall::ensure: stopped
-vmwaretools::working_dir: /usr/local/vmware

@@ -7,3 +7,6 @@ mod 'puppetlabs/concat'
 mod 'puppetlabs/inifile'
 mod 'puppetlabs/postgresql'
 mod 'puppetlabs/firewall'
+mod 'razorsedge/openvmtools'
+mod 'puppetlabs/vcsrepo'
+

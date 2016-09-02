@@ -1,5 +1,4 @@
 ---
 classes:
-  - shell
-  - user
-  - package
+  - base
+  - base::user

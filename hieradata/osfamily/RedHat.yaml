@@ -2,9 +2,10 @@
 classes:
   - ntp
   - firewall
-  - shell
-  - user
-  - package
+  - base
+  - base::packages
+  - base::user
+  - openvmtools
 
 ntp::servers:
   - server 0.rhel.pool.ntp.org iburst
@@ -13,4 +14,3 @@ ntp::servers:
   - server 3.rhel.pool.ntp.org iburst
 
 firewall::ensure: stopped
-vmwaretools::working_dir: /opt/vmware
