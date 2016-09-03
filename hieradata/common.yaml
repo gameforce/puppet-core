@@ -2,3 +2,7 @@
   classes:
     - base
     - base::user
+
+base::sudo::configs:
+         'systems':
+             'content'   : "%systems ALL=(ALL) NOPASSWD: ALL"
