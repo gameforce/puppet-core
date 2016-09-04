@@ -12,6 +12,7 @@ mod 'puppetlabs/vcsrepo'
 mod 'saz/sudo'
 mod 'saz/motd'
 mod 'thias/bind'
+mod 'zack/r10k'
 
 # Install gameforce-module and keep it up to date with 'master'
 mod 'gameforce',
