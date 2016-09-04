@@ -2,3 +2,5 @@
 classes:
   - puppetdb
   - puppetdb::master::config
+  - gameforce::bind
+  - gameforce::bind::server
