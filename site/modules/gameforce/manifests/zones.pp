@@ -1,6 +1,6 @@
 class gameforce::zones {
 
-include gameforce::bind
+include bind
 
 bind::server::file { 'gameforce.net':
   source => 'puppet:///modules/gameforce/dns/static.gameforce.net',
