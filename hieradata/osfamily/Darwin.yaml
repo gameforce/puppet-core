@@ -1,4 +1,4 @@
 ---
 classes:
-  - base
-  - base::user
+  - gameforce
+  - gameforce::user
