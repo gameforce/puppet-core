@@ -1,3 +1,0 @@
-class base {
-# class definition
-}
