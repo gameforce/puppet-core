@@ -8,7 +8,7 @@ class gameforce::zones {
 #  source => 'puppet:///modules/gameforce/dns/11.168.192.in-addr.arpa',
 #  }
 
-bind::server::file { [ 'gameforce.net', '11.168.192.in-addr.arpa' ]:
+bind::server::file { [ 'static.gameforce.net', 'static.11.168.192.in-addr.arpa' ]:
   source_base => 'puppet:///modules/gameforce/dns/',
   }
 

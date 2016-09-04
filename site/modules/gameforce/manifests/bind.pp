@@ -14,7 +14,7 @@ class gameforce::bind {
       ],
       '11.168.192.in-addr.arpa' => [
         'type master',
-        'file "11.168.192.in-addr.arpa"',
+        'file "static.11.168.192.in-addr.arpa"',
       ],
     },
   }
