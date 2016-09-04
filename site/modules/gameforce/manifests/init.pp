@@ -1,0 +1,3 @@
+class gameforce {
+# class definition
+}
