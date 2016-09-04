@@ -1,0 +1,11 @@
+$TTL 86400
+@       IN SOA  kam1.gameforce.net systems.gameforce.net. (
+                                2016090300      ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+
+@       IN      NS      kam1.
+10      IN      PTR     kam1.gameforce.net.
+11      IN      PTR     ad1.gameforce.net.
