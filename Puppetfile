@@ -1,4 +1,4 @@
-# Puppet Forge
+# Puppet Forge modules
 mod 'puppetlabs/apt'
 mod 'puppetlabs/ntp'
 mod 'puppetlabs/puppetdb'
@@ -13,7 +13,6 @@ mod 'saz/sudo'
 mod 'saz/motd'
 mod 'thias/bind'
 
-# Local modules
-#mod 'gameforce'
-#mod 'base'
-
+# Install gameforce-module and keep it up to date with 'master'
+mod 'gameforce',
+  :git => 'https://github.com/gameforce/gameforce-module'
