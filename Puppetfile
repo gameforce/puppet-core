@@ -11,4 +11,5 @@ mod 'razorsedge/openvmtools'
 mod 'puppetlabs/vcsrepo'
 mod 'saz/sudo'
 mod 'saz/motd'
+mod 'thias/bind'
 
