@@ -13,3 +13,7 @@ mod 'saz/sudo'
 mod 'saz/motd'
 mod 'thias/bind'
 
+# Local modules
+#mod 'gameforce'
+#mod 'base'
+

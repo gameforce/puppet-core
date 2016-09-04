@@ -2,5 +2,8 @@
 classes:
   - puppetdb
   - puppetdb::master::config
-  - gameforce::bind
-  - gameforce::zones
+#  - gameforce::bind
+#  - gameforce::zones
+   - r10k
+
+r10k::remote: 'git@github.com:gameforce/puppet-core.git'
