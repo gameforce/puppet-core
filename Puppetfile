@@ -14,6 +14,7 @@ mod 'saz/sudo'
 mod 'saz/motd'
 mod 'thias/bind'
 mod 'zack/r10k'
+mod 'thias/sysctl'
 
 # Install gameforce-module and keep it up to date with 'master'
 mod 'gameforce',
