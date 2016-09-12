@@ -1,4 +1,3 @@
 ---
   classes:
-    - gameforce
     - role::base

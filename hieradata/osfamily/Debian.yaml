@@ -2,9 +2,6 @@
 classes:
   - ntp
   - firewall
-  - gameforce
-  - gameforce::packages
-  - gameforce::user
   - openvmtools
 
 ntp::servers:
