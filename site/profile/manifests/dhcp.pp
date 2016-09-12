@@ -1,4 +1,4 @@
-class profile::dhcp {
+class profile::dhcpd {
 
 #  configsource => 'puppet:///modules/profile/dhcp/dhcpd.conf',
 #  # Restrict listening to a single interface
