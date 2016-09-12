@@ -6,7 +6,7 @@ class profile::dhcpd {
 #  # Default is to enable but allow to be stopped (for active/passive)
 #  ensure => 'running',
 
-include dhcpd
+#include dhcpd
 
 # Variables used from inside the template
 $dhcpd_netmask             = '255.255.255.0'
