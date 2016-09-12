@@ -11,6 +11,5 @@ $TTL 86400
 11      IN      PTR     ads.gameforce.net.
 12      IN      PTR     sbs.gameforce.net.
 13      IN      PTR     dmx.gameforce.net.
-
-; gateway
+14      IN      PTR     pms.gameforce.net.
 254     IN      PTR     rtr.gameforce.net.
