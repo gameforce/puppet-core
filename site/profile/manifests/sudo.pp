@@ -6,7 +6,7 @@
   }
 
   sudo::conf { 'secure_path':
-  content => "/opt/puppetlabs/bin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin" 
+  content => "secure_path /opt/puppetlabs/bin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin" 
 
   }
 
