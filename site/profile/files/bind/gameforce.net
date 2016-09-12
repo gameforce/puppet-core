@@ -1,0 +1,19 @@
+$TTL 86400
+@       IN SOA  kam.gameforce.net systems.gameforce.net. (
+                                2016090400      ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+
+@          IN      NS      kam.gameforce.net.
+
+; Add records here
+kam        IN  A      192.168.11.10
+puppet     IN  CNAME  kam 
+ads        IN  A      192.168.11.11
+sbs        IN  A      192.168.11.12
+dmx        IN  A      192.168.11.13
+
+; gateway
+rtr        IN  A      192.168.11.254

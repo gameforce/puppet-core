@@ -2,9 +2,6 @@
 classes:
   - ntp
   - firewall
-  - base
-  - base::packages
-  - base::user
   - openvmtools
 
 ntp::servers:
