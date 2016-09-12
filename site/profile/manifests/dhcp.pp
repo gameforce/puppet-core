@@ -16,6 +16,7 @@ $dhcpd_range_end           = '254'
 $dhcpd_default_lease_time  = '3600'
 $dhcpd_max_lease_time      = '21600'
 class { 'profile::dhcp':
+    include dhcpd
     configcontent => template('dhcpd/dhcpd.conf-simple.erb'),
       ensure      => 'running',
 }
