@@ -1,4 +1,4 @@
 class role::bind {
-  include profile::base
+  include role::base
   include profile::bind
 }
