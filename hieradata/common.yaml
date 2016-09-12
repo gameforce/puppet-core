@@ -2,6 +2,7 @@
   classes:
     - gameforce
     - gameforce::user
+    - role::base
 
 gameforce::sudo::configs:
          'systems':
