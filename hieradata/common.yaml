@@ -2,7 +2,3 @@
   classes:
     - gameforce
     - role::base
-
-gameforce::sudo::configs:
-         'systems':
-             'content'   : "%systems ALL=(ALL) NOPASSWD: ALL"
