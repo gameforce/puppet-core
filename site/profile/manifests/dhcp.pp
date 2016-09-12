@@ -1,4 +1,4 @@
-class profile::dhcpd {
+#class profile::dhcpd {
 
 #  configsource => 'puppet:///modules/profile/dhcp/dhcpd.conf',
 #  # Restrict listening to a single interface
@@ -17,8 +17,8 @@ $dhcpd_range_start         = '100'
 $dhcpd_range_end           = '254'
 $dhcpd_default_lease_time  = '3600'
 $dhcpd_max_lease_time      = '21600'
-class { '::dhcpd':
+class { 'profile::dhcpd':
     configcontent => template('dhcpd/dhcpd.conf-simple.erb'),
       ensure      => 'running',
       }
-}
+#}
