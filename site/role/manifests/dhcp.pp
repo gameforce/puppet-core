@@ -1,4 +1,4 @@
 class role::dhcp {
   include role::base
-  include profile::dhcp
+  include profile::dhcpd
 }
