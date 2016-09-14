@@ -24,6 +24,7 @@ class profile::bind {
         'algorithm hmac-md5',
         'secret "SV3fnrr+xInr/57va9qMRA=="',
       ],
+  }
 }
 
   bind::server::file { 'gameforce.net':
