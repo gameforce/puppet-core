@@ -32,9 +32,11 @@ class profile::bind {
 
   bind::server::file { 'dynamic/gameforce.net':
     source => 'puppet:///puppet-files/bind/gameforce.net',
+    replace => false
     }
 
   bind::server::file { 'dynamic/11.168.192.in-addr.arpa':
     source => 'puppet:///puppet-files/bind/11.168.192.in-addr.arpa',
+    replace => false
     }
 }
