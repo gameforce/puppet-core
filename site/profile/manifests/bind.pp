@@ -8,7 +8,7 @@ class profile::bind {
     forwarders             => [ '192.168.11.10', '8.8.8.8', '8.8.4.4' ],
     allow_query            => [ 'localnets' ],
     includes               => [ '/etc/named.root.key' ],
-    managed_keys_directory => [ '/var/named/dynamic' ],
+    managed_keys_directory => '/var/named/dynamic',
 
     zones             => {
       'gameforce.net' => [
