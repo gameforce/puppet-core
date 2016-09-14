@@ -7,16 +7,18 @@ class profile::bind {
     listen_on_v6_addr => [ 'any' ],
     forwarders        => [ '192.168.11.10', '8.8.8.8', '8.8.4.4' ],
     allow_query       => [ 'localnets' ],
-    includes          => [ '/etc/named.root.key', '/etc/rndc.key' ],
+    includes          => [ '/etc/named.root.key' ],
 
     zones             => {
       'gameforce.net' => [
         'type master',
-        'file "gameforce.net"',
+        'file "dynamic/gameforce.net"',
+        'allow-update {key "rndc-key";}',
       ],
       '11.168.192.in-addr.arpa' => [
         'type master',
-        'file "11.168.192.in-addr.arpa"',
+        'file "dynamic/11.168.192.in-addr.arpa"',
+        'allow-update {key "rndc-key";}',
       ],
     },
     keys                 => {
