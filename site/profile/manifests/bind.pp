@@ -7,7 +7,6 @@ class profile::bind {
     listen_on_v6_addr => [ 'any' ],
     forwarders        => [ '192.168.11.10', '8.8.8.8', '8.8.4.4' ],
     allow_query       => [ 'localnets' ],
-    keys              => { 'rndc-key' },
     includes          => [ '/etc/named.root.key', '/etc/rndc.key' ],
 
     zones             => {
@@ -20,6 +19,11 @@ class profile::bind {
         'file "11.168.192.in-addr.arpa"',
       ],
     },
+    keys                 => {
+      'rndc-key'         => [
+        'algorithm hmac-md5',
+        'secret "SV3fnrr+xInr/57va9qMRA=="',
+      ],
 }
 
   bind::server::file { 'gameforce.net':
