@@ -20,9 +20,8 @@ class profile::bind {
 
   source => 'puppet:///puppet-files/bind/named.conf',
 
-}
+    }
 
-  }
   bind::server::file { 'gameforce.net':
     source => 'puppet:///puppet-files/bind/gameforce.net',
     }
