@@ -4,6 +4,4 @@ classes:
   - puppetdb::master::config
   - role::bind
   - role::dhcp
-  - r10k
-
-r10k::remote: 'git@github.com:gameforce/puppet-core.git'
+  - role::puppet
