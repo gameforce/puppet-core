@@ -7,6 +7,7 @@ class { 'r10k':
 
 class { '::r10k::webhook::config':
   protected        => false,
+  use_mcollective => false,
   public_key_path  => '/etc/mcollective/server_public.pem',  # Mandatory for FOSS
   private_key_path => '/etc/mcollective/server_private.pem', # Mandatory for FOSS
   notify           => Service['webhook'],
