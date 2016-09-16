@@ -3,7 +3,7 @@
 
   sudo::conf { 'systems':
   priority => 10,
-  source => 'puppet:///modules/profile/sudo/systems.conf',
+  source => 'puppet:///puppet-files/sudo/systems.conf',
 
   }
 }
