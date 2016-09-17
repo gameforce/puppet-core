@@ -20,8 +20,8 @@ class profile::bind {
     zone_type       => 'master',
     domain          => 'gameforce.net',
     allow_updates   => [ 'key local-update', ],
-    ns_notify       => true,
-    dnssec          => true,
+    #ns_notify       => true,
+    #dnssec          => true,
   }
   ##include profile::bind::records
 }
