@@ -1,4 +1,4 @@
-class profile::bind {
+class profile::dns_server {
 
   class { 'bind':
     forwarders => [
@@ -15,13 +15,4 @@ class profile::bind {
       owner     => 'root',
       group     => 'bind',
   }
-
-  bind::zone { 'gameforce.net':
-    zone_type       => 'master',
-    domain          => 'gameforce.net',
-    allow_updates   => [ 'key local-update', ],
-    #ns_notify       => true,
-    #dnssec          => true,
-  }
-  ##include profile::bind::records
 }
