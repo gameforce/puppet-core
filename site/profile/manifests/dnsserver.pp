@@ -1,6 +1,6 @@
 class profile::dnsserver {
 
-  class { 'bind': }
+  class { 'bind':
     forwarders => [
         '192.168.11.10',
         '8.8.8.8',
