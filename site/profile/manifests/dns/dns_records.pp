@@ -1,4 +1,4 @@
-class profile::bind::records {
+class profile::dns::dns_records {
 
   resource_record { 'kam.gameforce.net address':
     ensure  => present,
@@ -11,5 +11,5 @@ class profile::bind::records {
     keyname => 'local-update',
     keyfile => '/etc/rndc.key'
   }
-  
+
 }
