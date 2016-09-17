@@ -1,4 +1,4 @@
-class profile::dns::dns_zones {
+class profile::dns_zones {
 
 bind::zone { 'gameforce.net':
   zone_type       => 'master',

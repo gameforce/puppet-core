@@ -1,4 +1,6 @@
-class profile::dns::dns_server {
+class profile::dns_server {
+
+include bind
 
   class { 'bind':
     forwarders => [
