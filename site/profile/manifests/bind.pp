@@ -18,11 +18,10 @@ class profile::bind {
 
   bind::zone { 'gameforce.net':
     zone_type       => 'master',
-    dynamic         => 'true',
     domain          => 'gameforce.net',
     allow_updates   => [ 'key local-update', ],
     ns_notify       => true,
     dnssec          => true,
   }
-  include profile::bind::records
+  ##include profile::bind::records
 }
