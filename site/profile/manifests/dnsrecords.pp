@@ -1,4 +1,4 @@
-class profile::dns_records {
+class profile::dnsrecords {
 
   resource_record { 'kam.gameforce.net address':
     ensure  => present,
