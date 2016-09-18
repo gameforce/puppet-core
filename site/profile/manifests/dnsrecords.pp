@@ -18,10 +18,10 @@ class profile::dnsrecords {
     keyfile => '/etc/named/keys/update',
 }
 
-  resource_record { 'gameforc e.net mail exchangers':
+  resource_record { 'gameforce.net mail exchangers':
     record        => 'gameforce.net',
     type          => 'MX',
-    data          => '10 mxr.gameforce.net.',
+    data          => '10 kam.gameforce.net.',
     ttl           => '86400',
     keyfile       => '/etc/named/keys/update',
 }
@@ -35,9 +35,9 @@ class profile::dnsrecords {
     keyfile       => '/etc/named/keys/update',
   }
 
-  resource_record { 'mxr.gameforce.net address':
+  resource_record { 'mail.gameforce.net address':
     ensure        => present,
-    record        => 'mxr.gameforce.net',
+    record        => 'mail.gameforce.net',
     type          => 'CNAME',
     data          => [ 'kam.gameforce.net.' ],
     ttl           => '86400',
