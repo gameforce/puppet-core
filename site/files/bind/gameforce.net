@@ -1,6 +1,6 @@
 $TTL 86400
 @       IN SOA  kam.gameforce.net systems.gameforce.net. (
-                                2016090400      ; serial
+                                        01      ; serial
                                         1D      ; refresh
                                         1H      ; retry
                                         1W      ; expire
@@ -21,3 +21,4 @@ puppet     IN  CNAME  kam
 sickrage   IN  CNAME  dmx
 trans      IN  CNAME  dmx
 plex       IN  CNAME  pms
+mxr        IN  CNAME  kam

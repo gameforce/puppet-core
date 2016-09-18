@@ -13,6 +13,6 @@ class profile::dnszones {
     domain          => '11.168.192.in-addr.arpa',
     allow_updates   => [ 'key update', ],
     ns_notify       => true,
-    dnssec          => true,
+    dnssec          => false,
     }
 }

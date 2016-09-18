@@ -6,7 +6,7 @@ class profile::dnsserver {
         '8.8.8.8',
         '8.8.4.4',
     ],
-    dnssec     => true,
+    dnssec     => false,
     version    => 'Controlled by Puppet',
   }
 

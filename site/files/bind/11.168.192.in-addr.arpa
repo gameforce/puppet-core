@@ -1,6 +1,6 @@
 $TTL 86400
 @       IN SOA  kam.gameforce.net systems.gameforce.net. (
-                                2016090400      ; serial
+                                        01      ; serial
                                         1D      ; refresh
                                         1H      ; retry
                                         1W      ; expire
