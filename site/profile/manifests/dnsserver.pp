@@ -14,6 +14,6 @@ class profile::dnsserver {
       algorithm => 'algorithm hmac-md5', # default: 'hmac-sha256'
       secret    => 'SV3fnrr+xInr/57va9qMRA==',
       owner     => 'root',
-      group     => 'bind',
+      group     => 'named',
   }
 }
