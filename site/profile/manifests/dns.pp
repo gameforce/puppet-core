@@ -69,6 +69,11 @@ class profile::dns {
     data => 'kam.gameforce.net',
   }
 
+  dns::record::cname { 'puppet':
+    zone => 'gameforce.net',
+    data => 'kam.gameforce.net',
+  }
+
   dns::record::cname { 'sickrage':
     zone => 'gameforce.net',
     data => 'dmx.gameforce.net',
