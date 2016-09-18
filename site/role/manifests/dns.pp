@@ -1,6 +1,7 @@
 class role::dns {
   include role::base
-  include profile::dnsserver
-  include profile::dnszones
-  include profile::dnsrecords
+  #include profile::dnsserver
+  #include profile::dnszones
+  #include profile::dnsrecords
+  include profile::dns
 }
