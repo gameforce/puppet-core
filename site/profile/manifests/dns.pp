@@ -25,39 +25,38 @@ class profile::dns {
   dns::record::a {
     'kam':
       zone => 'gameforce.net',
-      data => ['192.168.11.10'];
-      ptr  => true;
+      data => ['192.168.11.10'],
+      ptr  => true
     'ads':
       zone => 'gameforce.net',
-      data => ['192.168.11.11'];
-      ptr  => true;
+      data => ['192.168.11.11'],
+      ptr  => true
     'sbs':
       zone => 'gameforce.net',
-      data => ['192.168.11.12'];
-      ptr  => true;
+      data => ['192.168.11.12'],
+      ptr  => true
     'dmx':
       zone => 'gameforce.net',
-      data => ['192.168.11.13'];
-      ptr  => true;
+      data => ['192.168.11.13'],
+      ptr  => true
     'pms':
       zone => 'gameforce.net',
-      data => ['192.168.11.14'];
-      ptr  => true;
+      data => ['192.168.11.14'],
+      ptr  => true
   }
 
   # MX Records:
-  dns::record::mx {
-    'mx,10':
+  dns::record::mx { 'mx,10':
       zone       => 'gameforce.net',
-      preference => 10,
+      preference => '10',
       data       => 'kam.gameforce.net';
   }
 
   # NS Records:
   dns::record::ns {
-    'gameforce.net:
+    'gameforce.net':
       zone => 'gameforce.net',
-      data => 'kam';
+      data => 'kam',
   }
 
   # CNAME Records:
