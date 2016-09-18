@@ -48,7 +48,7 @@ class profile::dns {
   # MX Records:
   dns::record::mx { 'mx,10':
       zone       => 'gameforce.net',
-      preference => '10',
+      preference => 10,
       data       => 'kam.gameforce.net';
   }
 
