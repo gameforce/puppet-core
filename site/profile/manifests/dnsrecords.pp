@@ -9,7 +9,7 @@ class profile::dnsrecords {
     zone    => 'gameforce.net',
     server  => 'kam.gameforce.net',
     keyname => 'local-update',
-    keyfile => '/etc/rndc.key'
+    #keyfile => '/etc/rndc.key'
   }
 
 }
