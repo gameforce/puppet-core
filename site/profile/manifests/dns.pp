@@ -1,5 +1,7 @@
 class profile::dns {
 
+  include dns::server
+
   # Forwarders
   dns::server::options { '/etc/named/named.conf':
     forwarders => [ '192.168.11.10', '8.8.8.8', '8.8.4.4' ]
