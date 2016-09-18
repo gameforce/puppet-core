@@ -8,7 +8,7 @@ class profile::dnsrecords {
     ttl     => 86400,
     zone    => 'gameforce.net',
     server  => 'kam.gameforce.net',
-    keyname => 'local-update',
+    keyname => 'update',
     keyfile => '/etc/named/keys/local-update'
   }
 

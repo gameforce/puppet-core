@@ -10,7 +10,7 @@ class profile::dnsserver {
     version    => 'Controlled by Puppet',
   }
 
-  bind::key { 'local-update':
+  bind::key { 'update':
       #algorithm => 'hmac-md5', # default: 'hmac-sha256'
       #secret    => 'SV3fnrr+xInr/57va9qMRA==',
       owner       => 'root',
