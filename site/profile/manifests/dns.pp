@@ -11,6 +11,8 @@ class profile::dns {
   dns::zone { 'gameforce.net':
     soa         => 'kam.gameforce.net',
     soa_email   => 'systems.gameforce.net',
+    allow_update    => ['192.168.11.10', '192.168.11.11'],
+    forward_policy  => 'first',
     nameservers => ['kam'],
   }
 
@@ -18,6 +20,8 @@ class profile::dns {
   dns::zone { '11.168.192.IN-ADDR.ARPA':
     soa         => 'kam.gameforce.net',
     soa_email   => 'systems.gameforce.net',
+    allow_update    => ['192.168.11.10', '192.168.11.11'],
+    forward_policy  => 'first',
     nameservers => ['kam'],
   }
 
