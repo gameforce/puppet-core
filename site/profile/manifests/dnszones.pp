@@ -5,7 +5,7 @@ class profile::dnszones {
     domain          => 'gameforce.net',
     allow_updates   => [ 'key update', ],
     ns_notify       => true,
-    dnssec          => true,
+    dnssec          => false,
   }
 
   bind::zone { 'gameforce.net-reverse':
