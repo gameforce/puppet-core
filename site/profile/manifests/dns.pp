@@ -11,14 +11,14 @@ class profile::dns {
   dns::zone { 'gameforce.net':
     soa         => 'kam.gameforce.net',
     soa_email   => 'systems.gameforce.net',
-    nameservers => ['kam']
+    nameservers => ['kam'],
   }
 
   # Reverse Zone
   dns::zone { '11.168.192.IN-ADDR.ARPA':
     soa         => 'kam.gameforce.net',
     soa_email   => 'systems.gameforce.net',
-    nameservers => ['kam']
+    nameservers => ['kam'],
   }
 
   # A Records:
@@ -65,7 +65,7 @@ class profile::dns {
     zone => 'gameforce.net',
     data => 'kam.gameforce.net',
   }
-  
+
   dns::record::cname { 'sickrage':
     zone => 'gameforce.net',
     data => 'dmx.gameforce.net',
