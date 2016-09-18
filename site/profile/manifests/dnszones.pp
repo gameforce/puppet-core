@@ -5,7 +5,7 @@ bind::zone { 'gameforce.net-internal':
   domain          => 'gameforce.net',
   allow_updates   => [ 'key local-update', ],
   ns_notify       => true,
-  dnssec          => true,
+  dnssec          => false,
   }
 
 }
