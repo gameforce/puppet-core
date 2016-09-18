@@ -18,10 +18,10 @@ class profile::dnsrecords {
     keyfile => '/etc/named/keys/update',
 }
 
-  resource_record { 'gameforce.net mail exchangers':
+  resource_record { 'gameforc e.net mail exchangers':
     record        => 'gameforce.net',
     type          => 'MX',
-    data          => 'mxr.gameforce.net.',
+    data          => '10 mxr.gameforce.net.',
     ttl           => '86400',
     keyfile       => '/etc/named/keys/update',
 }
