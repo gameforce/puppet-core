@@ -11,7 +11,7 @@ class profile::dnsserver {
   }
 
   bind::key { 'local-update':
-      algorithm => 'algorithm hmac-md5', # default: 'hmac-sha256'
+      algorithm => 'hmac-md5', # default: 'hmac-sha256'
       #secret    => 'SV3fnrr+xInr/57va9qMRA==',
       secret_bits => 256, # default: 256
       owner       => 'root',
