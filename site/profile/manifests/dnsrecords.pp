@@ -10,7 +10,7 @@ class profile::dnsrecords {
 }
 
   resource_record { 'kam.gameforce.net servers':
-    record        => 'kam.gameforce.net'
+    record        => 'kam.gameforce.net',
     type          => 'NS',
     data          => 'kam.gameforce.net.',
     keyfile => '/etc/named/keys/update',
