@@ -26,23 +26,23 @@ class profile::dns {
     'kam':
       zone => 'gameforce.net',
       data => ['192.168.11.10'],
-      ptr  => true
+      ptr  => true,
     'ads':
       zone => 'gameforce.net',
       data => ['192.168.11.11'],
-      ptr  => true
+      ptr  => true,
     'sbs':
       zone => 'gameforce.net',
       data => ['192.168.11.12'],
-      ptr  => true
+      ptr  => true,
     'dmx':
       zone => 'gameforce.net',
       data => ['192.168.11.13'],
-      ptr  => true
+      ptr  => true,
     'pms':
       zone => 'gameforce.net',
       data => ['192.168.11.14'],
-      ptr  => true
+      ptr  => true,
   }
 
   # MX Records:
