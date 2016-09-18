@@ -1,5 +1,6 @@
 class profile::dns {
 
+  include dns
   include dns::server
 
   # Forwarders
