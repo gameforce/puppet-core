@@ -15,4 +15,10 @@ class profile::dnszones {
     ns_notify       => true,
     dnssec          => false,
     }
+
+    bind::view { 'internal':
+    recursion          => true,
+    match_destinations => [ 'any', ],
+    zones              => [ 'gameforce.net-forward', 'gameforce.net-reverse', ],
+  }
 }
