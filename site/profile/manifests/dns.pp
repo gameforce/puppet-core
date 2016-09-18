@@ -26,7 +26,7 @@ class profile::dns {
     'kam':
       zone => 'gameforce.net',
       data => ['192.168.11.10'],
-      ptr  => true,
+      ptr  => 'true',
     'ads':
       zone => 'gameforce.net',
       data => ['192.168.11.11'],
