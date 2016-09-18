@@ -14,8 +14,12 @@ mod 'saz/sudo'
 mod 'saz/motd'
 #mod 'inkblot/bind'
 #mod 'thias/bind'
-mod 'ajjahn/dns'
+#mod 'ajjahn/dns'
 mod 'zack/r10k'
 mod 'thias/sysctl'
 mod 'thias/dhcpd'
 mod 'spiette/selinux'
+
+# Github modules
+mod 'dns',
+  :git => 'https://github.com/ajjahn/puppet-dns'
