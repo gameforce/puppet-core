@@ -7,6 +7,7 @@ $TTL 86400
                         1W      ; expire
                         3H )    ; minimum
 
+@       IN      NS      kam.gameforce.net.
 10      IN      PTR     kam.gameforce.net.
 11      IN      PTR     ads.gameforce.net.
 12      IN      PTR     sbs.gameforce.net.
