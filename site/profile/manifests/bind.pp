@@ -25,7 +25,7 @@ class profile::bind {
         'secret "5SRbPvnrL3m72JxYsaYnxw=="',
       ],
     }
-
+  }
   bind::server::file { 'gameforce.net':
   source => 'puppet:///site/bind/gameforce.net',
   ensure => 'present',
@@ -35,5 +35,4 @@ class profile::bind {
   source => 'puppet:///site/bind/1.168.192.in-addr.arpa',
   ensure => 'present',
     }
-  }
 }
