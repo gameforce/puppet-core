@@ -35,7 +35,7 @@ class profile::bind {
     }
 
   bind::server::file { '1.168.192.in-addr.arpa':
-  source => 'puppet:///puppet-files/bind/1.168.192.in-addr.arpa',
+  source => 'puppet:///puppet-files/bind/11.168.192.in-addr.arpa',
   ensure => 'present',
     }
 }
