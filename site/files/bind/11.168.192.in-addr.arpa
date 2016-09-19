@@ -12,5 +12,5 @@ $TTL 86400
 12      IN      PTR     sbs.gameforce.net.
 13      IN      PTR     dmx.gameforce.net.
 14      IN      PTR     pms.gameforce.net.
-15      IN      PTR     gsm.gameforce.net.
+15      IN      PTR     gms.gameforce.net.
 254     IN      PTR     rtr.gameforce.net.

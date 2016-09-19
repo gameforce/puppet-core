@@ -15,7 +15,7 @@ ads        IN  A      192.168.11.11
 sbs        IN  A      192.168.11.12
 dmx        IN  A      192.168.11.13
 pms        IN  A      192.168.11.14
-gsm        IN  A      192.168.11.15
+gms        IN  A      192.168.11.15
 rtr        IN  A      192.168.11.254
 
 ; Add CNAME records here
