@@ -1,6 +1,6 @@
 # /etc/puppetlabs/code/environments/production/site/profile/manifests/package.pp
 class profile::package {
-  package { 'bind-tools': ensure => 'installed', }
+  package { 'bind-utils': ensure => 'installed', }
   package { 'epel-release': ensure => 'installed', }
   package { 'htop': ensure => 'installed', }
   package { 'nfs-utils': ensure => 'installed', }
