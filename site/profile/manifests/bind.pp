@@ -29,13 +29,13 @@ class profile::bind {
       ],
     }
   }
-  bind::server::file { 'gameforce.net':
-  source => 'puppet:///puppet-files/bind/gameforce.net',
-  ensure => 'present',
-    }
+  #bind::server::file { 'gameforce.net':
+  #source => 'puppet:///puppet-files/bind/gameforce.net',
+  #ensure => 'present',
+  #  }
 
-  bind::server::file { '1.168.192.in-addr.arpa':
-  source => 'puppet:///puppet-files/bind/11.168.192.in-addr.arpa',
-  ensure => 'present',
-    }
+  #bind::server::file { '1.168.192.in-addr.arpa':
+  #source => 'puppet:///puppet-files/bind/11.168.192.in-addr.arpa',
+  #ensure => 'present',
+  #  }
 }
