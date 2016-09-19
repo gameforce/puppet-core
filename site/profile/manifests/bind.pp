@@ -24,15 +24,16 @@ class profile::bind {
         'algorithm hmac-md5',
         'secret "5SRbPvnrL3m72JxYsaYnxw=="',
       ],
-  }
+    }
 
   bind::server::file { 'gameforce.net':
   source => 'puppet:///site/bind/gameforce.net',
   ensure => 'present',
-  }
+    }
 
   bind::server::file { '1.168.192.in-addr.arpa':
   source => 'puppet:///site/bind/1.168.192.in-addr.arpa',
   ensure => 'present',
+    }
   }
 }
