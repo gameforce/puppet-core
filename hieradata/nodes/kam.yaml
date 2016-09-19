@@ -1,8 +1,8 @@
 ---
-#classes:
+classes:
   #- puppetdb
   #- puppetdb::master::config
   #role::dns:
-  role::bind:
-  role::dhcp:
-  role::puppet:
+  - role::bind
+  - role::dhcp
+  - role::puppet
