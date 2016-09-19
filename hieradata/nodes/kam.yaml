@@ -3,5 +3,6 @@ classes:
   - puppetdb
   - puppetdb::master::config
   - role::dns
+  #- role::bind
   - role::dhcp
   - role::puppet
