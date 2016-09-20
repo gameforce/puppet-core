@@ -25,4 +25,5 @@ rage       IN      CNAME  dmx
 trans      IN      CNAME  dmx
 plex       IN      CNAME  pms
 mail       IN      CNAME  kam
+razor      IN      CNAME  kam
 gdash      IN      CNAME  gms
