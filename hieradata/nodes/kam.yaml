@@ -6,3 +6,4 @@ classes:
   - role::bind
   - role::dhcp
   - role::puppet
+  - role::repo
