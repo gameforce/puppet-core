@@ -1,5 +1,6 @@
 # Puppet Forge modules
 mod 'puppetlabs/apt'
+mod 'puppetlabs/apache'
 mod 'puppetlabs/ntp'
 mod 'puppetlabs/puppetdb'
 mod 'puppetlabs/stdlib'
