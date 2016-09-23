@@ -1,0 +1,26 @@
+#!ipxe
+echo <%= task.label %> (Installed by Razor)
+echo Installation node: <%= node_url %>
+echo Installation repo: <%= repo_url %>
+
+sleep 3
+<%# FIXME: On most machines, doing exit here works best to boot locally, on %>
+<%# some it's necessary to say 'sanboot --no-describe --drive 0x80'; we     %>
+<%# need to figure out how to conditionalize the template to pick one or    %>
+<%# the other, depending on the node and the bugs in its BIOS (see          %>
+<%# http://ipxe.org/cmd/sanboot)                                            %>
+
+<%# testing "is_virtual" exists technically isn't necessary, since we have  %>
+<%# full control over the client, but just in case someone builds a custom  %>
+<%# kernel image that doesn't include it, or something...                   %>
+<%
+  facts = node.facts || {}
+  if !facts["is_virtual"] or facts["is_virtual"] != "false" or
+      node.metadata['sanboot'] %>
+echo forcing local booting with sanboot 0x80
+sanboot --no-describe --drive 0x80
+<% end %>
+
+# exiting here with success will cause a globally successful boot
+echo exiting iPXE and continuing to next firmware boot device
+exit 0
