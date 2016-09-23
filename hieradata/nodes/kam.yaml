@@ -1,9 +1,13 @@
 ---
 classes:
-  #- puppetdb
-  #- puppetdb::master::config
-  #- role::dns:
   - role::bind
   - role::dhcp
   - role::puppet
   - role::repo
+  - role::base
+
+ntp::servers:
+  - 0.ca.pool.ntp.org iburst
+  - 1.ca.pool.ntp.org iburst
+  - 2.ca.pool.ntp.org iburst
+  - 3.ca.pool.ntp.org iburst

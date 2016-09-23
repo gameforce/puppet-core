@@ -5,4 +5,6 @@ class role::base {
   include profile::user
   include profile::motd
   include profile::sudo
+  include profile::ntp
+  include profile::firewall
 }

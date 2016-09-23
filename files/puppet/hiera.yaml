@@ -3,7 +3,7 @@
   - yaml
 :hierarchy:
   - "nodes/%{::hostname}"
-  - "osfamily/%{::osfamily}"
+  #- "osfamily/%{::osfamily}"
   - "virtual/%{::virtual}"
   - common
 
