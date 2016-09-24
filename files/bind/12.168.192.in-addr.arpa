@@ -1,4 +1,4 @@
-$ORIGIN 11.168.192.in-addr.arpa.
+$ORIGIN 12.168.192.in-addr.arpa.
 $TTL 86400
 @       IN      SOA  kam.lab.gameforce.net. systems.lab.gameforce.net. (
                         01      ; serial
