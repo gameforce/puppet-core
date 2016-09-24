@@ -10,9 +10,9 @@ class profile::bind {
     includes                => [ '/etc/named.root.key' ],
     managed_keys_directory  => '/var/named/dynamic',
     zones                   => {
-      'gameforce.net'       => [
+      'lab.gameforce.net'       => [
         'type master',
-        'file "gameforce.net"',
+        'file "lab.gameforce.net"',
         'allow-update {key "rndc-key";}',
       ],
       '11.168.192.in-addr.arpa' => [
@@ -30,7 +30,7 @@ class profile::bind {
     }
   }
   bind::server::file { 'gameforce.net':
-  source => 'puppet:///files/bind/gameforce.net',
+  source => 'puppet:///files/bind/lab.gameforce.net',
   ensure => 'present',
   }
 

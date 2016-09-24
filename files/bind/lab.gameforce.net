@@ -1,14 +1,14 @@
-$ORIGIN gameforce.net.
+$ORIGIN lab.gameforce.net.
 $TTL 86400
-@          IN     SOA      kam.gameforce.net. systems.gameforce.net. (
+@          IN     SOA      kam.lab.gameforce.net. systems.lab.gameforce.net. (
                            01      ; serial
                            1D      ; refresh
                            1H      ; retry
                            1W      ; expire
                            3H )    ; minimum
 
-@          IN      NS      kam.gameforce.net.
-@          IN      MX      10 kam.gameforce.net.
+@          IN      NS      kam.lab.gameforce.net.
+@          IN      MX      10 kam.lab.gameforce.net.
 
 ; Add A records here
 kam        IN      A      192.168.11.10
