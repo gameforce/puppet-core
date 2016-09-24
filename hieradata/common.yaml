@@ -3,4 +3,5 @@ classes:
   - role::base
 
 firewall::ensure: 'stopped'
-ntp::servers: 'kam.lab.gameforce.net'
+ntp::servers:
+  - 'kam.lab.gameforce.net'

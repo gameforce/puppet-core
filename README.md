@@ -6,6 +6,12 @@ RAZOR SERVER INSTALLATION
 #Install razor-server package and dependencies
   yum install -y razor-server
 
+#Install tftp server and copy script and bootloaders
+TODO: example
+
+#Copy the microkernel in the razor repo
+TODO: example
+
 #Log on to the postgres admin console:
   sudo -u postgres psql postgres
 
@@ -33,11 +39,13 @@ RAZOR SERVER INSTALLATION
   alias razor='razor -u http://razor:8150/api'
 
 #Create razor repo
-  razor create-repo --name centos --iso-url http://kam/iso/CentOS-7-x86_64-Minimal.iso --task centos
+  razor create-repo --name centos --iso-url http://kam/iso/CentOS-7-x86_64-DVD-1511.iso --task centos
 
-#Create razor broker
+#Create razor broker (optional)
   razor create-broker --name puppet -c server=kam.lab.gameforce.net -c environment=vmlab --broker-type puppet
 
-#Create razor policy
-  razor create-policy --name server --repo centos --hostname ‘host${id}.lab.gameforce.net’ --root-password 'thx1138' --broker puppet --task centos
-  
+#Or if we don't want to hand off to puppet because it will enable the puppet agent service
+  razor create-broker --name noop --broker-type noop
+
+#Create razor policy with noop broker
+  razor create-policy --name server --repo centos --hostname ‘host${id}.lab.gameforce.net’ --root-password 'thx1138' --broker noop --task centos
