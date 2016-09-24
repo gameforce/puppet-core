@@ -11,13 +11,13 @@ $TTL 86400
 @          IN      MX      10 kam.lab.gameforce.net.
 
 ; Add A records here
-kam        IN      A      192.168.11.10
-ads        IN      A      192.168.11.11
-sbs        IN      A      192.168.11.12
-dmx        IN      A      192.168.11.13
-pms        IN      A      192.168.11.14
-gms        IN      A      192.168.11.15
-rtr        IN      A      192.168.11.254
+kam        IN      A      192.168.12.10
+ads        IN      A      192.168.12.11
+sbs        IN      A      192.168.12.12
+dmx        IN      A      192.168.12.13
+pms        IN      A      192.168.12.14
+gms        IN      A      192.168.12.15
+rtr        IN      A      192.168.12.254
 
 ; Add CNAME records here
 puppet     IN      CNAME  kam
