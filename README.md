@@ -31,3 +31,13 @@ RAZOR SERVER INSTALLATION
 
 #Create alias to point to the right razor server:
   alias razor='razor -u http://razor:8150/api'
+
+#Create razor repo
+  razor create-repo --name centos --iso-url http://kam/iso/CentOS-7-x86_64-Minimal.iso --task centos
+
+#Create razor broker
+  razor create-broker --name puppet -c server=kam.lab.gameforce.net -c environment=vmlab --broker-type puppet
+
+#Create razor policy
+  razor create-policy --name server --repo centos --hostname ‘host${id}.lab.gameforce.net’ --root-password 'thx1138' --broker puppet --task centos
+  
