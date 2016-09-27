@@ -6,7 +6,7 @@
 install
 text
 network --bootproto dhcp --noipv6
-url --url http://kam/centos/7/base/x86_64/os/
+url --url http://kam/centos/7/base/
 
 
 ###########################
@@ -24,30 +24,31 @@ firstboot --disabled
 skipx
 reboot
 
-
 ############################
 #Repos
 ############################
-repo --name=epel --baseurl=http://kam/el/7/epel/x86_64/
-#repo --name=framestore --baseurl=http://kam/production/scientific/6/framestore/x86_64/
+repo --name=epel --baseurl=http://kam/centos/7/epel/
+repo --name=centos --baseurl=http://kam/centos/7/base/
+repo --name=puppet --baseurl=http://kam/centos/7/puppet/
 # NO ADDITIONAL REPOS AT THIS TIME
 
 
 ############################
 #HDD Configuration
 ############################
-%include /tmp/root-disk
 zerombr
+clearpart --all --initlabel
 bootloader --location mbr
-part /boot --size=200 --fstype=xfs
-part swap --size=2048 --grow --fstype=swap
-part / --grow --fstype=xfs
+part /boot --size=256 --fstype=xfs
+part / --size=3072 --grow --maxsize=24000 --fstype=xfs
+part swap --size=128 --grow --fstype=swap
 
 
 #############################
 #Packages to be installed
 #############################
 %packages --nobase
+@core
 epel-release
 curl
 wget
@@ -57,6 +58,9 @@ smartmontools
 samba
 git
 htop
+bind-tools
+nfs-utils
+screen
 %end
 
 

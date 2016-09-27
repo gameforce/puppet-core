@@ -48,4 +48,4 @@ TODO: example
   razor create-broker --name noop --broker-type noop
 
 #Create razor policy with noop broker
-  razor create-policy --name server --repo centos --hostname ‘host${id}.lab.gameforce.net’ --root-password 'thx1138' --broker noop --task centos
+  razor create-policy --name server --repo centos --hostname ‘host${id}.lab.gameforce.net’ --broker noop --task centos
