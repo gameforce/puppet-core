@@ -38,8 +38,11 @@ TODO: example
 #Create alias to point to the right razor server:
   alias razor='razor -u http://razor:8150/api'
 
-#Create razor repos we need centos, solaris and windows
+#Create razor repos we need centos, solaris, vyos and windows
   razor create-repo --name centos --iso-url http://kam/iso/CentOS-7-x86_64-DVD-1511.iso --task centos
+  razor create-repo --name vyos #TODO
+  razor create-repo --name windows #TODO
+  razor create-repo --name solaris #TODO
 
 #Create razor brokers
   razor create-broker --name noop --broker-type noop
@@ -51,16 +54,17 @@ TODO: example
   razor create-tag --name ads --rule '["=", ["fact", "macaddress"], "08:00:27:2d:2f:99"]'
   razor create-tag --name sbs --rule '["=", ["fact", "macaddress"], "08:00:27:b5:9a:21"]'
   razor create-tag --name pms --rule '["=", ["fact", "macaddress"], "08:00:27:d8:af:b6"]'
-
+  razor create-tag --name gms --rule '["=", ["fact", "macaddress"], "08:00:27:0e:3f:64"]'
+  razor create-tag --name rtr --rule '["=", ["fact", "macaddress"], "08:00:27:e6:34:33"]'
 
 #Create razor policies for each server tied with bound to the tag
   razor create-policy --name kam --repo centos --tag kam --hostname 'kam.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos
   razor create-policy --name dmx --repo centos --tag dmx --hostname 'dmx.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos
   razor create-policy --name pms --repo centos --tag pms --hostname 'pms.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos
+  razor create-policy --name gms --repo centos --tag gms --hostname 'gms.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos
+  razor create-policy --name rtr --repo vyos --tag rtr --hostname 'rtr.lab.gameforce.net' --root-password 'secret' --broker puppet --task vyos
   razor create-policy --name ads --repo windows --tag ads --hostname 'ads.lab.gameforce.net' --root-password 'secret' --broker noop --task windows
   razor create-policy --name sbs --repo solaris --tag sbs --hostname 'sbs.lab.gameforce.net' --root-password 'secret' --broker puppet --task solaris
+  razor create-policy --name rtr --repo vyos --tag rtr --hostname 'rtr.lab.gameforce.net' --root-password 'secret' --broker puppet --task vyos
 
-
-pms
-gms
-rtr
+--
