@@ -41,11 +41,12 @@ TODO: example
 #Create razor repo
   razor create-repo --name centos --iso-url http://kam/iso/CentOS-7-x86_64-DVD-1511.iso --task centos
 
-#Create razor broker (optional)
+#Create razor broker with puppet policy
   razor create-broker --name puppet -c server=kam.lab.gameforce.net -c environment=vmlab --broker-type puppet
 
-#Or if we don't want to hand off to puppet because it will enable the puppet agent service
-  razor create-broker --name noop --broker-type noop
+#Create razor tag for each server using the macaddress fact
+  razor create-tag --name dmx --rule '["=", ["fact", "macaddress"], "08:00:27:14:4E:DD"]'
 
-#Create razor policy with noop broker
-  razor create-policy --name server --repo centos --hostname ‘host${id}.lab.gameforce.net’ --broker noop --task centos
+#Create razor policies for each server tied with bound to the tag
+  razor create-policy --name centos --repo centos --tag dmx --hostname 'dmx.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos
+
