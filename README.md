@@ -1,11 +1,8 @@
-# puppet-core
+##puppet-core
   TODO: Add steps to install puppet
-
-RAZOR SERVER INSTALLATION
-=========================
-
+  
 #Install razor-server package and dependencies
-  yum install -y razor-server
+  `yum install -y razor-server`
 
 #Install tftp server and copy script and bootloaders
   TODO: example
@@ -30,8 +27,8 @@ RAZOR SERVER INSTALLATION
   \q
 
 #Create the schema
-  razor-admin -e production migrate-database
-  service razor-server start
+  `razor-admin -e production migrate-database`
+  `service razor-server start`
 
 #Install razor client
   gem install razor-client
