@@ -17,8 +17,8 @@ mod 'thias/bind'
 mod 'zack/r10k'
 mod 'thias/sysctl'
 mod 'thias/dhcpd'
-mod 'spiette/selinux'
+#mod 'spiette/selinux'
 
 # Github modules
-mod 'dns',
-  :git => 'https://github.com/ajjahn/puppet-dns'
+# mod 'dns',
+#  :git => 'https://github.com/ajjahn/puppet-dns'
