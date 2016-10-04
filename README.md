@@ -1,16 +1,17 @@
 # puppet-core
-TODO: Add steps to install puppet
+  TODO: Add steps to install puppet
 
 RAZOR SERVER INSTALLATION
 =========================
+
 #Install razor-server package and dependencies
   yum install -y razor-server
 
 #Install tftp server and copy script and bootloaders
-TODO: example
+  TODO: example
 
 #Copy the microkernel in the razor repo
-TODO: example
+  TODO: example
 
 #Log on to the postgres admin console:
   sudo -u postgres psql postgres
