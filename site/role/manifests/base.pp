@@ -1,5 +1,5 @@
 class role::base {
-  include profile::selinux
+  #include profile::selinux
   include profile::sysctl
   include profile::package
   include profile::user
