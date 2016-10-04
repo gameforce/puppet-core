@@ -1,4 +1,4 @@
-class ::logperm {
+class logperm {
 
   case $::osfamily {
     'RedHat': {
@@ -10,7 +10,7 @@ class ::logperm {
         '/var/log/secure'
       ]
     }
-    default: {fail("Unsupported osfamily: ${::osfamily} operatingsystem: ${::operatingsystem}. Please update ::logperm class.")}
+    default: {fail("Unsupported osfamily: ${::osfamily} operatingsystem: ${::operatingsystem}. Please update logperm class.")}
   }
 
   file { $logfiles:
