@@ -1,4 +1,4 @@
-class logperm {
+class profile::logperm {
 
   case $::osfamily {
     'RedHat': {
