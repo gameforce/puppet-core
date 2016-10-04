@@ -44,7 +44,7 @@
   `razor create-repo --name ubuntu #TODO`
 
   `razor create-repo --name windows #TODO`
-  
+
 
 ###Create razor brokers
   `razor create-broker --name noop --broker-type noop`
@@ -53,20 +53,17 @@
 
 
 ###Create razor tags for each server using the macaddress fact
-  `razor create-tag --name kam --rule '["=", ["fact", "macaddress"], "08:00:27:a6:16:e5"]'`
 
-  `razor create-tag --name dmx --rule '["=", ["fact", "macaddress"], "08:00:27:14:4e:dd"]'`
+  ```
+  razor create-tag --name kam --rule '["=", ["fact", "macaddress"], "08:00:27:a6:16:e5"]'
+  razor create-tag --name dmx --rule '["=", ["fact", "macaddress"], "08:00:27:14:4e:dd"]'
+  razor create-tag --name ads --rule '["=", ["fact", "macaddress"], "08:00:27:2d:2f:99"]'
+  razor create-tag --name pms --rule '["=", ["fact", "macaddress"], "08:00:27:d8:af:b6"]'
+  razor create-tag --name gms --rule '["=", ["fact", "macaddress"], "08:00:27:0e:3f:64"]'
+  razor create-tag --name rtr --rule '["=", ["fact", "macaddress"], "08:00:27:e6:34:33"]'
+  ```
 
-  `razor create-tag --name ads --rule '["=", ["fact", "macaddress"], "08:00:27:2d:2f:99"]'`
-
-  `razor create-tag --name pms --rule '["=", ["fact", "macaddress"], "08:00:27:d8:af:b6"]'`
-
-  `razor create-tag --name gms --rule '["=", ["fact", "macaddress"], "08:00:27:0e:3f:64"]'`
-
-  `razor create-tag --name rtr --rule '["=", ["fact", "macaddress"], "08:00:27:e6:34:33"]'`
-
-
-#Create razor policies for each server tied with bound to the tag
+###Create razor policies for each server tied with bound to the tag
   `razor create-policy --name kam --repo centos --tag kam --hostname 'kam.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos`
 
   `razor create-policy --name dmx --repo centos --tag dmx --hostname 'dmx.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos`
