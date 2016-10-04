@@ -38,21 +38,20 @@ TODO: example
 #Create alias to point to the right razor server:
   alias razor='razor -u http://razor:8150/api'
 
-#Create razor repos we need centos, solaris, vyos and windows
+#Create razor repos we need centos and windows
   razor create-repo --name centos --iso-url http://kam/iso/CentOS-7-x86_64-DVD-1511.iso --task centos
-  razor create-repo --name vyos #TODO
+  razor create-repo --name vyos #TODO (based off debian)
+  razor create-repo --name ubuntu #TODO
   razor create-repo --name windows #TODO
-  razor create-repo --name solaris #TODO
 
 #Create razor brokers
   razor create-broker --name noop --broker-type noop
-  razor create-broker --name puppet -c server=kam.lab.gameforce.net -c environment=vmlab --broker-type puppet
+  razor create-broker --name puppet -c server=kam.lab.gameforce.net -c environment=staging --broker-type puppet
 
 #Create razor tags for each server using the macaddress fact
   razor create-tag --name kam --rule '["=", ["fact", "macaddress"], "08:00:27:a6:16:e5"]'
   razor create-tag --name dmx --rule '["=", ["fact", "macaddress"], "08:00:27:14:4e:dd"]'
   razor create-tag --name ads --rule '["=", ["fact", "macaddress"], "08:00:27:2d:2f:99"]'
-  razor create-tag --name sbs --rule '["=", ["fact", "macaddress"], "08:00:27:b5:9a:21"]'
   razor create-tag --name pms --rule '["=", ["fact", "macaddress"], "08:00:27:d8:af:b6"]'
   razor create-tag --name gms --rule '["=", ["fact", "macaddress"], "08:00:27:0e:3f:64"]'
   razor create-tag --name rtr --rule '["=", ["fact", "macaddress"], "08:00:27:e6:34:33"]'
@@ -64,6 +63,5 @@ TODO: example
   razor create-policy --name gms --repo centos --tag gms --hostname 'gms.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos
   razor create-policy --name rtr --repo vyos --tag rtr --hostname 'rtr.lab.gameforce.net' --root-password 'secret' --broker puppet --task vyos
   razor create-policy --name ads --repo windows --tag ads --hostname 'ads.lab.gameforce.net' --root-password 'secret' --broker noop --task windows
-  razor create-policy --name sbs --repo solaris --tag sbs --hostname 'sbs.lab.gameforce.net' --root-password 'secret' --broker puppet --task solaris
 
 --
