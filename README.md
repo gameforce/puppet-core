@@ -65,6 +65,5 @@ TODO: example
   razor create-policy --name rtr --repo vyos --tag rtr --hostname 'rtr.lab.gameforce.net' --root-password 'secret' --broker puppet --task vyos
   razor create-policy --name ads --repo windows --tag ads --hostname 'ads.lab.gameforce.net' --root-password 'secret' --broker noop --task windows
   razor create-policy --name sbs --repo solaris --tag sbs --hostname 'sbs.lab.gameforce.net' --root-password 'secret' --broker puppet --task solaris
-  razor create-policy --name rtr --repo vyos --tag rtr --hostname 'rtr.lab.gameforce.net' --root-password 'secret' --broker puppet --task vyos
 
 --
