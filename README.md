@@ -17,7 +17,6 @@
   `vim /etc/puppetlabs/razor-server/config.yaml`
 
 ###Create the databases for razor and give access to the razor user:
-
   ```
   create user razor password 'razor';
   create database razor_prd;
@@ -30,7 +29,6 @@
   ```
 
 ###Create the schema:
-
   ```
   razor-admin -e production migrate-database
   service razor-server start
@@ -43,7 +41,6 @@
   `alias razor='razor -u http://razor:8150/api'`
 
 ###Create razor repos we need centos and windows:
-
   ```
   razor create-repo --name centos --iso-url http://kam/iso/CentOS-7-x86_64-DVD-1511.iso --task centos
   razor create-repo --name vyos #TODO (based off debian)
@@ -53,14 +50,12 @@
 
 
 ###Create razor brokers:
-
   ```
   razor create-broker --name noop --broker-type noop`
   razor create-broker --name puppet -c server=kam.lab.gameforce.net -c environment=staging --broker-type puppet
   ```
 
 ###Create razor tags for each server using the macaddress fact:
-
   ```
   razor create-tag --name kam --rule '["=", ["fact", "macaddress"], "08:00:27:a6:16:e5"]'
   razor create-tag --name dmx --rule '["=", ["fact", "macaddress"], "08:00:27:14:4e:dd"]'
@@ -71,7 +66,6 @@
   ```
 
 ###Create razor policies for each server tied with bound to the tag:
-
   ```
   razor create-policy --name kam --repo centos --tag kam --hostname 'kam.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos
   razor create-policy --name dmx --repo centos --tag dmx --hostname 'dmx.lab.gameforce.net' --root-password 'secret' --broker puppet --task centos
