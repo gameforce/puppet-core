@@ -1,5 +1,8 @@
 ###puppet-core:
-  TODO: Add steps to install puppet
+  This repo shows how to build a puppet infra 
+
+###Steps to install puppet
+  `yum install puppetserver`
 
 ###Install razor-server package and dependencies:
   `yum install -y razor-server`
