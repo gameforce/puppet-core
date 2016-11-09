@@ -1,5 +1,19 @@
 ###puppet-core:
-  TODO: Add steps to install puppet
+  This repo shows how to build a puppet infra
+
+###Steps to install puppet
+  `yum install puppetserver`
+  - git clone this repo somewhere
+  - copy files/puppet/ stuff into /etc/puppetlabs/puppet/
+  - edit Puppetfile to make sure you need the modules in it
+  - Install r10k:
+    `puppet module install zack/r10k`
+    `puppet apply modules/r10k/tests/init.pp`
+  - Use r10k to install the rest of the modules
+    `r10k puppetfile install`
+  - Do a puppet run
+    `puppet agent --test`
+  - Should install everything you need
 
 ###Install razor-server package and dependencies:
   `yum install -y razor-server`
