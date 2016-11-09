@@ -1,7 +1,7 @@
 ---
 classes:
-  - role::bind
-  - role::dhcp
+  #- role::bind
+  #- role::dhcp
   - role::puppet
   - role::repo
   - role::base
