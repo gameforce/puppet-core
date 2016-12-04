@@ -49,14 +49,14 @@ part / --grow --fstype=xfs
 #############################
 %packages --nobase
 epel-release
+curl
 wget
 zsh
-rsync
-git
-smartmontools
-htop
-samba
 puppet
+smartmontools
+samba
+git
+htop
 %end
 
 
@@ -162,8 +162,8 @@ cat >> /etc/puppetlabs/puppet/puppet.conf <<'EOF'
 EOF
 
 # Clean out any old certificates on the puppetca that may exist for this host
-# certname=`hostname`
-# curl "http://puppetca/cgi-bin/cleancert.cgi?${certname}"
+certname=`hostname`
+curl "http://puppetca/cgi-bin/cleancert.cgi?${certname}"
 
 # Variable to say machine is server
 mkdir -p /etc/facter/facts.d
