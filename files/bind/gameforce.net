@@ -25,3 +25,4 @@ plex       IN      CNAME  reaver
 mail       IN      CNAME  kam
 razor      IN      CNAME  kam
 gdash      IN      CNAME  kam
+gdash      IN      CNAME  kam
