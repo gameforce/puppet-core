@@ -1,5 +1,26 @@
 # puppet-core
-TODO: Add steps to install puppet
+
+STEPS TO INSTALL PUPPET
+=======================
+# yum check-update
+# yum update
+# yum upgrade
+# sudo yum install git
+# ssh-keygen -t rsa -C systems@fusefx
+# (upload key to github)
+# mkdir git
+# cd git
+# git clone git@github.com:gameforce/puppet-core
+# sudo yum -y install ntp
+# sudo ntpdate fbc-dc01
+# rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+# sudo yum -y install puppetserver
+# sudo systemctl start puppetserver
+# rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+# yum -y install puppet-agent
+# /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+# puppet cert list
+# puppet agent --test
 
 RAZOR SERVER INSTALLATION
 =========================
