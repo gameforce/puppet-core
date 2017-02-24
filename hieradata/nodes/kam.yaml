@@ -1,10 +1,5 @@
 ---
 classes:
-<<<<<<< HEAD
-=======
-  #- role::bind
-  #- role::dhcp
->>>>>>> staging
   - role::puppet
   - role::repo
   - role::linux
@@ -13,5 +8,4 @@ classes:
 firewall::ensure: 'stopped'
 
 ntp::servers:
-  - fbc-dc01.fusefx.studio
-  - fbc-dc02.fusefx.studio
+  - puppet.gameforce.net

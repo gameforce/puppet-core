@@ -5,5 +5,4 @@ classes:
 firewall::ensure: 'stopped'
 
 ntp::servers:
-  - 1.fbc-dc01.fusefx.studio iburst
-  - 2.fbc-dc02.fusefx.studio iburst
+  - 1.puppet.gameforce.net iburst
