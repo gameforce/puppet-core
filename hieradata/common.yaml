@@ -1,3 +1,11 @@
 ---
 classes:
+<<<<<<< HEAD
   - role::default
+=======
+  - role::base
+
+firewall::ensure: 'stopped'
+ntp::servers:
+  - 'kam.lab.gameforce.net'
+>>>>>>> staging

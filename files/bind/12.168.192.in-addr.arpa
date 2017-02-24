@@ -1,0 +1,17 @@
+$ORIGIN 12.168.192.in-addr.arpa.
+$TTL 86400
+@       IN      SOA  kam.lab.gameforce.net. systems.lab.gameforce.net. (
+                        01      ; serial
+                        1D      ; refresh
+                        1H      ; retry
+                        1W      ; expire
+                        3H )    ; minimum
+
+@       IN      NS      kam.lab.gameforce.net.
+10      IN      PTR     kam.lab.gameforce.net.
+11      IN      PTR     ads.lab.gameforce.net.
+12      IN      PTR     sbs.lab.gameforce.net.
+13      IN      PTR     dmx.lab.gameforce.net.
+14      IN      PTR     pms.lab.gameforce.net.
+15      IN      PTR     gms.lab.gameforce.net.
+254     IN      PTR     rtr.lab.gameforce.net.

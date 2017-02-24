@@ -15,6 +15,7 @@ mod 'saz/sudo'
 mod 'saz/motd'
 mod 'zack/r10k'
 mod 'thias/sysctl'
+<<<<<<< HEAD
 mod 'spiette/selinux'
 mod 'glarizza-osx_management', '0.2.1'
 mod 'puppet-mcollective', '2.5.0'
@@ -25,3 +26,11 @@ mod 'gildas-homebrew'
 # Github modules
 # mod 'dns',
 #   :git => 'https://github.com/ajjahn/puppet-dns'
+=======
+mod 'thias/dhcpd'
+#mod 'spiette/selinux'
+
+# Github modules
+# mod 'dns',
+#  :git => 'https://github.com/ajjahn/puppet-dns'
+>>>>>>> staging
