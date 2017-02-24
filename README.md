@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 # puppet-core
-TODO: Add proper steps to install puppet
-=======
+
 ###puppet-core:
   This repo shows how to build a puppet infra
->>>>>>> staging
 
 ###Steps to install puppet
   `yum install puppetserver`
