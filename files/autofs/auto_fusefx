@@ -1,0 +1,4 @@
+# maps for mac
+admin       -fstype=nfs,rw,resvport    fbc-fs:/ifs/data/fbc-fs/admin
+outfit01    -fstype=nfs,rw,resvport    fbc-fs:/ifs/data/fbc-fs/outfit01
+OUTFIT01    -fstype=nfs,rw,resvport    fbc-fs:/ifs/data/fbc-fs/outfit01

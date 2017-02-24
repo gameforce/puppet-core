@@ -2,7 +2,11 @@
 classes:
   - role::puppet
   - role::repo
-  - role::base
+  - role::linux
+  - role::samba
+
+firewall::ensure: 'stopped'
 
 ntp::servers:
-  - fbc-dc01.fusefx.studio iburst
+  - fbc-dc01.fusefx.studio
+  - fbc-dc02.fusefx.studio

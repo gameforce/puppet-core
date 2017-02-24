@@ -1,0 +1,3 @@
+# maps for linux
+admin       -fstype=nfs,rw    fbc-fs:/ifs/data/fbc-fs/admin
+outfit01    -fstype=nfs,rw    fbc-fs:/ifs/data/fbc-fs/outfit01

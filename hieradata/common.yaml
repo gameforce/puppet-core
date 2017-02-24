@@ -1,6 +1,3 @@
 ---
 classes:
-  - role::base
-
-firewall::ensure: 'stopped'
-ntp::servers: 'fbc-dc01.fusefx.studio'
+  - role::default

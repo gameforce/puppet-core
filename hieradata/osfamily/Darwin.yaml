@@ -1,0 +1,13 @@
+# darwin.yaml
+classes:
+  - role::mac
+
+ntp::servers:
+  - 1.fbc-dc01.fusefx.studio iburst
+  - 2.fbc-dc02.fusefx.studio iburst
+
+autofs::mount_entries:
+  '/etc/auto_volumes':
+     mountpoint: '/Volumes'
+     mountfile: '/etc/auto_volumes'
+     options: '--timeout=300'

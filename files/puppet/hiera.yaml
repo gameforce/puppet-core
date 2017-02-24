@@ -1,11 +1,15 @@
+# /etc/puppetlabs/puppet/hiera.yaml
 ---
 :backends:
   - yaml
 :hierarchy:
   - "nodes/%{::hostname}"
-  #- "osfamily/%{::osfamily}"
-  - "virtual/%{::virtual}"
+  - "%{::osfamily}"
   - common
 
-#:yaml:
-#  :datadir:
+:yaml:
+# datadir is empty here, so hiera uses its defaults:
+# - /etc/puppetlabs/code/environments/%{environment}/hieradata on *nix
+# - %CommonAppData%\PuppetLabs\code\environments\%{environment}\hieradata on Windows
+# When specifying a datadir, make sure the directory exists.
+:datadir:
