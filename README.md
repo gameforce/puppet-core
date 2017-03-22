@@ -1,10 +1,8 @@
-## puppet-core
-
 ### puppet-core:
   This repo shows how to build a puppet infra on ubuntu 16.04 (Xenial)
 
-###Steps to install puppet
-# Enable the apt repo
+### Steps to install puppet
+`` Enable the apt repo ``
 wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 sudo dpkg -i puppetlabs-release-precise.deb
 sudo apt-get update
