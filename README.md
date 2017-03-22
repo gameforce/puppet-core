@@ -2,16 +2,16 @@
   This repo shows how to build a puppet infra on ubuntu 16.04 (Xenial)
 
 ### Steps to install puppet
-`` Enable the apt repo ``
-wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
-sudo dpkg -i puppetlabs-release-precise.deb
-sudo apt-get update
+Enable the apt repo
+`` wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb ``
+`` sudo dpkg -i puppetlabs-release-xenial.deb ``
+`` sudo apt-get update ``
 
-# Install puppet server
-sudo apt-get install puppet-server
+### Install puppet server
+`` sudo apt-get install puppet-server ``
 
-# Clone this repo
-mkdir git;cd git
+### Clone this repo
+``mkdir git;cd git``
 git clone git@github.com:gameforce/puppet-core
 
 
