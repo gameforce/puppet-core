@@ -8,7 +8,7 @@ Enable the apt repo
 `` sudo apt-get update ``
 
 ### Install puppet server
-`` sudo apt-get install puppet-server ``
+`` sudo apt-get install puppetserver ``
 
 ### Clone this repo
 ``mkdir git;cd git``
