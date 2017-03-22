@@ -1,6 +1,6 @@
-# puppet-core
+## puppet-core
 
-###puppet-core:
+### puppet-core:
   This repo shows how to build a puppet infra on ubuntu 16.04 (Xenial)
 
 ###Steps to install puppet
