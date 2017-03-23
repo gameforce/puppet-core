@@ -6,4 +6,5 @@ class role::linux {
   include profile::sudo
   include profile::ntp
   include profile::firewall
+#  include profile::logperm
 }
