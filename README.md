@@ -1,32 +1,53 @@
 # puppet-core
-
-###puppet-core:
   This repo shows how to build a puppet infra on ubuntu 16.04 (Xenial)
 
-###Steps to install puppet
-# Enable the apt repo
+## Steps to install puppet
+### Enable the apt repo
+``` 
 wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
-sudo dpkg -i puppetlabs-release-precise.deb
+sudo dpkg -i puppetlabs-release-xenial.deb
 sudo apt-get update
+```
 
-# Install puppet server
-sudo apt-get install puppet-server
+### Install puppet server
+```
+sudo apt-get install puppetserver
+sudo apt-get install puppet-common
+```
 
-# Clone this repo
-mkdir git;cd git
+### Clone this repo
+```
+mkdir git
+cd git
 git clone git@github.com:gameforce/puppet-core
+```
 
+### Setup puppet bits
 
-  - copy files/puppet/ stuff into /etc/puppetlabs/puppet/
-  - edit Puppetfile to make sure you need the modules in it
+  - Copy configs in place
+  ```
+  sudo rsync -av files/puppet/ /etc/puppetlabs/puppet/
+  ```
+  
+  Edit Puppetfile to make sure you need the modules in it
   - Install r10k:
-    `puppet module install zack/r10k`
-    `puppet apply modules/r10k/tests/init.pp`
+    ```
+    cd code/environments/production/`
+    /opt/puppetlabs/bin/puppet module install zack/r10k
+    puppet apply modules/r10k/tests/init.pp
+    ```
+    
   - Use r10k to install the rest of the modules
-    `r10k puppetfile install`
+    ```
+    r10k puppetfile install
+    ```
+    
   - Do a puppet run
-    `puppet agent --test`
-  - Should install everything you need
+    ```
+    puppet agent --test
+    ```
+    
+  - Should install everything you need.
 
 ###Install razor-server package and dependencies:
   `yum install -y razor-server`
