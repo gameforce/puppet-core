@@ -1,2 +1,3 @@
 # Include hiera classes
-hiera_include('classes')
+# old: hiera_include('classes')
+lookup('classes', {merge => unique}).include
