@@ -10,28 +10,38 @@ sudo apt-get update
 ```
 
 ### Install puppet server
-`sudo apt-get install puppetserver`
-`sudo apt-get install puppet-common`
+```
+sudo apt-get install puppetserver
+sudo apt-get install puppet-common
+```
 
 ### Clone this repo
-`mkdir git;cd git`
-`git clone git@github.com:gameforce/puppet-core`
+```
+mkdir git
+cd git
+git clone git@github.com:gameforce/puppet-core
+```
 
 ### Setup puppet bits
 
-  Copy configs in place
+  - Copy configs in place
   `sudo rsync -av files/puppet/ /etc/puppetlabs/puppet/`
   
   Edit Puppetfile to make sure you need the modules in it
   - Install r10k:
-    `cd code/environments/production/`
-    `/opt/puppetlabs/bin/puppet module install zack/r10k`
-    `puppet apply modules/r10k/tests/init.pp`
+    ```
+    cd code/environments/production/`
+    /opt/puppetlabs/bin/puppet module install zack/r10k
+    puppet apply modules/r10k/tests/init.pp
+    ```
+    
   - Use r10k to install the rest of the modules
     `r10k puppetfile install`
+    
   - Do a puppet run
     `puppet agent --test`
-  - Should install everything you need
+    
+  - Should install everything you need.
 
 ###Install razor-server package and dependencies:
   `yum install -y razor-server`
