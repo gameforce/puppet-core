@@ -7,19 +7,24 @@
 
 `` sudo dpkg -i puppetlabs-release-xenial.deb ``
 
-`` sudo apt-get update ``
+``sudo apt-get update``
 
 ### Install puppet server
-`` sudo apt-get install puppetserver ``
+``sudo apt-get install puppetserver``
+``sudo apt-get install puppet-common``
 
 
 ### Clone this repo
 ``mkdir git;cd git``
-git clone git@github.com:gameforce/puppet-core
 
+``git clone git@github.com:gameforce/puppet-core``
 
-  - copy files/puppet/ stuff into /etc/puppetlabs/puppet/
-  - edit Puppetfile to make sure you need the modules in it
+### Setup puppet bits
+
+  Copy configs in place
+  ``sudo rsync -av files/puppet/ /etc/puppetlabs/puppet/``
+  
+  Edit Puppetfile to make sure you need the modules in it
   - Install r10k:
     `puppet module install zack/r10k`
     `puppet apply modules/r10k/tests/init.pp`
