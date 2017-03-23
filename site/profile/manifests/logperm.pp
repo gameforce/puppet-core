@@ -9,6 +9,10 @@ class profile::logperm {
         '/var/log/spooler',
         '/var/log/secure'
       ]
+    'Debian': {
+      $logfiles = [
+        '/var/log/syslog',
+        '/var/log/auth.log'
     }
     default: {fail("Unsupported osfamily: ${::osfamily} operatingsystem: ${::operatingsystem}. Please update logperm class.")}
   }
