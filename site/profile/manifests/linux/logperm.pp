@@ -10,6 +10,14 @@ class profile::logperm {
         '/var/log/secure'
       ]
     }
+    'Debian': {
+      $logfiles = [
+        '/var/log/messages',
+        '/var/log/cron',
+        '/var/log/maillog',
+        '/var/log/spooler',
+        '/var/log/secure'
+      ]
     'Darwin': {
       $logfiles = [
         '/var/log/system.log',
