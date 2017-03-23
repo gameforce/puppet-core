@@ -6,4 +6,6 @@ classes:
 
 firewall::ensure: 'stopped'
 
-ntp::servers: puppet.gameforce.net
+ntp::servers: 
+  - 0.us.pool.ntp.org iburst
+  - 1.us.pool.ntp.org iburst
