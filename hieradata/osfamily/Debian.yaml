@@ -1,0 +1,8 @@
+---
+classes:
+  - role::linux
+
+firewall::ensure: 'stopped'
+
+ntp::servers:
+  - 1.puppet.gameforce.net iburst
