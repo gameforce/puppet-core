@@ -3,9 +3,11 @@
 
 ## Steps to install puppet
 ### Enable the apt repo
-``` wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb ```
-` sudo dpkg -i puppetlabs-release-xenial.deb `
-`sudo apt-get update`
+``` 
+wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+sudo dpkg -i puppetlabs-release-xenial.deb
+sudo apt-get update
+```
 
 ### Install puppet server
 `sudo apt-get install puppetserver`
