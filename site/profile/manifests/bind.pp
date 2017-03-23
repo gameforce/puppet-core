@@ -3,12 +3,13 @@ class profile::bind {
   include bind
 
   bind::server::conf { '/etc/bind/named.conf':
-    listen_on_addr          => [ 'any' ],
-    listen_on_v6_addr       => [ 'false' ],
-    forwarders              => [ '8.8.8.8', '8.8.4.4' ],
-    allow_query             => [ 'localnets' ],
-    includes                => [ '/etc/bind/rndc.key','/etc/bind/named.conf.options','/etc/bind/named.conf.local','/etc/bind/named.conf.default-zones' ],
-    managed_keys_directory  => '/var/named/dynamic',
+    directory              => '/etc/bind/',
+    listen_on_addr         => [ 'any' ],
+    listen_on_v6_addr      => [ 'false' ],
+    forwarders             => [ '8.8.8.8', '8.8.4.4' ],
+    allow_query            => [ 'localnets' ],
+    includes               => [ '/etc/bind/rndc.key', '/etc/bind/named.conf.options', '/etc/bind/named.conf.local', '/etc/bind/named.conf.default-zones' ],
+    managed_keys_directory => '/var/named/dynamic',
     zones                   => {
       'gameforce.net'       => [
         'type master',
