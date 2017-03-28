@@ -36,7 +36,8 @@ sudo puppet module install zack/r10k
 sudo puppet apply modules/r10k/tests/init.pp
 ```
 
-### Edit Puppetfile to make sure you need the modules in itUse r10k to install the rest of the modules
+### Use r10k to install the rest of the modules
+#### Edit the Puppetfile to make sure you need the modules in it, comment out what you don't need
 ```
 cd %HOME/git/puppet-core
 sudo r10k puppetfile install
