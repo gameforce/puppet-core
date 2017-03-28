@@ -11,15 +11,14 @@ sudo apt-get update
 
 ### Install puppet server
 ```
-sudo apt-get install puppetserver
-sudo apt-get install puppet-common
+sudo apt install puppetserver
 ```
 
 ### Clone this repo
 ```
 mkdir git
 cd git
-git clone git@github.com:gameforce/puppet-core
+git clone https://github.com/gameforce/puppet-core
 ```
 
 ### Setup puppet bits
@@ -32,7 +31,7 @@ git clone git@github.com:gameforce/puppet-core
   Edit Puppetfile to make sure you need the modules in it
   - Install r10k:
     ```
-    cd code/environments/production/`
+    cd /etc/puppetlabs/puppet/code/environments/production
     /opt/puppetlabs/bin/puppet module install zack/r10k
     puppet apply modules/r10k/tests/init.pp
     ```
