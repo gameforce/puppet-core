@@ -8,7 +8,7 @@ sudo dpkg -i puppetlabs-release-pc1-xenial.deb
 sudo apt-get update
 ```
 
-### Install puppet server
+### Install puppet server, don't start it yet
 ```
 sudo apt install puppetserver
 ```
@@ -32,8 +32,8 @@ sudo systemctl start puppetserver
 ```
 ln -s /opt/puppetlabs/bin/puppet /usr/bin/
 cd /etc/puppetlabs/puppet/code/environments/production
-sudo puppet module install zack/r10k
-sudo puppet apply modules/r10k/tests/init.pp
+sudo puppet module install puppet-r10k
+sudo puppet apply modules/r10k/manifests/init.pp
 ```
 
 ### Use r10k to install the rest of the modules
@@ -41,6 +41,7 @@ sudo puppet apply modules/r10k/tests/init.pp
 ```
 cd %HOME/git/puppet-core
 sudo r10k puppetfile install
+vi site
 ```
 #### Do a puppet run
 ```
