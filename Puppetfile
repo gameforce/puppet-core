@@ -17,3 +17,9 @@ mod 'puppet/r10k'
 mod 'thias/sysctl'
 mod 'thias/bind'
 mod 'puppetlabs/dhcp'
+
+# Unmet dependencies
+mod 'puppetlabs/ruby'
+mod 'puppetlabs/gcc'
+mod 'puppet/make'
+mod 'gentoo/portage'
