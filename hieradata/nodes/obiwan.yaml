@@ -3,6 +3,7 @@ classes:
   - role::puppet
   - role::repo
   - role::linux
+  - role::dhcp
 
 firewall::ensure: 'stopped'
 
