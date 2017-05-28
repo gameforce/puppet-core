@@ -24,7 +24,8 @@ class profile::dhcp {
     gateway      => '192.168.11.254',
   }
   
-  dhcp::host { 'ayla'   : mac  => '6c:ad:f8:74:ff:d2', ip => '192.168.11.1', }
+  dhcp::host { 'ayla'   : mac  => '6c:ad:f8:74:ff:d2', ip => '192.168.11.2', }
+  dhcp::host { 'kylo'   : mac  => 'c4:3d:c7:a3:0d:10', ip => '192.168.11.3', }
   dhcp::host { 'ahsoka' : mac  => 'c4:b3:01:ba:43:e1', ip => '192.168.11.4', }
   dhcp::host { 'anakin' : mac  => '68:5b:35:bf:25:98', ip => '192.168.11.5', }
   dhcp::host { 'sheev'  : mac  => '90:2b:34:31:da:a3', ip => '192.168.11.6', }
