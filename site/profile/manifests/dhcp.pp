@@ -9,7 +9,7 @@ class profile::dhcp {
     nameservers   => ['192.168.11.10', '8.8.8.4'],
     ntpservers    => ['us.pool.ntp.org'],
     interfaces    => ['enp11s0'],
-    dnsupdatekey  => '/etc/bind/rndc.key',
+    # dnsupdatekey  => '/etc/bind/rndc.key',
     # dnskeyname    => 'rndc-key',
     # require       => Bind::Key['test'],
     pxeserver     => '192.168.11.10',
