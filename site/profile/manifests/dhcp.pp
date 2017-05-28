@@ -11,7 +11,7 @@ class profile::dhcp {
     interfaces   => ['enp11s0'],
     dnsupdatekey => '/etc/bind/rndc.key',
     dnskeyname   => 'rndc-key',
-    require      => Bind::Key['rndc-key'],
+    require      => ['rndc-key'],
     pxeserver    => '192.168.11.10',
     pxefilename  => 'pxelinux.0',
     omapi_port   => 7911,
