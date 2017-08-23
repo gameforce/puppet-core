@@ -6,5 +6,4 @@ class role::base {
   include profile::sudo
   include profile::ntp
   include profile::firewall
-#  include profile::vmware
 }
