@@ -1,0 +1,12 @@
+---
+classes:
+  - role::puppet
+  - role::repo
+  - role::linux
+  - role::dhcp
+
+firewall::ensure: 'stopped'
+
+ntp::servers: 
+  - 0.us.pool.ntp.org iburst
+  - 1.us.pool.ntp.org iburst

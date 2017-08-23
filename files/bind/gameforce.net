@@ -1,0 +1,27 @@
+$ORIGIN lab.gameforce.net.
+$TTL 86400
+@          IN     SOA      obiwan.gameforce.net. systems.gameforce.net. (
+                           01      ; serial
+                           1D      ; refresh
+                           1H      ; retry
+                           1W      ; expire
+                           3H )    ; minimum
+
+@          IN      NS      obiwan.gameforce.net.
+@          IN      MX      10 obiwan.gameforce.net.
+
+; Add A records here
+sheev         IN      A      192.168.11.5   ;macos
+anakin        IN      A      192.168.11.6   ;windows
+obiwan        IN      A      192.168.11.10  ;ubuntu
+ahsoka        IN      A      192.168.11.11  ;win2kvm
+quigon        IN      A      192.168.11.12  ;iPhone 
+yoda          IN      A      192.168.11.13  ;iPad
+router        IN      A      192.168.11.254 ;netgear
+
+; Add CNAME records here
+puppet     IN      CNAME  obiwan
+rage       IN      CNAME  reaver
+trans      IN      CNAME  reaver
+plex       IN      CNAME  reaver
+mail       IN      CNAME  obiwan
