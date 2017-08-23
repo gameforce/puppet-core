@@ -1,0 +1,8 @@
+---
+classes:
+  - role::base
+
+firewall::ensure: 'stopped'
+
+ntp::servers:
+  - 1.maul.gameforce.net iburst

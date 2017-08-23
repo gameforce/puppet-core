@@ -1,0 +1,197 @@
+#############################################################################
+# Kickstart for Scientific Linux 6
+############################################################################
+# This file is managed by puppet.
+
+install
+text
+network --bootproto dhcp --noipv6
+url --url http://kam/centos/7/base/x86_64/os/
+
+
+###########################
+#Localisation settings
+###########################
+
+lang <%= lang %>
+keyboard <%= keyboard %>
+timezone <%= timezone %>
+auth --enablemd5 --enableshadow
+rootpw --iscrypted $1$4bYaQKbt$IgtOvSrYYOid347KIr1/X.
+selinux --disabled
+firewall --disabled
+firstboot --disabled
+skipx
+reboot
+
+
+############################
+#Repos
+############################
+repo --name=epel --baseurl=http://kam/el/7/epel/x86_64/
+#repo --name=framestore --baseurl=http://kam/production/scientific/6/framestore/x86_64/
+# NO ADDITIONAL REPOS AT THIS TIME
+
+
+############################
+#HDD Configuration
+############################
+%include /tmp/root-disk
+zerombr
+bootloader --location mbr
+part /boot --size=200 --fstype=xfs
+part swap --size=2048 --grow --fstype=swap
+part / --grow --fstype=xfs
+
+
+#############################
+#Packages to be installed
+#############################
+%packages --nobase
+epel-release
+curl
+wget
+zsh
+puppet
+smartmontools
+samba
+git
+htop
+%end
+
+
+##############################################
+# PRE INSTALL SCRIPTS
+##############################################
+
+%pre
+#!/bin/sh
+#
+# Pre-install script; will not cause Anaconda to abort, even if it
+# returns non-zero return code
+#
+
+# Allow user to see this script on a console
+
+exec < /dev/tty3 > /dev/tty3 2>&1
+chvt 3
+
+# Machines of different manufactures can use different types
+# of disk. Select the disk for the OS install.
+
+CANDIDATES="cciss/c0d0 sda vda"
+
+for AUTO in $CANDIDATES ""; do
+	if [ -b "/dev/$AUTO" ]; then
+		break
+	fi
+done
+
+# Allow user to select the disk for install
+
+while true; do
+	read -p "Enter destination disk, or ? for a list [$AUTO]: " M
+
+	if [ "$M" == '?' ]; then
+		echo
+		(cd /sys/block && ls | grep -v '^loop' |
+			grep -v '^ram' | sed -e 'y|!|/|' )
+		echo
+		continue
+	fi
+
+	if [ "$M" == '' ]; then
+		M="$AUTO"
+	fi
+
+	if [ "$M" == '' ]; then
+		continue
+	fi
+
+	if [ ! -b "/dev/$M" ]; then
+		echo "/dev/$M not found" >&2
+		continue
+	fi
+
+	break
+done
+
+echo "clearpart --drives=$M --all" > /tmp/root-disk
+
+# Final confirmation from user
+
+CONFIRM="no"
+while [ "$CONFIRM" != "yes" ]; do
+	echo
+	echo '********************************************************************************'
+	echo '*                              W A R N I N G                                   *'
+	echo '*                                                                              *'
+	echo '*        This process will install a completely new operating system           *'
+	echo '*                                                                              *'
+	echo '*      Do you wish to continue? (Type the entire word "yes" to proceed.)       *'
+	echo '*                                                                              *'
+	echo '********************************************************************************'
+	echo
+	read -p "Proceed with install to $M? " CONFIRM
+done
+
+# Switch back to the kickstart display
+
+clear
+chvt 1
+
+%end
+
+
+##############################################
+# POST INSTALL SCRIPTS
+##############################################
+
+%post --interpreter /bin/bash
+
+# Allow user to see this script on a console
+
+exec < /dev/tty3 > /dev/tty3 2>&1
+chvt 3
+
+chkconfig puppet on
+
+cat >> /etc/puppetlabs/puppet/puppet.conf <<'EOF'
+    report=true
+    pluginsync=true
+EOF
+
+# Clean out any old certificates on the puppetca that may exist for this host
+certname=`hostname`
+curl "http://puppetca/cgi-bin/cleancert.cgi?${certname}"
+
+# Variable to say machine is server
+mkdir -p /etc/facter/facts.d
+cat >> /etc/facter/facts.d/systype.txt << 'EOF'
+systype=server
+EOF
+
+# Disable the default external repos
+# sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/*.repo
+
+#Configure local repos
+cat >> /etc/yum.repos.d/systems.repo <<'EOF'
+[systems]
+name=Systems Linux Repo - x86_64
+baseurl=http://kam/centos/7/base/x86_64/os/
+enabled=1
+gpgcheck=0
+enablegroups=1
+proxy=_none_
+EOF
+
+#Run puppet so the clients configuration is applied before reboot
+echo executing puppet agent run for $HOSTNAME
+/opt/puppetlabs/bin/puppet agent --test
+
+# Switch back to the kickstart display
+
+clear
+chvt 1
+
+%end

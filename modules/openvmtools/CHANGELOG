@@ -1,0 +1,60 @@
+2017-07-15 Michael Arnold <github@razorsedge.org> - 1.1.0
+=========================================================
+
+ Michael Arnold <github@razorsedge.org> (21):
+  * Update Puppet 4 gem and support puppet_blacksmith with modulesync.
+  * Update Geppetto .project.
+  * Fix :operatingsystemrelease in rspec tests.
+  * Really fix :operatingsystemrelease in rspec tests.
+  * Unit test against Puppet 4 via modulesync.
+  * Now supporting Puppet 4.
+  * Keep Puppet 2.7 support.
+  * Pin rake below version 11 to keep Ruby 1.8 support.
+  * The "pe" requirement is no longer supported by the Forge.
+  * Add .vendor to .gitignore.
+  * Pin gems to specific Ruby versions with modulesync.
+  * Fix Markdown rendering of headers.
+  * Rename DEVELOP.md to CONTRIBUTING.md.
+  * Update instructions in CONTRIBUTING.md.
+  * README.markdown formatting fixes.
+  * Use Ruby 2.3.1 and remove puppet-lint-variable_contains_upcase with
+    modulesync.
+  * Constrain metadata-json-lint on Ruby 1.x with modulesync.
+  * Remove Ruby 2.3.1 testing and add Puppet 5 testing with modulesync.
+  * No longer accept failures in Puppet 4 testing with modulesync.
+  * Fix rspec tests for non-supported osfamily/non-vmware platform.
+  * Update versions for 1.1.0 release.
+ 
+
+2015-04-10 Michael Arnold <github@razorsedge.org> - 1.0.0
+=========================================================
+
+ Michael Arnold <github@razorsedge.org> (3):
+  * Add the pattern parameter to the service resource.
+  * Fix errors in README.markdown.
+  * Update versions for 1.0.0 release.
+ 
+
+2015-04-01 Michael Arnold <github@razorsedge.org> - 0.2.0
+=========================================================
+
+ Michael Arnold <github@razorsedge.org> (4):
+  * Fixing Debian and Ubuntu $service_name.
+  * Fix Debian and Ubuntu $desktop_package_name.
+  * Update metadata summary.
+  * Update versions for 0.2.0 release.
+ 
+
+2015-03-31 Michael Arnold <github@razorsedge.org> - 0.1.0
+=========================================================
+
+ Michael Arnold <github@razorsedge.org> (3):
+  * Created a shiney new module.
+  * Fix errors in the README.markdown.
+  * Update versions for 0.1.0 release.
+ 
+
+2015-03-28 Michael Arnold <github@razorsedge.org> - 0.0.0
+=========================================================
+
+
