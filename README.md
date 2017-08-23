@@ -1,16 +1,14 @@
 # puppet infra on ubuntu 16.04 (Xenial)
-This repo shows how to build a puppet infra on ubuntu 16.04 (Xenial)
+This repo shows how to build a puppet infra on CentOS/RedHat 7
 
-### Enable the apt repo
+### Enable the repo
 ``` 
-wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
-sudo dpkg -i puppetlabs-release-pc1-xenial.deb
-sudo apt-get update
+rpm - blah
 ```
 
 ### Install puppet server, don't start it yet
 ```
-sudo apt install puppetserver
+install puppetserver
 ```
 
 ### Clone this repo
@@ -34,6 +32,7 @@ ln -s /opt/puppetlabs/bin/puppet /usr/bin/
 cd /etc/puppetlabs/puppet/code/environments/production
 sudo puppet module install puppet-r10k
 sudo puppet apply modules/r10k/manifests/init.pp
+or use gem install method (describe)
 ```
 
 ### Use r10k to install the rest of the modules
