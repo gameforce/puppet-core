@@ -1,0 +1,2 @@
+# maps for windows
+files       -fstype=smbfs,rw    sheev:/data/files
