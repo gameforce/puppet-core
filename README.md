@@ -1,9 +1,9 @@
-# puppet infra on ubuntu 16.04 (Xenial)
+# puppet infra on redhat and derivatives
 This repo shows how to build a puppet infra on CentOS/RedHat 7
 
-### Enable the repo
+### Enable the puppet repo
 ``` 
-rpm - blah
+sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
 ```
 
 ### Install puppet server, don't start it yet
