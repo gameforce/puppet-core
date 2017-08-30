@@ -1,2 +1,2 @@
 # maps for windows
-files       -fstype=smbfs,rw    sheev:/data/files
+data       -fstype=nfs,rw    sidious:/data-pool
