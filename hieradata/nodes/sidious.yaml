@@ -1,9 +1,9 @@
----
-classes:
-  - role::puppet
-  - role::repo
+lookup_options:
+  classes:
+    - role::puppet
+    - role::repo
 
-firewall::ensure: 'stopped'
+  firewall::ensure: 'stopped'
 
-ntp::servers:
-  - maul.gameforce.net
+  ntp::servers:
+    - maul.gameforce.net
