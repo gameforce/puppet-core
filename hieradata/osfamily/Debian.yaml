@@ -1,8 +1,8 @@
 ---
-classes:
-  - role::default
+ classes:
+    - role::default
 
-firewall::ensure: 'stopped'
+  firewall::ensure: 'stopped'
 
-ntp::servers:
-  - 1.maul.gameforce.net iburst
+  ntp::servers:
+    - 1.maul.gameforce.net iburst
