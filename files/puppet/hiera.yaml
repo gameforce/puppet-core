@@ -1,28 +1,18 @@
-#---
-#version: 5
-#defaults:  # Used for any hierarchy level that omits these keys.
-#  datadir: data         # This path is relative to hiera.yaml's directory.
-#  data_hash: yaml_data  # Use the built-in YAML backend.
-#
-#hierarchy:
-#  - name: "Per-node data"                   # Human-readable name.
-#    path: "nodes/%{hostname}.yaml"  # File path, relative to datadir. IMPORTANT: include the file extension!
-#
-#  - name: "Per-OS defaults"
-#    path: "osfamily/%{facts.os.family}.yaml"
-#
-#  - name: "Common data"
-#    path: "common.yaml"
-
 ---
-version: 3
-:backends:
-  - yaml
-:hierarchy:
-  - "nodes/%{::hostname}"
-  - "osfamily/%{::osfamily}"
-  - "virtual/%{::virtual}"
-  - common
-
-#:yaml:
-#  :datadir:
+  2 version: 5
+  3
+  4 defaults:
+  5   datadir: hieradata
+  6
+  7 hierarchy:
+  8   - name: "Eyaml hierarchy"
+  9     lookup_key: eyaml_lookup_key # eyaml backend
+ 10     paths:
+ 11       - "nodes/%{hostname}.yaml"
+ 12       - "role/%{::role}-%{::env}.yaml"
+ 13       - "role/%{::role}.yaml"
+ 14       - "zone/%{::zone}.yaml"
+ 15       - "common.yaml"
+ 16     options:
+ 17       pkcs7_private_key: /etc/puppetlabs/puppet/keys/private_key.pkcs7.pem
+ 18       pkcs7_public_key:  /etc/puppetlabs/puppet/keys/public_key.pkcs7.pem
