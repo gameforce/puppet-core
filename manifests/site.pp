@@ -4,4 +4,4 @@
 
 # hiera version 5:
 #lookup('classes', {merge => unique}).include
-lookup('classes'
+lookup('classes')
