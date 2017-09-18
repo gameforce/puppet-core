@@ -1,5 +1,5 @@
-lookup_options:
-  classes:
-    - role::base
-    - role::puppet
-    - role::repo
+---
+classes:
+  - role::base
+  - role::puppet
+  - role::repo
