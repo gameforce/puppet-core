@@ -38,7 +38,7 @@ class apache (
   $purge_vhost_dir                                               = undef,
   $purge_vdir                                                    = false,
   $serveradmin                                                   = 'root@localhost',
-  $sendfile                                                      = 'On',
+  Enum['On', 'Off', 'on', 'off'] $sendfile                       = 'On',
   $error_documents                                               = false,
   $timeout                                                       = '120',
   $httpd_dir                                                     = $::apache::params::httpd_dir,
@@ -129,7 +129,6 @@ class apache (
       notify => Class['Apache::Service'],
     }
   }
-  validate_re($sendfile, [ '^[oO]n$' , '^[oO]ff$' ])
 
   # declare the web server user and group
   # Note: requiring the package means the package ought to create them and not puppet
@@ -271,7 +270,7 @@ class apache (
   if $::apache::conf_dir and $::apache::params::conf_file {
     if $::osfamily == 'gentoo' {
       $error_documents_path = '/usr/share/apache2/error'
-      if is_array($default_mods) {
+      if $default_mods =~ Array {
         if versioncmp($apache_version, '2.4') >= 0 {
           if defined('apache::mod::ssl') {
             ::portage::makeconf { 'apache2_modules':
@@ -336,7 +335,7 @@ class apache (
 
     # preserve back-wards compatibility to the times when default_mods was
     # only a boolean value. Now it can be an array (too)
-    if is_array($default_mods) {
+    if $default_mods =~ Array {
       class { '::apache::default_mods':
         all  => false,
         mods => $default_mods,

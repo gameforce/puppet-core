@@ -485,9 +485,9 @@ Converts a Boolean to a number. Converts values:
 * `false`, 'f', '0', 'n', and 'no' to 0.
 * `true`, 't', '1', 'y', and 'yes' to 1.
 
-  Argument: a single Boolean or string as an input.
+Argument: a single Boolean or string as an input.
 
-  *Type*: rvalue.
+*Type*: rvalue.
 
 #### `bool2str`
 
@@ -1751,6 +1751,30 @@ Converts the argument into bytes.
 For example, "4 kB" becomes "4096".
 
 Arguments: A single string.
+
+*Type*: rvalue.
+
+#### `to_json`
+
+Converts input into a JSON String.
+
+For example, `{ "key" => "value" }` becomes `{"key":"value"}`.
+
+*Type*: rvalue.
+
+#### `to_json_pretty`
+
+Converts input into a pretty JSON String.
+
+For example, `{ "key" => "value" }` becomes `{\n  \"key\": \"value\"\n}`.
+
+*Type*: rvalue.
+
+#### `to_yaml`
+
+Converts input into a YAML String.
+
+For example, `{ "key" => "value" }` becomes `"---\nkey: value\n"`.
 
 *Type*: rvalue.
 
