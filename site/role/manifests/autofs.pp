@@ -1,3 +1,3 @@
-class role::linux::autofs {
+class role::autofs {
   include profile::autofs
 }
