@@ -8,8 +8,5 @@ hierarchy:
   - name: "Nodes"                        # Human-readable name.
     path: "nodes/%{facts.hostname}.yaml"     # File path, relative to datadir. IMPORTANT: include the file extension!
 
-  - name: "Per-OS defaults"
-    path: "osfamily/%{facts.osfamily}.yaml"
-
   - name: "Common Data"
     path: "common.yaml"
