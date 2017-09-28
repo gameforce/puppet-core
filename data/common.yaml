@@ -1,7 +1,7 @@
 ---
 #classes:
 role::base
-openvmtools::
+openvmtools
 profile::autofs
 
 firewall::ensure: stopped
