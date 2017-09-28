@@ -1,7 +1,7 @@
 ---
-classes:
-  - role::base
-  - openvmtools
+#classes:
+role::base
+::openvmtools
 
 firewall::ensure: stopped
 ntp::servers: clock.gameforce.net
