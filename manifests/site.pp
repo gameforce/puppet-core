@@ -1,6 +1,7 @@
 # Include hiera classes
-# hiera version 3:
+# Hiera v3:
 # hiera_include('classes')
 
-# hiera version 5:
-lookup('classes', {merge => unique}).include
+# Hiera v5:
+# Merge several arrays of class names into one array:
+lookup('classes', {merge => 'unique'})

@@ -1,9 +1,0 @@
-lookup_options:
-  classes:
-    - role::puppet
-    - role::repo
-
-  firewall::ensure: 'stopped'
-
-  ntp::servers:
-    - maul.gameforce.net
