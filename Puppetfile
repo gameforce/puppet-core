@@ -2,7 +2,7 @@
 mod 'puppetlabs/apt'
 mod 'puppetlabs/apache'
 mod 'puppetlabs/ntp'
-mod 'puppetlabs/puppetdb'
+mod 'puppetlabs-puppetdb', '6.0.1'
 mod 'puppetlabs/stdlib'
 mod 'puppetlabs/concat'
 mod 'puppetlabs/inifile'
