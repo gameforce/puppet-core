@@ -1,7 +1,8 @@
 ---
 #classes:
 role::base
-::openvmtools
+openvmtools::
+profile::autofs
 
 firewall::ensure: stopped
 ntp::servers: clock.gameforce.net
