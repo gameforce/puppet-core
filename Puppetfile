@@ -17,3 +17,5 @@ mod 'puppet-r10k', '6.1.0'
 mod 'thias-sysctl', '1.0.6'
 mod 'puppet-autofs', '4.0.0'
 mod 'joshcooper-powershell', '0.0.6'
+
+#TODO: Add local modules for role and profile
