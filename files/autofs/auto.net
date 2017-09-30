@@ -1,2 +1,2 @@
-# maps for windows
+# maps
 data       -fstype=nfs,rw    sidious:/data-pool

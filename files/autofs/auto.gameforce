@@ -1,2 +1,0 @@
-# maps for linux
-files       -fstype=nfs,rw    srv1:/data-pool/files
