@@ -1,6 +1,1 @@
 ---
-classes:
-  lookup_options:
-    role::base:
-    role::puppet:
-    role::repo:
