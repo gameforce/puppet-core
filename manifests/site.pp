@@ -3,4 +3,5 @@
 
 node default {
   include common
+  include mounts
 }
