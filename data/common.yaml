@@ -2,17 +2,6 @@
 classes:
   role::base:
   openvmtools:
-lookup_options:
-  profile::autofs::mounts:
-    merge: hash
-  profile::autofs::mounts:
-    net:
-      mount: '/net'
-      mapfile: '/etc/auto.net.data'
-      mapcontents:
-        - '* -user,rw,soft,intr,rsize=32768,wsize=32768,tcp,nfsvers=3,noacl sidious:/data-pool'
-      options: '--timeout=120'
-      order: 01
 
 firewall::ensure:  'stopped'
 ntp::servers: 'clock.gameforce.net'

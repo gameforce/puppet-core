@@ -4,8 +4,3 @@ classes:
     role::base:
     role::puppet:
     role::repo:
-  
-  autofs::maps:
-    data:
-      map: '/etc/auto.net.data'
-      mapcontent: 'data -user,rw sidious:/data-pool'
