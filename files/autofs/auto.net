@@ -1,2 +1,7 @@
-# maps
-*       -fstype=nfs,rw    sidious:/data-pool/&
+# maps for data
+kids     -fstype=nfs,rw  sidious:/data-pool/kids
+movies   -fstype=nfs,rw  sidious:/data-pool/movies
+music    -fstype=nfs,rw  sidious:/data-pool/music
+photos   -fstype=nfs,rw  sidious:/data-pool/photos
+series   -fstype=nfs,rw  sidious:/data-pool/series
+systems  -fstype=nfs,rw  sidious:/data-pool/systems
