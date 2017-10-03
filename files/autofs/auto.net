@@ -1,2 +1,2 @@
 # maps
-systems       -fstype=nfs,rw    sidious:/data-pool/systems
+*       -fstype=nfs,rw    sidious:/data-pool/&
