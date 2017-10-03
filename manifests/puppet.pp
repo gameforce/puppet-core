@@ -11,15 +11,12 @@ sshkey { "sidious.gameforce.net":
   }
 
 class { '::r10k::webhook::config':
-  protected        => false,
   use_mcollective => false,
   public_key_path  => "/etc/puppetlabs/puppet/ssl/ca/signed/${facts['fqdn']}.pem",
   private_key_path => "/etc/puppetlabs/puppet/ssl/private_keys/${facts['fqdn']}.pem",
-  notify           => Service['webhook'],
   }
 
 class { '::r10k::webhook':
-   user    => 'puppet',
-   group   => 'puppet',
-   require => Class['::r10k::webhook::config'],
+   user    => 'root',
+   group   => 'root',
   }
