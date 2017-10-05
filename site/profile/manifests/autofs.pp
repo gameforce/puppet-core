@@ -7,7 +7,7 @@ class profile::autofs {
 }
 
 file { '/etc/autofs.conf':
-  ensure   => 'file',
+  ensure   => 'present',
   owner    => 'root',
   group    => 'root',
   mode     => '0644',
