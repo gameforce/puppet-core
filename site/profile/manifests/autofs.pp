@@ -7,11 +7,11 @@ class profile::autofs {
 }
 
 file { '/etc/autofs.conf':
-  ensure   => 'file',
+  ensure   => 'present',
   owner    => 'root',
   group    => 'root',
   mode     => '0644',
-  template => 'puppet:///files/autofs/auto.conf.erb',
+  source => 'puppet:///files/autofs/autofs.conf.erb',
 }
 
 class { 'autofs':
