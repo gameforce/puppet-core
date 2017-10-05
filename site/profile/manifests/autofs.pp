@@ -11,7 +11,7 @@ file { '/etc/autofs.conf':
   owner    => 'root',
   group    => 'root',
   mode     => '0644',
-  source => 'puppet:///files/autofs/autofs.conf.erb',
+  source => 'puppet:///files/autofs/autofs.conf',
 }
 
 class { 'autofs':
