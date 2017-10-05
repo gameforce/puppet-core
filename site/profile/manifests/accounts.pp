@@ -1,12 +1,12 @@
 # requires vcsrepo from the forge
-class profile::user {
+class profile::accounts {
 
   group { 'puppet':
     ensure => 'present',
     gid    => '52',
   }
 
-  # create our default user
+  # create our default local user
   user { 'systems':
     ensure           => 'present',
     home             => '/home/systems',

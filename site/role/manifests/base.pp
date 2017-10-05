@@ -1,9 +1,5 @@
 class role::base {
-  include profile::sysctl
-  include profile::package
-  include profile::user
-  include profile::motd
-  include profile::sudo
-  include profile::ntp
-  include profile::firewall
+  include profile::packages
+  include profile::accounts
+  include profile::autofs
 }

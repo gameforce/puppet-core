@@ -5,8 +5,8 @@ defaults:                          # Used for any hierarchy level that omits the
   data_hash: yaml_data             # Use the built-in YAML backend.
 
 hierarchy:
-  - name: "Nodes"                        # Human-readable name.
-    path: "nodes/%{facts.hostname}.yaml"     # File path, relative to datadir. IMPORTANT: include the file extension!
+  - name: "Nodes"                  # Human-readable name.
+    path: "nodes/%{hostname}.yaml" # File path, relative to datadir. IMPORTANT: include the file extension!
 
   - name: "Common Data"
     path: "common.yaml"
