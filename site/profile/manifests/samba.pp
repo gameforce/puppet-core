@@ -1,3 +1,3 @@
 class profile::samba {
-  notice "test"
+  notify{"TODO: Add samba stuff!": }
 }
