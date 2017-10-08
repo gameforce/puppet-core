@@ -1,3 +1,2 @@
-modules/
-.tmp/
+modules
 .r10k-deploy.json
