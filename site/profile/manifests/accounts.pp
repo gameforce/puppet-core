@@ -10,7 +10,7 @@ class profile::accounts {
   user { 'systems':
     ensure           => 'present',
     home             => '/home/systems',
-    managehome       => 'true',
+    managehome       => true,
     password         => '$1$GameForc$5aLg3YmOPfKApjeLWr./5/',
     password_max_age => '99999',
     password_min_age => '0',
@@ -22,11 +22,11 @@ class profile::accounts {
 
   # clone our dotfiles repo
   vcsrepo { '/home/systems/.dotfiles':
-    ensure => 'latest',
+    ensure   => 'latest',
     provider => 'git',
-    owner => 'systems',
-    group => 'systems',
-    source => 'https://github.com/gameforce/dotfiles.git',
+    owner    => 'systems',
+    group    => 'systems',
+    source   => 'https://github.com/gameforce/dotfiles.git',
     revision => 'master',
   }
 
