@@ -1,6 +1,6 @@
 #!/bin/bash
 #############################################################################
-# Kickstart for Scientific Linux 7
+# Kickstart for CentOS 7
 ############################################################################
 
 install
@@ -32,7 +32,6 @@ repo --name=centos --baseurl=http://kam/centos/7/base/
 repo --name=puppet --baseurl=http://kam/centos/7/puppet/
 # NO ADDITIONAL REPOS AT THIS TIME
 
-
 ############################
 #HDD Configuration
 ############################
@@ -42,7 +41,6 @@ bootloader --location mbr
 part /boot --size=256 --fstype=xfs
 part / --size=3072 --grow --maxsize=24000 --fstype=xfs
 part swap --size=128 --grow --fstype=swap
-
 
 #############################
 #Packages to be installed
@@ -62,7 +60,6 @@ bind-tools
 nfs-utils
 screen
 %end
-
 
 ##############################################
 # PRE INSTALL SCRIPTS
@@ -146,7 +143,6 @@ chvt 1
 
 %end
 
-
 ##############################################
 # POST INSTALL SCRIPTS
 ##############################################
@@ -176,7 +172,7 @@ systype=server
 EOF
 
 # Disable the default external repos
-# sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/*.repo
+sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/*.repo
 
 #Configure local repos
 cat >> /etc/yum.repos.d/systems.repo <<'EOF'
