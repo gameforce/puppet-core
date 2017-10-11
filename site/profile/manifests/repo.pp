@@ -13,8 +13,8 @@ class profile::repo {
   }
 
   # vhost definitions
-  apache::vhost { 'srv':
+  apache::vhost { 'kam':
   port    => '80',
-  docroot => '/var/www/html/vhosts/srv',
+  docroot => '/var/www/html/vhosts/kam',
   }
 }
