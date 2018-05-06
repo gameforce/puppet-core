@@ -4,7 +4,7 @@ class profile::samba {
       workgroup     => 'gameforce',
       server_string => "Gameforce Samba Server",
       interfaces    => "eth0 lo",
-      security      => 'share'
+      security      => 'user'
     }
 
   samba::server::share {'data':
