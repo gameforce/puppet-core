@@ -13,7 +13,7 @@ class profile::packages {
     package { 'htop': ensure => 'installed', }
   }
 
-  elseif $facts['osfamily'] == 'RedHat'  {
+  elsif $facts['osfamily'] == 'RedHat'  {
     package { 'epel-release': ensure => 'installed', }
     package { 'bind-utils': ensure   => 'installed', }
     package { 'nfs-utils': ensure    => 'installed', }
