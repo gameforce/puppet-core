@@ -13,8 +13,8 @@ class profile::samba {
     path                 => '/data',
     browsable            => true,
     writable             => true,
-    create_mask          => 0770,
-    directory_mask       => 0770,
+    create_mask          => 0774,
+    directory_mask       => 0774,
     force_group          => 'darf',
     force_user           => 'darf',
     }
