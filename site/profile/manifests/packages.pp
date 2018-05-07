@@ -11,6 +11,7 @@ class profile::packages {
     package { 'vim-nox': ensure => 'installed', }
     package { 'wget': ensure => 'installed', }
     package { 'htop': ensure => 'installed', }
+  }
 
   elseif $facts['osfamily'] == 'RedHat'  {
     package { 'epel-release': ensure => 'installed', }
@@ -22,6 +23,5 @@ class profile::packages {
     package { 'vim-enhanced': ensure => 'installed', }
     package { 'wget': ensure         => 'installed', }
     package { 'htop': ensure         => 'installed', }
-    }
   }
 }
