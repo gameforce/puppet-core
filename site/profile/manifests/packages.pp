@@ -24,4 +24,5 @@ class profile::packages {
     package { 'wget': ensure         => 'installed', }
     package { 'htop': ensure         => 'installed', }
   }
+  else {}
 }
