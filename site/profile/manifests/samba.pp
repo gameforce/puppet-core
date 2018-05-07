@@ -5,7 +5,7 @@ class profile::samba {
       server_string => "Gameforce Samba Server",
       interfaces    => "eth0 lo",
       security      => 'user'
-      log file      => '/var/log/samba.log',
+      'log file'    => '/var/log/samba.log',
     }
 
   samba::server::share {'data':
