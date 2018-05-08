@@ -1,0 +1,23 @@
+# This file is managed by puppet do not edit
+# /var/lib/tftpboot/pxelinux.cfg/default
+
+DEFAULT menu.c32
+PROMPT 0
+TIMEOUT 300
+ONTIMEOUT localdisk
+MENU TITLE PXE Network Boot
+
+LABEL localdisk
+    MENU LABEL ^Local Hard Drive
+    MENU DEFAULT
+    LOCALBOOT 0
+
+LABEL install_desktop
+    MENU LABEL ^CentOS 7 Desktop
+    KERNEL centos/x86_64/vmlinuz
+    APPEND ks=http://repo/ks/centos-desktop.ks initrd=centos/x86_64/initrd.img ipv6.disable=1 net.ifnames=0 ramdisk_size=100000
+
+LABEL install_server
+    MENU LABEL ^CentOS 7 Server
+    KERNEL centos/x86_64/vmlinuz
+    APPEND ks=http://repo/ks/centos-server.ks initrd=centos/x86_64/initrd.img ipv6.disable=1 net.ifnames=0 ramdisk_size=100000
