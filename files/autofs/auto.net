@@ -5,5 +5,10 @@
 #photos   -fstype=nfs,rw  sidious:/data-pool/photos
 #series   -fstype=nfs,rw  sidious:/data-pool/series
 
-# maps or data on rey
-data     -fstype=nfs,rw  rey:/data
+# maps for data on rey
+files     -fstype=nfs,rw  sidious:/files
+kids     -fstype=nfs,rw  sidious:/kids
+movies   -fstype=nfs,rw  sidious:/movies
+music    -fstype=nfs,rw  sidious:/music
+photos   -fstype=nfs,rw  sidious:/photos
+series   -fstype=nfs,rw  sidious:/series
