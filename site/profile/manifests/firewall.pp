@@ -1,8 +1,5 @@
 class profile::firewall {
 
-  # includes
-  include firewall
-
   class { 'firewall':
     ensure => 'stopped',
   }
@@ -11,5 +8,4 @@ class profile::firewall {
   #  ensure => 'stopped',
   #  enable => 'false',
   #}
-
 }
