@@ -9,7 +9,7 @@ class profile::kickstart {
     owner  => 'root',
     group  => 'root',
     mode   => '0755',
-
+  }
 # pxe default menu
   file { '/var/lib/tftpboot/pxelinux.cfg/default':
     ensure => 'present',
