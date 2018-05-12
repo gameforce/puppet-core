@@ -23,6 +23,7 @@ class profile::kickstart {
     mode   => '0644',
     source => 'puppet:///files/kickstart/centos-desktop.ks',
     notify =>  Service['httpd'],
+    require => Package['tftp-server'],
   }
 
   file { '/var/www/html/vhosts/repo/ks/centos-server.ks':
@@ -32,5 +33,6 @@ class profile::kickstart {
     mode   => '0644',
     source => 'puppet:///files/kickstart/centos-server.ks',
     notify =>  Service['httpd'],
+    require => Package['tftp-server'],
   }
 }
