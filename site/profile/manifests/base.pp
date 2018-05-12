@@ -2,7 +2,7 @@ class profile::base {
 
   # includes
   include ::openvmtools
-  include firewall
+  #include firewall
 
   class sysctl {
     # Disable all interfaces
@@ -18,13 +18,13 @@ class profile::base {
     servers => [ 'clock.gameforce.net', 'sith.gameforce.net' ],
   }
 
-  class { 'firewall':
-    ensure => 'stopped'
-  }
+  #class { 'firewall':
+  #  ensure => 'stopped'
+  #}
 
   service { 'iptables':
     ensure => 'stopped',
-    enable => 'false'
+    enable => 'false',
   }
 
   class { 'sudo': }
