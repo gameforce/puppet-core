@@ -2,7 +2,6 @@ class profile::base {
 
   # includes
   include ::openvmtools
-  #include firewall
 
   class sysctl {
     # Disable all interfaces
@@ -16,15 +15,6 @@ class profile::base {
 
   class { 'ntp':
     servers => [ 'clock.gameforce.net', 'sith.gameforce.net' ],
-  }
-
-  #class { 'firewall':
-  #  ensure => 'stopped'
-  #}
-
-  service { 'iptables':
-    ensure => 'stopped',
-    enable => 'false',
   }
 
   class { 'sudo': }
