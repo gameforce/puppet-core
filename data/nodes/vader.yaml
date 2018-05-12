@@ -2,4 +2,3 @@
   classes:
     - role::base
     - role::firewall
-    - role::samba

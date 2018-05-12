@@ -1,4 +1,5 @@
 ---
   classes:
     - role::base
+    - role::firewall
     - role::gitlab
