@@ -1,5 +1,8 @@
 class profile::kickstart {
 
+# Ensure tftp server is installed
+  package { 'tftp-server': ensure => 'installed', }
+
 # pxe default menu
   file { '/var/lib/tftpboot/pxelinux.cfg/default':
     ensure => 'present',
@@ -7,6 +10,7 @@ class profile::kickstart {
     group  => 'root',
     mode   => '0644',
     source => 'puppet:///files/pxeboot/default',
+    require => Package['tftp-server'],
     # notify =>  Service['tftp'],
     # Server Error: Invalid relationship: File[/var/lib/tftpboot/pxelinux.cfg/default] { notify => Service[tftp.service] }, because Service[tftp.service] doesn't seem to be in the catalog
   }
