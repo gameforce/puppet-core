@@ -21,12 +21,6 @@ class profile::base {
     ensure => 'stopped'
   }
 
-  service { "iptables":
-    ensure => "stopped",
-    hasstatus => "true",
-    status => "true"
-}
-
   class { 'sudo': }
     sudo::conf { 'systems':
       source      => 'puppet:///files/sudo/systems.conf',
