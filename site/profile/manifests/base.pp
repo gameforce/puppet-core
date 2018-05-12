@@ -2,6 +2,7 @@ class profile::base {
 
   # includes
   include ::openvmtools
+  include firewall
 
   class sysctl {
     # Disable all interfaces
