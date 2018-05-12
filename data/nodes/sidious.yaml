@@ -1,7 +1,6 @@
 ---
   classes:
     - role::base
-    - role::firewall
     - role::kickstart
     - role::puppet
     - role::repo

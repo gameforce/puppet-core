@@ -16,10 +16,4 @@ class profile::base {
   class { 'ntp':
     servers => [ 'clock.gameforce.net', 'sith.gameforce.net' ],
   }
-
-  class { 'sudo': }
-    sudo::conf { 'systems':
-      source      => 'puppet:///files/sudo/systems.conf',
-      ldap_enable => false,
-  }
 }
