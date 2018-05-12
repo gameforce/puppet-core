@@ -6,9 +6,9 @@
 #series   -fstype=nfs,rw  sidious:/data-pool/series
 
 # maps for data on rey
-files    -fstype=nfs,rw  rey:/files
-kids     -fstype=nfs,rw  rey:/kids
-movies   -fstype=nfs,rw  rey:/movies
-music    -fstype=nfs,rw  rey:/music
-photos   -fstype=nfs,rw  rey:/photos
-series   -fstype=nfs,rw  rey:/series
+files    -fstype=nfs,rw  rey:/data/files
+kids     -fstype=nfs,rw  rey:/data/kids
+movies   -fstype=nfs,rw  rey:/data/movies
+music    -fstype=nfs,rw  rey:/data/music
+photos   -fstype=nfs,rw  rey:/data/photos
+series   -fstype=nfs,rw  rey:/data/series
