@@ -12,9 +12,15 @@ class profile::repo {
     mode   => '0755',
   }
 
-  # vhost definitions
-  apache::vhost { 'kam':
+  # vhost definitions: repo
+  apache::vhost { 'repo':
   port    => '80',
-  docroot => '/var/www/html/vhosts/kam',
+  docroot => '/var/www/html/vhosts/repo',
+  }
+
+  # vhost definitions: kickstart
+  apache::vhost { 'repo':
+  port    => '80',
+  docroot => '/var/www/html/vhosts/kickstart',
   }
 }

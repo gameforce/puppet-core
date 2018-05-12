@@ -23,7 +23,7 @@ class profile::kickstart {
   }
 
 # kickstart setup
-  file { '/var/www/html/vhosts/repo/ks/centos-desktop.ks':
+  file { '/var/www/html/vhosts/kickstart/centos-desktop.ks':
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
@@ -33,7 +33,7 @@ class profile::kickstart {
     require => Package['tftp-server','syslinux-tftpboot'],
   }
 
-  file { '/var/www/html/vhosts/repo/ks/centos-server.ks':
+  file { /var/www/html/vhosts/kickstart/centos-server.ks':
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
