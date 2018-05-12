@@ -12,3 +12,4 @@ movies   -fstype=nfs,rw  rey:/data/movies
 music    -fstype=nfs,rw  rey:/data/music
 photos   -fstype=nfs,rw  rey:/data/photos
 series   -fstype=nfs,rw  rey:/data/series
+systems  -fstype=nfs,rw  rey:/data/systems
