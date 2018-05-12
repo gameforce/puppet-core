@@ -3,9 +3,9 @@ class profile::firewall {
   # includes
   include firewall
 
-  #class { 'firewall':
-  #  ensure => 'stopped'
-  #}
+  class { 'firewall':
+    ensure => 'stopped',
+  }
 
   #service { 'iptables':
   #  ensure => 'stopped',
