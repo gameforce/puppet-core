@@ -30,16 +30,14 @@ class profile::kickstart {
     mode   => '0644',
     source => 'puppet:///files/kickstart/centos-desktop.ks',
     notify =>  Service['httpd'],
-    require => Package['tftp-server','syslinux-tftpboot'],
   }
 
-  file { /var/www/html/vhosts/kickstart/centos-server.ks':
+  file { '/var/www/html/vhosts/kickstart/centos-server.ks':
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
     source => 'puppet:///files/kickstart/centos-server.ks',
     notify =>  Service['httpd'],
-    require => Package['tftp-server','syslinux-tftpboot'],
   }
 }
