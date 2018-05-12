@@ -19,7 +19,7 @@ class profile::repo {
   }
 
   # vhost definitions: kickstart
-  apache::vhost { 'repo':
+  apache::vhost { 'kickstart':
   port    => '80',
   docroot => '/var/www/html/vhosts/kickstart',
   }
