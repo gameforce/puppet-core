@@ -1,4 +1,4 @@
 ---
   classes:
     - role::base
-    - role:docker
+    - role::docker
