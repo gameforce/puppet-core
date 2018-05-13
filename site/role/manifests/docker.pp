@@ -1,3 +1,3 @@
-class role::base {
+class role::docker {
   include profile::docker
 }
