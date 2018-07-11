@@ -55,7 +55,7 @@ class profile::base {
 
   # mod 'walkamongus-sssd', '2.0.1'
   class { '::realmd':
-  domain               => 'ad0.owi.lan',
+  domain               => 'ad0.gameforce.net',
   # setup link for the domain join user: https://richardstk.com/2013/11/29/create-a-dedicated-account-to-join-computers-to-a-domain/
   domain_join_user     => 'domainjoin',
   domain_join_password => '#thx1138',
