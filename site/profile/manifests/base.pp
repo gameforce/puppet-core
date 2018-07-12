@@ -32,11 +32,6 @@ class profile::base {
       value  => '1'
   }
 
-  # mod 'puppetlabs-firewall', '1.9.0'
-  class { 'firewall':
-    ensure => 'stopped',
-  }
-
   # puppet agent cron job
   cron { 'puppet-agent':
     ensure  => 'present',
