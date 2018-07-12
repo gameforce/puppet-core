@@ -28,4 +28,6 @@ mod 'puppet-nginx', '0.9.0'
 mod 'puppetlabs-java', '2.3.0'
 mod 'puppet-archive', '2.2.0'
 mod 'WhatsARanjit-plexmediaserver', '2.2.0'
-mod 'WhatsARanjit-transmission', '0.1.0'
+
+# https://github.com/Magmatrix/transmission
+mod 'Magmatrixx-transmission', '0.1.0'

@@ -1,9 +1,11 @@
 class profile::transmission {
-  class { 'transmission':
-  #  transuser    => 'systems',
-    transgroup   => 'systems',
-    rpc_enabled  => 'true',
-    rpc_password => '$6$yshB3fNH$gNYCCumlYwENi31r/LYBe4jAqtLsXW1HnlaroUSJtgLK5nUAc8rXu2jdOAbUozuIjmJ2ZKv.N4S4.UwuftrQn/',
-    rpc_port     => '9090',
-  }
+    class {'transmission':
+       download_dir   => "/data/systems/downloads",
+       incomplete_dir => "/data/systems/downloads/incomplete",
+       web_port       => 9091,
+       web_whitelist  => ['127.0.0.1'],
+       blocklist_url  => 'http://list.iblocklist.com/?list=bt_level1',
+       web_user       => 'transmission',
+       web_password   => '#thx1138',
+    }
 }
