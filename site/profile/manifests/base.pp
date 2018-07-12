@@ -37,13 +37,6 @@ class profile::base {
     ensure => 'stopped',
   }
 
-  # mod 'saz-sudo', '4.2.0'
-  class { 'sudo': }
-  sudo::conf { 'systems':
-    priority =>   10,
-    source   =>   'puppet:///files/sudo/systems.conf',
-  }
-
   # puppet agent cron job
   cron { 'puppet-agent':
     ensure  => 'present',
