@@ -30,4 +30,5 @@ mod 'puppet-archive', '2.2.0'
 mod 'WhatsARanjit-plexmediaserver', '2.2.0'
 
 # https://github.com/Magmatrix/transmission
-mod 'Magmatrixx-transmission', '0.1.0'
+mod 'Magmatrixx-transmission'
+:git: 'https://github.com/Magmatrix/transmission.git'
