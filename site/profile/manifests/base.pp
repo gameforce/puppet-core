@@ -11,13 +11,13 @@ class profile::base {
     mode    => '0644'
   }
 
-  file { '/etc/bashrc':
-    ensure => 'present',
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0644',
-    source => 'puppet:///files/site/bashrc',
-   }
+#  file { '/etc/bashrc':
+#    ensure => 'present',
+#    owner  => 'root',
+#    group  => 'root',
+#    mode   => '0644',
+#    source => 'puppet:///files/site/bashrc',
+#   }
 
   # mod 'saz-motd', '2.4.0'
   class { 'motd': }
