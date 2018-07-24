@@ -10,7 +10,7 @@ class profile::plex {
     ensure      => directory,
   }
 
-  file { '/plex/docker-compose-plex-host.yml':
+  file { '/plex/docker-compose-plex.yml':
     ensure      => file,
     source      => 'puppet:///files/docker/docker-compose-plex.yml',
   }
