@@ -1,6 +1,6 @@
 version: '2'
 services:
-  plex:
+  sickrage:
     container_name: sickrage
     image: linuxserver/sickrage
     restart: unless-stopped
