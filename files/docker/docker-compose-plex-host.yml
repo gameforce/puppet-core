@@ -5,6 +5,7 @@ services:
     image: plexinc/pms-docker
     restart: unless-stopped
     environment:
+      - COMPOSE_PROJECT_NAME=plex
       - TZ=America/Vancouver
       - PLEX_CLAIM=claim-Nnv2CFS1TmrCGQqLjSSx
     network_mode: host
