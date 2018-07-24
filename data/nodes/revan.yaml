@@ -3,4 +3,4 @@
     - role::base
     - role::docker
     - role::plex
-    - role:sickrage
+    - role::sickrage
