@@ -43,7 +43,7 @@ class profile::base {
 
   # mod 'walkamongus-sssd', '2.0.1'
   class { '::realmd':
-  domain               => 'ad0.gameforce.net',
+  domain               => 'gameforce.net',
   # setup link for the domain join user: https://richardstk.com/2013/11/29/create-a-dedicated-account-to-join-computers-to-a-domain/
   domain_join_user     => 'domainjoin',
   domain_join_password => '#thx1138',
@@ -64,7 +64,7 @@ class profile::base {
       'id_provider'                    => 'ad',
       'access_provider'                => 'ad',
       'krb5_store_password_if_offline' => 'True',
-      'default_shell'                  => '/bin/bash',
+      'fallback_shell'                  => '/bin/bash',
       'ldap_id_mapping'                => false,
       'enumerate'                      => true,
       'fallback_homedir'               => '/home/%u',
