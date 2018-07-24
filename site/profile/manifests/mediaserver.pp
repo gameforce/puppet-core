@@ -4,6 +4,7 @@ class profile::mediaserver {
   docker_compose { '/tmp/docker-compose.yml':
     ensure      => present,
     options     => '-p mediaserver',
+    name        => 'mediaserver',
   }
 
   file { '/tmp/docker-compose.yml':
