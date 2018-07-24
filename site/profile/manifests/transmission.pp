@@ -3,10 +3,10 @@ class profile::transmission {
 
     docker_compose { 'transmission':
       ensure      => present,
-      name        => '/plex/docker-compose-transmission.yml',
+      name        => '/transmission/docker-compose-transmission.yml',
     }
 
-    # required to have a project name #745 
+    # required to have a project name #745
     file { '/transmission':
       ensure      => directory,
     }
