@@ -3,8 +3,7 @@ class profile::mediaserver {
 
   docker_compose { '/tmp/docker-compose.yml':
     ensure      => present,
-    options     => '--project-name mediaserver',
-    subscribe   => File['/tmp/docker-compose.yml'],
+#    options     => '--project-name mediaserver',
   }
 
   file { '/tmp/docker-compose.yml':
