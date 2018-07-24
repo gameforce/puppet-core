@@ -10,5 +10,5 @@ services:
     network_mode: host
     volumes:
       - /net/systems/plex/database:/config
-      - /net/systems/plex/temp>:/transcode
+      - /net/systems/plex/temp:/transcode
       - /net/:/data
