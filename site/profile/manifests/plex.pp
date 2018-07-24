@@ -1,10 +1,10 @@
 class profile::plex {
   include 'docker'
 
-  docker_compose { '/tmp/docker-compose-plex-host.yml':
+  docker_compose { 'plex':
     ensure      => present,
-    options     => '--project-name plex',
-    subscribe   => File['/tmp/docker-compose-plex-host.yml'],
+    name        => '/tmp/docker-compose-plex-host.yml',
+    options     => '-p plex',
   }
 
   file { '/tmp/docker-compose-plex-host.yml':

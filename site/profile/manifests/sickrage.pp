@@ -1,10 +1,10 @@
 class profile::sickrage {
   include 'docker'
 
-  docker_compose { '/tmp/docker-compose-sickrage-host.yml':
+  docker_compose { 'sickrage':
     ensure      => present,
-    options     => '--project-name sickrage',
-    subscribe   => File['/tmp/docker-compose-plex-host.yml'],
+    options     => '-p sickrage',
+    name        => '/tmp/docker-compose-sickrage-host.yml',
   }
 
   file { '/tmp/docker-compose-sickrage-host.yml':
