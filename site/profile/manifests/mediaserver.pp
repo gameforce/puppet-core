@@ -1,10 +1,10 @@
 class profile::mediaserver {
   include 'docker'
 
-  docker_compose { '/tmp/docker-compose.yml':
+  docker_compose { 'mediaserver':
     ensure      => present,
-    options     => '-p mediaserver',
-    name        => 'mediaserver',
+    #options     => '-p mediaserver',
+    name        => '/tmp/docker-compose.yml',
   }
 
   file { '/tmp/docker-compose.yml':
