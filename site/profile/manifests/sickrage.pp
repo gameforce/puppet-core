@@ -3,6 +3,7 @@ class profile::sickrage {
 
   docker_compose { '/tmp/docker-compose-sickrage-host.yml':
     ensure      => present,
+    options     => '--project-name sickrage',
   }
 
   file { '/tmp/docker-compose-sickrage-host.yml':
