@@ -1,5 +1,6 @@
 class profile::sickrage {
   include 'docker'
+  Exec { environment => [ "COMPOSE_PROJECT_NAME=sickrage" ] }
 
   docker_compose { 'sickrage':
     ensure      => present,

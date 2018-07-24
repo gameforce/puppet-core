@@ -1,5 +1,6 @@
 class profile::plex {
   include 'docker'
+  Exec { environment => [ "COMPOSE_PROJECT_NAME=plex" ] }
 
   docker_compose { 'plex':
     ensure      => present,
