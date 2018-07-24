@@ -1,15 +1,17 @@
 class profile::plex {
   include 'docker'
-  Exec { environment => [ "COMPOSE_PROJECT_NAME=plex" ] }
 
   docker_compose { 'plex':
     ensure      => present,
-    name        => '/plex/docker-compose-plex-host.yml',
-    options     => '-p plex',
+    name        => '/plex/docker-compose-plex.yml',
   }
 
-  file { '/tmp/docker-compose-plex-host.yml':
+  file { '/plex':
+    ensure      => directory,
+  }
+
+  file { '/plex/docker-compose-plex-host.yml':
     ensure      => file,
-    source      => 'puppet:///files/docker/docker-compose-plex-host.yml',
+    source      => 'puppet:///files/docker/docker-compose-plex.yml',
   }
 }
