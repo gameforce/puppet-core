@@ -4,3 +4,4 @@
     - role::docker
     - role::plex
     - role::sickrage
+    - role::transmission

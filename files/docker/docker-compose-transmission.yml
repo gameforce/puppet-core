@@ -1,0 +1,18 @@
+version: '2'
+services:
+  transmission:
+    container_name: transmission
+    image: linuxserver/transmission
+    restart: unless-stopped
+    ports:
+      - "9091:9091"
+      - "51413:51413"
+    environment:
+      - TZ=America/Vancouver
+      - PGID=1000
+      - PUID=502
+    network_mode: host
+    volumes:
+      - /net/systems/transmission/config:/config
+      - /net/systems/downloads:/downloads
+      - /net/systems/watch:/watch

@@ -1,3 +1,18 @@
 class profile::transmission {
-     #place the files in the right places
+    include 'docker'
+
+    docker_compose { 'transmission':
+      ensure      => present,
+      name        => '/plex/docker-compose-transmission.yml',
+    }
+
+    # required to have a project name #745 
+    file { '/transmission':
+      ensure      => directory,
+    }
+
+    file { '/transmission/docker-compose-transmission.yml':
+      ensure      => file,
+      source      => 'puppet:///files/docker/docker-compose-transmission.yml',
+    }
 }
