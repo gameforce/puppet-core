@@ -4,7 +4,7 @@ class profile::plex {
 
   docker_compose { 'plex':
     ensure      => present,
-    name        => '/tmp/docker-compose-plex-host.yml',
+    name        => '/plex/docker-compose-plex-host.yml',
     options     => '-p plex',
   }
 
