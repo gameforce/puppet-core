@@ -3,10 +3,7 @@ class profile::windows {
   include ::openvmtools
 
   # set environment variables
-  exec { 'SetPath':
-    command   => 'Set-Variable -Name PATH -Value "%PATH%;C:\Tools" -Option Constant -Scope Global -Force',
-    provider  => powershell,
- }
+  #TODO
 
   # install telnet client
   exec { 'TelnetClient':
