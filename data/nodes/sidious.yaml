@@ -1,7 +1,7 @@
 ---
-  classes:
-    - role::base
-    - role::kickstart
-    - role::puppet
-    - role::repo
-    - role::samba
+    classes:
+        - role::base
+        - role::kickstart
+        - role::puppet
+        - role::repo
+        - role::samba
