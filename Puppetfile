@@ -29,7 +29,3 @@ mod 'puppetlabs-java', '2.3.0'
 mod 'puppet-archive', '2.2.0'
 mod 'WhatsARanjit-plexmediaserver', '2.2.0'
 mod 'puppetlabs-windows', '6.0.0'
-
-# https://github.com/Magmatrix/transmission
-mod 'Magmatrixx-transmission'
-:git: 'https://github.com/Magmatrix/transmission.git'
