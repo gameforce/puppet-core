@@ -1,7 +1,7 @@
 class profile::windows {
 
   # includes
-  include ::openvmtools
+  # include ::openvmtools
 
   windowsfeature { 'TelnetClient':
   ensure => present,
