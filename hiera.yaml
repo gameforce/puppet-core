@@ -1,15 +1,15 @@
 ---
-version: 5
-  defaults:
-    datadir: data
-    data_hash: yaml_data
-
+defaults:
+  data_hash: yaml_data
+  datadir: data
 hierarchy:
-  - name: "Per-node data"
+  -
+    name: "Per-node data"
     path: "nodes/%{facts.hostname}.yaml"
-
-  - name: "Per-OS defaults"
+  -
+    name: "Per-OS defaults"
     path: "osfamily/%{facts.os.family}.yaml"
-
-  - name: "Common data"
-    path: "common.yaml"
+  -
+    name: "Common data"
+    path: common.yaml
+version: 5
