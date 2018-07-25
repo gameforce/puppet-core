@@ -20,7 +20,7 @@ class profile::base {
 #   }
 
   # mod 'saz-motd', '2.4.0'
-  class { 'motd': }
+  #class { 'motd': }
 
   # mod 'puppetlabs-ntp', '6.2.0'
   class { '::ntp':
