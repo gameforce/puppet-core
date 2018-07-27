@@ -9,7 +9,7 @@ class profile::windows {
      provider  => powershell
    }
 
-  # install telnet client TODO Fix the check its not working!!!!
+  # install telnet client TODO: install puppetlabs-dism for this https://github.com/puppetlabs/puppetlabs-dism
   exec { 'TelnetClient':
     command   => 'Enable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"',
     unless    => "if (Get-WindowsOptionalFeature -Online -FeatureName TelnetClient) { exit 1 } else { exit 0 }",
