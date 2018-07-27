@@ -4,7 +4,7 @@ class profile::windows {
 
   # Setting Powershell Execution Policy to unrestricted
    exec { 'Set PowerShell execution policy unrestricted':
-     command   => 'Set-ExecutionPolicy Unrestricted',
+     command   => 'Set-ExecutionPolicy Unrestricted -Force',
      unless    => 'if ((Get-ExecutionPolicy -Scope LocalMachine).ToString() -eq "Unrestricted") { exit 0 } else { exit 1 }',
      provider  => powershell
    }
