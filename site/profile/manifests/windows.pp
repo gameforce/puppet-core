@@ -9,7 +9,7 @@ class profile::windows {
      provider  => powershell
    }
 
-  # install telnet client
+  # install telnet client TODO Fix the check its not working!!!!
   exec { 'TelnetClient':
     command   => 'Enable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"',
     unless    => "if (Get-WindowsOptionalFeature -Online -FeatureName TelnetClient) { exit 1 } else { exit 0 }",
