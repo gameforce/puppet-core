@@ -12,7 +12,7 @@ class profile::windows {
   # install telnet client
   exec { 'TelnetClient':
     command   => 'Enable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"',
-    unless    => "if (Get-WindowsOptionalFeature -Online -FeatureName TelnetClient) { exit 0 } else { exit 1 }",
+    unless    => "if (Get-WindowsOptionalFeature -Online -FeatureName TelnetClient) { exit 1 } else { exit 0 }",
     provider  => powershell,
  }
   # for windows server use windowsfeature
