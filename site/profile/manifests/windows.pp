@@ -2,14 +2,12 @@ class profile::windows {
 
   include ::openvmtools
 
-  # set environment stuff
-
-  #Set execution policy
-  exec { 'ExecutionPolicy':
-    command   => 'Set-ExecutionPolicy Bypass -Scope Process -Force',
-    provider  => powershell,
-    logoutput => true,
- }
+  # Setting Powershell Execution Policy to unrestricted
+   exec { 'Set PowerShell execution policy unrestricted':
+     command   => 'Set-ExecutionPolicy Unrestricted',
+     unless    => 'if ((Get-ExecutionPolicy -Scope LocalMachine).ToString() -eq "Unrestricted") { exit 0 } else { exit 1 }',
+     provider  => powershell
+   }
 
   # install telnet client
   exec { 'TelnetClient':
