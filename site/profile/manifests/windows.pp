@@ -2,8 +2,13 @@ class profile::windows {
 
   include ::openvmtools
 
-  # set environment variables
-  #TODO
+  # set environment stuff
+
+  #Set execution policy
+  exec { 'ExecutionPolicy':
+    command   => 'Set-ExecutionPolicy Bypass -Scope Process -Force"',
+    provider  => powershell,
+ }
 
   # install telnet client
   exec { 'TelnetClient':
