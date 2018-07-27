@@ -6,7 +6,7 @@ class profile::windows {
 
   #Set execution policy
   exec { 'ExecutionPolicy':
-    command   => 'Set-ExecutionPolicy Bypass -Scope Process -Force"',
+    command   => 'Set-ExecutionPolicy Bypass -Scope Process -Force',
     provider  => powershell,
  }
 
