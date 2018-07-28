@@ -22,16 +22,17 @@ class profile::kickstart {
     # Server Error: Invalid relationship: File[/var/lib/tftpboot/pxelinux.cfg/default] { notify => Service[tftp.service] }, because Service[tftp.service] doesn't seem to be in the catalog
   }
 
-# kickstart setup
-  file { '/var/www/html/vhosts/kickstart/centos-desktop.ks':
+# ignition
+  file { '/var/www/html/vhosts/kickstart/pxe-config.ign':
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///files/kickstart/centos-desktop.ks',
+    source => 'puppet:///files/kickstart/pxe-config.ign',
     notify =>  Service['httpd'],
   }
 
+  # kickstart
   file { '/var/www/html/vhosts/kickstart/centos-server.ks':
     ensure => 'present',
     owner  => 'root',
