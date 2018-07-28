@@ -4,4 +4,4 @@ ip link set eno16xxxx name eth0
 ip link set eth0 up
 
 # hiera debugging
-puppet lookup --debug --explain --node obiwan.gameforce.net role::windows
+puppet lookup --debug --explain --node sidious role::kickstart
