@@ -5,3 +5,4 @@
         - role::puppet
         - role::repo
         - role::samba
+        - role::gitlab
