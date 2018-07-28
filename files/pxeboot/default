@@ -19,6 +19,6 @@ LABEL install_coreos
     APPEND coreos.first_boot=1 coreos.config.url=http://kickstart/pxe-config.ign
 
 LABEL install_centos
-    MENU LABEL ^CentOS 7
+    MENU LABEL ^CentOS
     KERNEL centos/x86_64/vmlinuz
     APPEND ks=http://repo/kickstart/centos-server.ks initrd=centos/x86_64/initrd.img ipv6.disable=1 net.ifnames=0 ramdisk_size=100000
