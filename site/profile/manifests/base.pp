@@ -28,9 +28,9 @@ class profile::base {
   }
 
   # Disable ipv6 via sysctl run dracut -f if it breaks rpcbind
-  sysctl::value { 'net.ipv6.conf.all.disable_ipv6':
-      value  => '1'
-  }
+  #sysctl::value { 'net.ipv6.conf.all.disable_ipv6':
+  #    value  => '1'
+  #}
 
   # puppet agent cron job
   cron { 'puppet-agent':
