@@ -7,7 +7,8 @@ defaults:
 
 hierarchy:
   - name: "Per-node data"
-    path: "nodes/%{::facts.hostname}.yaml"
+    #path: "nodes/%{::facts.hostname}.yaml"
+    path: "nodes/%{trusted.certname}.yaml"
 
   - name: "Per-OS defaults"
     path: "osfamily/%{::facts.os.family}.yaml"
