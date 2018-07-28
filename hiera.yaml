@@ -7,10 +7,10 @@ defaults:
 
 hierarchy:
   - name: "Per-node data"
-    path: "nodes/%{facts.hostname}.yaml"
+    path: "nodes/%{::facts.hostname}.yaml"
 
   - name: "Per-OS defaults"
-    path: "osfamily/%{facts.os.family}.yaml"
+    path: "osfamily/%{::facts.os.family}.yaml"
 
   - name: "Common data"
     path: common.yaml
