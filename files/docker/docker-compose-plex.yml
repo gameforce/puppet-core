@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - TZ=America/Vancouver
-      - PLEX_CLAIM=claim-Nnv2CFS1TmrCGQqLjSSx
+      - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
     network_mode: host
     volumes:
       - /net/systems/plex/database:/config
