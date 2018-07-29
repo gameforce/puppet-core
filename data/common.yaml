@@ -7,7 +7,7 @@ ntp::restrict:
   - '127.0.0.1'
   - '::1'
 
-ntp::service_name: 'ntp'
+ntp::service_name: 'ntpd'
 
 ntp::servers:
   - '0.debian.pool.ntp.org'
