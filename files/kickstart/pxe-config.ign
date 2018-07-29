@@ -15,7 +15,35 @@
       }
     ]
   },
-  "storage": {},
+  "storage": {
+  "disks": [
+    {
+      "device": "/dev/sda",
+      "partitions": [
+        {
+          "label": "ROOT"
+        }
+      ],
+      "wipeTable": true
+    }
+  ],
+  "filesystems": [
+    {
+      "mount": {
+        "device": "/dev/disk/by-partlabel/ROOT",
+        "format": "ext4",
+        "label": "ROOT",
+        "wipeFilesystem": true
+      }
+    }
+  ],
+  "files": [{
+      "filesystem": "root",
+      "path": "/etc/hostname",
+      "mode": 420,
+      "contents": { "source": "data:,core1" }
+    }]
+  },
   "systemd": {
     "units": [
       {

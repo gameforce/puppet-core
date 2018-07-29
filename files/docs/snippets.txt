@@ -5,3 +5,6 @@ ip link set eth0 up
 
 # hiera debugging
 puppet lookup --debug --explain --node sidious role::kickstart
+
+# get puppet-agent on CoreOS
+docker run -v /tmp:/tmp -v /etc:/etc -v /var:/var -v /usr:/usr -v /lib64 /lib64 -d --net=host puppet/puppet-agent agent --verbose --no-daemonize --logdest=console --server=puppet --environment=production --summarize
