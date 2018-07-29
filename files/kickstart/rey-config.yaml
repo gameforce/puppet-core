@@ -4,7 +4,7 @@ hostname: rey
 
 coreos:
   units:
-    - name: etcd.service
+    - name: etcd2.service
       command: start
     - name: fleet.service
       command: start
