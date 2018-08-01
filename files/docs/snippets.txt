@@ -7,7 +7,7 @@ ip link set eth0 up
 puppet lookup --debug --explain --node sidious role::kickstart
 
 # get puppet-agent on CoreOS
-docker run -v /tmp:/tmp -v /etc:/etc -v /var:/var -v /usr:/usr -v /lib64 /lib64 -d --net=host puppet/puppet-agent agent --verbose --no-daemonize --logdest=console --server=puppet --environment=production --summarize
+docker run -v /tmp:/tmp -v /etc:/etc -v /var:/var -v /usr:/usr -v /lib64:/lib64 -d --net=host puppet/puppet-agent-centos agent --verbose --no-daemonize --logdest=console --server=puppet --environment=production --summarize
 
 # install coreos to disk
 coreos-install -d /dev/sda -C stable -c cloud-config.yaml

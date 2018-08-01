@@ -3,6 +3,7 @@ class profile::base {
 
   # includes
   include ::openvmtools
+  include ::ntp
 
   # site specific environment
   $sitepath = '/net/systems/bin:/opt/puppetlabs/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
@@ -18,19 +19,6 @@ class profile::base {
 #    mode   => '0644',
 #    source => 'puppet:///files/site/bashrc',
 #   }
-
-  # mod 'saz-motd', '2.4.0'
-  #class { 'motd': }
-
-  # mod 'puppetlabs-ntp', '6.2.0'
-  class { '::ntp':
-    servers => [ 'clock' ],
-  }
-
-  # Disable ipv6 via sysctl run dracut -f if it breaks rpcbind
-  #sysctl::value { 'net.ipv6.conf.all.disable_ipv6':
-  #    value  => '1'
-  #}
 
   # puppet agent cron job
   cron { 'puppet-agent':

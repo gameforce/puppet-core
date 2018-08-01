@@ -19,6 +19,11 @@ LABEL install_coreos
     APPEND coreos.first_boot=1 coreos.config.url=http://kickstart/pxe-config.ign
 
 LABEL install_centos
-    MENU LABEL ^CentOS
+    MENU LABEL ^CentOS 7.4
     KERNEL centos/x86_64/vmlinuz
     APPEND ks=http://repo/kickstart/centos-server.ks initrd=centos/x86_64/initrd.img ipv6.disable=1 net.ifnames=0 ramdisk_size=100000
+
+LABEL install_sysrescd
+    MENU LABEL SystemRescueCD 5.2.2
+    kernel srcd/rescuecd64
+    append initrd=srcd/initram.igz netboot=tftp://192.168.11.3/srcd/sysrcd.dat
