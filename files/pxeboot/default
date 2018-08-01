@@ -25,5 +25,5 @@ LABEL install_centos
 
 LABEL install_sysrescd
     MENU LABEL SystemRescueCD 5.2.2
-    kernel srcd/rescuecd64
+    kernel srcd/rescud64
     append initrd=srcd/initram.igz netboot=tftp://192.168.11.3/srcd/sysrcd.dat
