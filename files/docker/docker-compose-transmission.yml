@@ -4,7 +4,6 @@ services:
     container_name: transmission
     image: linuxserver/transmission
     restart: unless-stopped
-    mode: replicated
     ports:
       - "9091:9091"
       - "51413:51413"
@@ -17,3 +16,9 @@ services:
       - /net/systems/transmission/config:/config
       - /net/systems/downloads:/downloads
       - /net/systems/watch:/watch
+    deploy:
+      mode: replicated
+      replicas: 2
+      update_config:
+        delay: 15s
+        monitor: 15s

@@ -4,7 +4,6 @@ services:
     container_name: sickrage
     image: linuxserver/sickrage
     restart: unless-stopped
-    mode: replicated
     ports:
       - "8081:8081"
     environment:
@@ -16,3 +15,9 @@ services:
       - /net/systems/sickrage/config:/config
       - /net/systems/downloads:/downloads
       - /net/series:/series
+    deploy:
+      mode: replicated
+      replicas: 2
+      update_config:
+        delay: 15s
+        monitor: 15s

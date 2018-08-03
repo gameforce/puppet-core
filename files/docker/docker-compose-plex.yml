@@ -4,7 +4,6 @@ services:
     container_name: plex
     image: plexinc/pms-docker
     restart: unless-stopped
-    mode: replicated
     environment:
       - TZ=America/Vancouver
       - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
@@ -13,3 +12,9 @@ services:
       - /net/systems/plex/database:/config
       - /net/systems/plex/temp:/transcode
       - /net/:/data
+   deploy:
+     mode: replicated
+     replicas: 2
+     update_config:
+       delay: 15s
+       monitor: 15s
