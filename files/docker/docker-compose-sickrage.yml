@@ -4,6 +4,7 @@ services:
     container_name: sickrage
     image: linuxserver/sickrage
     restart: unless-stopped
+    mode: replicated
     ports:
       - "8081:8081"
     environment:

@@ -4,6 +4,7 @@ services:
     container_name: plex
     image: plexinc/pms-docker
     restart: unless-stopped
+    mode: replicated
     environment:
       - TZ=America/Vancouver
       - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa

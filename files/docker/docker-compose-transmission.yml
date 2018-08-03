@@ -4,6 +4,7 @@ services:
     container_name: transmission
     image: linuxserver/transmission
     restart: unless-stopped
+    mode: replicated
     ports:
       - "9091:9091"
       - "51413:51413"
