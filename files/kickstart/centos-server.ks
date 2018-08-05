@@ -53,6 +53,7 @@ repo --name CentOS-Base --baseurl http://192.168.11.3/centos/7.5.1804/os/x86_64 
 # Disk Partitioning
 bootloader --location=mbr --driveorder=sda --append="crashkernel=auth rhgb"
 clearpart --all --initlabel
+ignoredisk --only-use=sda
 part /boot --size 500 --fstype ext3
 part / --size 8192 --grow --fstype xfs
 part swap --size 2048 --fstype swap
