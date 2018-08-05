@@ -12,12 +12,6 @@ class profile::repo {
     mode   => '0755',
   }
 
-  # vhost definitions: repo
-  apache::vhost { 'repo':
-  port    => '80',
-  docroot => '/var/www/html/vhosts/repo',
-  }
-
   # vhost definitions: kickstart
   apache::vhost { 'kickstart':
   port    => '80',

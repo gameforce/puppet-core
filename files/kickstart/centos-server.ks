@@ -2,7 +2,7 @@
 text
 skipx
 install
-url --url http://repo/centos/7.3/os/x86_64
+url --url http://kickstart/centos/7.3/os/x86_64
 lang en_US.UTF-8
 keyboard us
 rootpw --iscrypted $6$yshB3fNH$gNYCCumlYwENi31r/LYBe4jAqtLsXW1HnlaroUSJtgLK5nUAc8rXu2jdOAbUozuIjmJ2ZKv.N4S4.UwuftrQn/
