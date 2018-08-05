@@ -11,7 +11,7 @@ class profile::accounts {
     ensure           => 'present',
     home             => '/home/systems',
     managehome       => true,
-    password         => '$1$GameForc$5aLg3YmOPfKApjeLWr./5/',
+    password         => '$1$2zR7MTG3$yn3d4zfVfppe5ap1HnauH.',
     password_max_age => '99999',
     password_min_age => '0',
     shell            => '/bin/zsh',
