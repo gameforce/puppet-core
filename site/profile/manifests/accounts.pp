@@ -20,6 +20,14 @@ class profile::accounts {
     groups           => [ 'users','puppet' ]
   }
 
+  ssh_authorized_key { "darf@obiwan":
+    ensure  => present,
+    user    => root,
+    type    => "ssh-rsa",
+    key     => "AAAAB3NzaC1yc2EAAAADAQABAAABAQClbJjehAJkP5n3CLY2OEKWgsXdSqd2p7WYtco0hvbxix0dX91rTHspffenahOaulvAIsbfZz5emyPffrWwpXVQKscDZbHapTwbMcc+igZ1VkXgaDvnz/PtcQEhcR9JMh/Bzk1/ySLUfA9Iz8xPXOcmgw50UjLIrcqIL5zgUagQ7ScvD/nN0DxPk93hjhzLWbxUzxsHgzY332y8PlmfliDsYbgof2vBccdlM20T5Mk7ivofICUCqSWJGkpFfJh/FniD+bEFB2uAyLjzml8p5pLDZxMYA86jSnzja0y7Dex1UXIeotX59xzfF/x+HmkGSW3IJIgw7K5PruhuO/YWQNUx";
+ }
+
+
   # clone our dotfiles repo
   vcsrepo { '/home/systems/.dotfiles':
     ensure   => 'latest',
