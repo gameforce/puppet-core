@@ -7,60 +7,60 @@ class profile::accounts {
   }
 
   # create our default local user
-  user { 'systems':
+  user { 'darf':
     ensure           => 'present',
-    home             => '/home/systems',
+    home             => '/home/darf',
     managehome       => true,
     password         => '$1$2zR7MTG3$yn3d4zfVfppe5ap1HnauH.',
     password_max_age => '99999',
     password_min_age => '0',
     shell            => '/bin/zsh',
     uid              => '502',
-    comment          => 'systems',
+    comment          => 'darf@gameforce.net',
     groups           => [ 'users','puppet' ]
   }
 
   ssh_authorized_key { "darf@obiwan":
     ensure  => present,
-    user    => root,
+    user    => darf,
     type    => "ssh-rsa",
     key     => "AAAAB3NzaC1yc2EAAAADAQABAAABAQClbJjehAJkP5n3CLY2OEKWgsXdSqd2p7WYtco0hvbxix0dX91rTHspffenahOaulvAIsbfZz5emyPffrWwpXVQKscDZbHapTwbMcc+igZ1VkXgaDvnz/PtcQEhcR9JMh/Bzk1/ySLUfA9Iz8xPXOcmgw50UjLIrcqIL5zgUagQ7ScvD/nN0DxPk93hjhzLWbxUzxsHgzY332y8PlmfliDsYbgof2vBccdlM20T5Mk7ivofICUCqSWJGkpFfJh/FniD+bEFB2uAyLjzml8p5pLDZxMYA86jSnzja0y7Dex1UXIeotX59xzfF/x+HmkGSW3IJIgw7K5PruhuO/YWQNUx";
  }
 
 
   # clone our dotfiles repo
-  vcsrepo { '/home/systems/.dotfiles':
+  vcsrepo { '/home/darf/.dotfiles':
     ensure   => 'latest',
     provider => 'git',
-    owner    => 'systems',
-    group    => 'systems',
+    owner    => 'darf',
+    group    => 'darf',
     source   => 'https://github.com/gameforce/dotfiles.git',
     revision => 'master',
   }
 
   # Setup symlinks to dotfiles
-  file { '/home/systems/.zshrc':
+  file { '/home/darf/.zshrc':
     ensure => 'symlink',
-    target => '/home/systems/.dotfiles/zshrc.linux',
+    target => '/home/darf/.dotfiles/zshrc.linux',
   }
 
-  file { '/home/systems/.vimrc':
+  file { '/home/darf/.vimrc':
     ensure => 'symlink',
-    target => '/home/systems/.dotfiles/vimrc',
+    target => '/home/darf/.dotfiles/vimrc',
   }
 
-  file { '/home/systems/.vim':
+  file { '/home/darf/.vim':
     ensure => 'symlink',
-    target => '/home/systems/.dotfiles/vim',
+    target => '/home/darf/.dotfiles/vim/',
   }
 
-  file { '/home/systems/.gitconfig':
+  file { '/home/darf/.gitconfig':
     ensure => 'symlink',
-    target => '/home/systems/.dotfiles/gitconfig',
+    target => '/home/darf/.dotfiles/gitconfig',
   }
 
-  file { '/home/systems/.screenrc':
+  file { '/home/darf/.screenrc':
     ensure => 'symlink',
-    target => '/home/systems/.dotfiles/screenrc',
+    target => '/home/darf/.dotfiles/screenrc',
   }
 }
