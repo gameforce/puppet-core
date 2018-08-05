@@ -2,7 +2,7 @@
 text
 skipx
 install
-url --url http://kickstart/centos/7.3/os/x86_64
+url --url http://kickstart/centos/7.5.1804/os/x86_64
 lang en_US.UTF-8
 keyboard us
 rootpw --iscrypted $6$yshB3fNH$gNYCCumlYwENi31r/LYBe4jAqtLsXW1HnlaroUSJtgLK5nUAc8rXu2jdOAbUozuIjmJ2ZKv.N4S4.UwuftrQn/
@@ -28,18 +28,18 @@ while [ "$hn" == "" ]; do
 done
 chvt 1
 HOSTNAME=${hn}
-IPADDR=$(ip route get 172.16.10.2 | awk '{print $NF;exit}')
+IPADDR=$(ip route get 192.168.11.10 | awk '{print $NF;exit}')
 HWADDR=$(ip link show eth0 | tail -1 | awk '{print $2}' | sed 's/://g')
 mkdir /mnt/tmp
 mount -o nolock syn:/volume1/systems /mnt/tmp
 cp -r /mnt/tmp/tools/.ssh /root
 umount -l /mnt/tmp
-ssh -o StrictHostKeyChecking=no administrator@ads1 "Add-DhcpServerv4Reservation -ScopeId 172.16.0.0 -IPAddress $IPADDR -ClientId $HWADDR -Description PXE -Name $HOSTNAME"
+ssh -o StrictHostKeyChecking=no administrator@ads1 "Add-DhcpServerv4Reservation -ScopeId 192.168.11.0 -IPAddress $IPADDR -ClientId $HWADDR -Description PXE -Name $HOSTNAME"
 echo "network --device eth0 --bootproto dhcp --noipv6 --onboot=yes --hostname=${HOSTNAME}" > /tmp/network.txt
 echo -e "Setting IP to $IPADDR and HOSTNAME to $HOSTNAME and adding reservation"
 %end
 
-# Setup netoworking
+# Setup networking
 %include /tmp/network.txt
 
 # External Package Repositories
@@ -48,9 +48,7 @@ repo --name=puppetlabs --baseurl=http://yum.puppetlabs.com/el/7/PC1/x86_64/
 repo --name=puppetlabs_dependencies --baseurl=http://yum.puppetlabs.com/el/7/dependencies/x86_64/
 
 # Internal Package Repositories
-repo --name CentOS-Base --baseurl http://repo/7/os/x86_64 --install
-repo --name Stellar --baseurl http://repo/stellar/x86_64 --install
-
+repo --name CentOS-Base --baseurl http://kickstart/centos/7.5.1804/os/x86_64 --install
 
 # Disk Partitioning
 bootloader --location=mbr --driveorder=sda --append="crashkernel=auth rhgb"
@@ -103,9 +101,6 @@ echo "################################"
 
 PATH=/net/software/bin:/opt/puppetlabs/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin
 export PATH
-
-#Import GPG keys
-repo --import http://repo/stellar/RPM-GPG-KEY-stellar
 
 # Configure systype fact
 mkdir -p /etc/puppetlabs/facter/facts.d
