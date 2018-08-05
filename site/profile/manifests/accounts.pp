@@ -15,7 +15,7 @@ class profile::accounts {
     password_max_age => '99999',
     password_min_age => '0',
     shell            => '/bin/zsh',
-    uid              => '502',
+    uid              => '1001',
     comment          => 'darf@gameforce.net',
     groups           => [ 'users','puppet' ]
   }
