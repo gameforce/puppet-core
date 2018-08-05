@@ -10,7 +10,7 @@ VERSION=$1
 
 # Change these variables as appropriate
 LOCK_FILE=/tmp/centos_mirror_rsync_updates
-DOWNLOAD_LOCATION=rsync://mirrors.usc.edu/centos
+DOWNLOAD_LOCATION=rsync://mirrors.cat.pdx.edu/centos/
 TARGET_DIR=/var/www/html/vhosts/kickstart/centos
 RSYNC_RETVAL=1
 
