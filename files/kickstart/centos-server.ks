@@ -2,7 +2,7 @@
 text
 skipx
 install
-url --url http://kickstart/centos/7.5.1804/os/x86_64
+url --url http://192.168.11.3/centos/7.5.1804/os/x86_64
 lang en_US.UTF-8
 keyboard us
 rootpw --iscrypted $6$yshB3fNH$gNYCCumlYwENi31r/LYBe4jAqtLsXW1HnlaroUSJtgLK5nUAc8rXu2jdOAbUozuIjmJ2ZKv.N4S4.UwuftrQn/
@@ -48,7 +48,7 @@ repo --name=puppetlabs --baseurl=http://yum.puppetlabs.com/el/7/PC1/x86_64/
 repo --name=puppetlabs_dependencies --baseurl=http://yum.puppetlabs.com/el/7/dependencies/x86_64/
 
 # Internal Package Repositories
-repo --name CentOS-Base --baseurl http://kickstart/centos/7.5.1804/os/x86_64 --install
+repo --name CentOS-Base --baseurl http://192.168.11.3/centos/7.5.1804/os/x86_64 --install
 
 # Disk Partitioning
 bootloader --location=mbr --driveorder=sda --append="crashkernel=auth rhgb"
