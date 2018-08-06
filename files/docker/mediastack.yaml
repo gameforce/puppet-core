@@ -1,4 +1,3 @@
-name: mediastack
 version: '2'
 services:
   plex:
