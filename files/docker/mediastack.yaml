@@ -1,0 +1,46 @@
+name: mediastack
+version: '2'
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    environment:
+      - TZ=America/Vancouver
+      - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
+    network_mode: host
+    volumes:
+      - /net/systems/plex/database:/config
+      - /net/systems/plex/temp:/transcode
+      - /net/:/data
+  sickrage:
+    container_name: sickrage
+    image: linuxserver/sickrage
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      - TZ=America/Vancouver
+      - PGID=1001
+      - PUID=100
+    network_mode: host
+    volumes:
+      - /net/systems/sickrage/config:/config
+      - /net/systems/downloads:/downloads
+      - /net/series:/series
+  transmission:
+    container_name: transmission
+    image: linuxserver/transmission
+    restart: unless-stopped
+    ports:
+      - "9091:9091"
+      - "51413:51413"
+    environment:
+      - TZ=America/Vancouver
+      - PGID=1001
+      - PUID=100
+    network_mode: host
+    volumes:
+      - /net/systems/transmission/config:/config
+      - /net/systems/downloads:/downloads
+      - /net/systems/watch:/watch
