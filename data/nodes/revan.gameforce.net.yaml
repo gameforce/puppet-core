@@ -1,6 +1,7 @@
 ---
     classes:
         - role::base
+        - role::accounts
         - role::docker
         - role::plex
         - role::sickrage
