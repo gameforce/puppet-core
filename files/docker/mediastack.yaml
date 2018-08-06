@@ -36,10 +36,10 @@ services:
       - "51413:51413"
     environment:
       - TZ=America/Vancouver
-      - PGID=1001
-      - PUID=100
+      - PGID=100
+      - PUID=1001
     network_mode: host
     volumes:
       - /net/systems/transmission/config:/config
       - /net/systems/downloads:/downloads
-      - /net/systems/watch:/watch
+      - /net/systems/downloads/watch:/watch
