@@ -33,7 +33,7 @@ class profile::accounts {
     ensure   => 'latest',
     provider => 'git',
     owner    => 'darf',
-    group    => 'darf',
+    group    => 'users',
     source   => 'https://github.com/gameforce/dotfiles.git',
     revision => 'master',
   }
