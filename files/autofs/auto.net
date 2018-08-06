@@ -1,5 +1,5 @@
 # maps for data on sidious
-files    -fstype=nfs,rw  sb0:/data/home
+home     -fstype=nfs,rw  sb0:/data/home
 kids     -fstype=nfs,rw  sb0:/data/kids
 movies   -fstype=nfs,rw  sb0:/data/movies
 music    -fstype=nfs,rw  sb0:/data/music
