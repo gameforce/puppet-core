@@ -3,14 +3,14 @@ class profile::mediastack {
 
   docker_compose { 'mediastack':
     ensure      => present,
-    name        => '/tmp/mediastack.yml',
+    name        => '/mediastack/mediastack.yaml',
   }
 
-  #file { '/plex':
-  #  ensure      => directory,
-  #}
+  file { '/mediastack':
+    ensure      => directory,
+  }
 
-  file { '/tmp/mediastack.yml':
+  file { '/mediastack/mediastack.yaml':
     ensure      => file,
     source      => 'puppet:///files/docker/mediastack.yaml',
   }
