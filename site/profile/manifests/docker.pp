@@ -3,6 +3,6 @@ class profile::docker {
 
   class {'docker::compose':
   ensure => present,
-  #version => '1.9.0',
+  version => '1.9.0',
   }
 }
