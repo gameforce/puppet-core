@@ -1,8 +1,8 @@
 # maps for data on sidious
-files    -fstype=nfs,rw  sb0:/data-pool/files
+files    -fstype=nfs,rw  sb0:/data-pool/home
 kids     -fstype=nfs,rw  sb0:/data-pool/kids
 movies   -fstype=nfs,rw  sb0:/data-pool/movies
 music    -fstype=nfs,rw  sb0:/data-pool/music
 photos   -fstype=nfs,rw  sb0:/data-pool/photos
-series   -fstype=nfs,rw  sb0:/data-pool/series
+series   -fstype=nfs,rw,uid=1001,gid=100 sb0:/data-pool/series
 systems  -fstype=nfs,rw  sb0:/data-pool/systems

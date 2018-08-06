@@ -8,8 +8,8 @@ services:
       - "8081:8081"
     environment:
       - TZ=America/Vancouver
-      - PGID=1000
-      - PUID=502
+      - PGID=1001
+      - PUID=100
     network_mode: host
     volumes:
       - /net/systems/sickrage/config:/config
