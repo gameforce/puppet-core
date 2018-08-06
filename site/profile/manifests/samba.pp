@@ -7,14 +7,14 @@ class profile::samba {
       security      => 'user'
     }
 
-#  samba::server::share {'data':
-#    comment              => 'Data',
-#    path                 => '/data',
-#    browsable            => true,
-#    writable             => true,
-#    create_mask          => 774,
-#    directory_mask       => 774,
-#    force_group          => 'darf',
-#    force_user           => 'darf',
-#    }
+  samba::server::share {'data':
+    comment              => 'Data',
+    path                 => '/data',
+    browsable            => true,
+    writable             => true,
+    create_mask          => 774,
+    directory_mask       => 774,
+    force_group          => 'users',
+    force_user           => 'darf',
+    }
   }

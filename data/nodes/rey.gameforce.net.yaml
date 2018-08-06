@@ -3,3 +3,4 @@
     - role::base
     - role::docker
     - role::mediastack
+    - role::samba

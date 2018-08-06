@@ -4,4 +4,3 @@
         - role::kickstart
         - role::puppet
         - role::repo
-        - role::samba
