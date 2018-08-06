@@ -17,7 +17,7 @@ class profile::accounts {
     shell            => '/bin/zsh',
     uid              => '1001',
     comment          => 'darf@gameforce.net',
-    groups           => [ 'users','puppet','disk','sudo' ]
+    groups           => [ 'users','puppet','disk','sudo','docker' ]
   }
 
   ssh_authorized_key { "darf@obiwan":
