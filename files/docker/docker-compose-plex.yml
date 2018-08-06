@@ -12,9 +12,3 @@ services:
       - /net/systems/plex/database:/config
       - /net/systems/plex/temp:/transcode
       - /net/:/data
-   deploy:
-     mode: replicated
-     replicas: 2
-     update_config:
-       delay: 15s
-       monitor: 15s
