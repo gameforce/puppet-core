@@ -15,9 +15,3 @@ services:
       - /net/systems/sickrage/config:/config
       - /net/systems/downloads:/downloads
       - /net/series:/series
-    deploy:
-      mode: replicated
-      replicas: 2
-      update_config:
-        delay: 15s
-        monitor: 15s

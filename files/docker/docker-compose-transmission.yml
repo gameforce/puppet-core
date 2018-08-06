@@ -16,9 +16,3 @@ services:
       - /net/systems/transmission/config:/config
       - /net/systems/downloads:/downloads
       - /net/systems/watch:/watch
-    deploy:
-      mode: replicated
-      replicas: 2
-      update_config:
-        delay: 15s
-        monitor: 15s
