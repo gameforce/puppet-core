@@ -9,9 +9,9 @@ services:
       - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
     network_mode: host
     volumes:
-      - /net/systems/plex/database:/config
-      - /net/systems/plex/temp:/transcode
-      - /net/:/data
+      - /data/systems/plex/database:/config
+      - /data/systems/plex/temp:/transcode
+      - /data/:/data
   sickrage:
     container_name: sickrage
     image: linuxserver/sickrage
