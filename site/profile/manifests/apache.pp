@@ -7,6 +7,6 @@ class profile::apache {
 
   # enable apache modules
   class { 'apache::mod::ssl': }
-  class { 'apache::mod::mod_socache_shmcb': }
+  class { 'apache::mod::mod_socache_shmcb.so': }
   class { 'apache::mod::wsgi': }
 }
