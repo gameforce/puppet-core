@@ -1,2 +1,2 @@
-# home map
-* -fstype=nfs,rw,nosuid,soft sidious:/data-pool/home/&
+# home
+* -fstype=nfs,rw,nosuid,soft sb0:/data/home/&
