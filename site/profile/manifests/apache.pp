@@ -7,7 +7,7 @@ class profile::apache {
 
   # vhost definition for vip
   apache::vhost { 'vip.gameforce.net':
-  port    => '80',
+  port    => '8080',
   docroot => '/var/www/html/vhosts/vip',
   }
 
