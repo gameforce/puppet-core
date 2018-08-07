@@ -14,5 +14,4 @@ class profile::apache {
   # enable apache modules
   class { 'apache::mod::ssl': }
   class { 'apache::mod::wsgi': }
-  class { 'apache::mod::cache': }
 }
