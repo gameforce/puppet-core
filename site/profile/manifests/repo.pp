@@ -17,4 +17,11 @@ class profile::repo {
   port    => '80',
   docroot => '/var/www/html/vhosts/kickstart',
   }
+
+  cron { 'repo_sync':
+    command     => '/net/systems/bin/centos_mirror_repo.sh',
+    hour        => '2-4',
+    monthday    => '1',,
+    user        => 'root',
+  }
 }
