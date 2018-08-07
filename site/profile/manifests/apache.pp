@@ -11,6 +11,6 @@ class profile::apache {
 
   # enable arbitrary modules
   class { 'apache::mod::mod_socache_shmcb':
-    #loadfile_name => 'modules/mod_socache_shmcb.so'
+    loadfiles => ['modules/mod_socache_shmcb.so'],
   }
 }
