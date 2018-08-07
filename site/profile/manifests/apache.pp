@@ -8,9 +8,5 @@ class profile::apache {
   # enable apache modules
   class { 'apache::mod::ssl': }
   class { 'apache::mod::wsgi': }
-
-  # enable arbitrary modules
-  class { 'apache::mod::shmcb':
-    loadfiles => ['modules/mod_socache_shmcb.so'],
-  }
+  class { 'apache::mod::cache': }
 }
