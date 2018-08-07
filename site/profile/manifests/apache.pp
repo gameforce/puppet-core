@@ -10,7 +10,7 @@ class profile::apache {
   class { 'apache::mod::wsgi': }
 
   # enable arbitrary modules
-  class { 'apache::mod::mod_socache_shmcb':
+  class { 'apache::mod::shmcb':
     loadfiles => ['modules/mod_socache_shmcb.so'],
   }
 }
