@@ -1,9 +1,5 @@
 class profile::repo {
 
-  class { 'apache':
-  default_vhost => false,
-  }
-
   # Ensure the vhosts directory exists
   file { '/var/www/html/vhosts':
     ensure => 'directory',
