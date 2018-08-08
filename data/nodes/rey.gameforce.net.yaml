@@ -4,3 +4,4 @@
     - role::docker
     - role::mediastack
     - role::samba
+    - role::vip

@@ -3,6 +3,6 @@
 
 while true
 do
-  rsync -avz /net/ /data-pool/  --log-file=/var/log/backup.log
+  rsync -avz /net/ /data-pool/ --log-file=/var/log/backup.log
   inotifywait -r /net/
 done
