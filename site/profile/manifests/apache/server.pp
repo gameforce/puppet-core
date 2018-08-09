@@ -1,4 +1,4 @@
-class profile::apache::apache {
+class profile::apache::server {
 
   # include apache
   class { 'apache':
