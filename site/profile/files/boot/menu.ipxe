@@ -14,9 +14,9 @@ cpuid --ext 29 && set archl amd64 || set archl i386
 ###################### MAIN MENU ####################################
 
 :start
-menu iPXE boot menu for ${initiator-iqn}
+menu iPXE boot menu for ${site}
 item --gap --             ------------------------- Operating systems ------------------------------
-item --key f freedos      Boot FreeDOS from iSCSI
+item --key f freedos      Boot FreeDOS from NFS
 item --key m msdos        Boot MS-DOS from iSCSI
 item --key u ubuntu       Boot Ubuntu from iSCSI
 item --key v vmware       Boot VMware ESXi from iSCSI
@@ -69,7 +69,7 @@ goto start
 ############ MAIN MENU ITEMS ############
 
 :freedos
-echo Booting FreeDOS from iSCSI for ${initiator-iqn}
+echo Booting FreeDOS from NFS for ${site}
 set root-path ${base-iscsi}:${hostname}.boot.freedos
 sanboot ${root-path} || goto failed
 goto start
