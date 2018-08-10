@@ -12,6 +12,6 @@ class profile::mediastack {
 
   file { '/mediastack/mediastack.yaml':
     ensure      => file,
-    source      => 'puppet:///files/docker/mediastack.yaml',
+    source      => 'puppet:///modules/profile/docker/mediastack.yaml',
   }
 }
