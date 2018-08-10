@@ -1,4 +1,4 @@
-class profile::kickstart {
+class profile::boot {
 
 # Ensure tftp server is installed
   package { 'tftp-server':       ensure => 'installed', }
@@ -16,29 +16,29 @@ class profile::kickstart {
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///files/pxeboot/default',
+    source => 'puppet:///modules/profile/files/boot/default',
     require => File['/var/lib/tftpboot/pxelinux.cfg'],
     # notify =>  Service['tftp'],
     # Server Error: Invalid relationship: File[/var/lib/tftpboot/pxelinux.cfg/default] { notify => Service[tftp.service] }, because Service[tftp.service] doesn't seem to be in the catalog
   }
 
 # ignition
-  file { '/var/www/html/vhosts/kickstart/pxe-config.ign':
+  file { '/var/www/html/vhosts/kam/ignition.json':
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///files/kickstart/pxe-config.ign',
+    source => 'puppet:///modules/profile/files/boot/ignition.json',
     notify =>  Service['httpd'],
   }
 
   # kickstart
-  file { '/var/www/html/vhosts/kickstart/centos-server.ks':
+  file { '/var/www/html/vhosts/kam/centos.ks':
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///files/kickstart/centos-server.ks',
+    source => 'puppet:///modules/profile/files/boot/centos.ks',
     notify =>  Service['httpd'],
   }
 }
