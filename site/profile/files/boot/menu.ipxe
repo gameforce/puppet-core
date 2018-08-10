@@ -109,6 +109,7 @@ goto start
 
 :menu-recovery
 menu Recovery tools
+item WinPE           Windows PE
 item sysrcd          SystemRescueCD ${sysrcd-version}
 item spinrite        SpinRite ${spinrite-version}
 item spinrite-msdos  SpinRite ${spinrite-version} (using MS-DOS 6.22)
@@ -124,6 +125,14 @@ iseq ${menu-default} menu-recovery && isset ${submenu-default} && goto menu-reco
 choose selected && goto ${selected} || goto start
 :menu-recovery-timed
 choose --timeout ${submenu-timeout} --default ${submenu-default} selected && goto ${selected} || goto start
+
+:WinPE
+cpuid --ext 29 && set arch amd64 || set arch x86
+kernel wimboot
+initrd ${arch}/media/Boot/BCD                     BCD
+initrd ${arch}/media/Boot/boot.sdi                boot.sdi
+initrd ${arch}/media/sources/boot.wim             boot.wim || goto failed
+goto start
 
 :spinrite
 sanboot --no-describe --drive 0x00 ${sanboot-url}spinrite-${spinrite-version}/spinrite-${spinrite-version}.img || goto failed
