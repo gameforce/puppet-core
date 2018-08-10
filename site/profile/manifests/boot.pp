@@ -17,12 +17,31 @@ class profile::boot {
     # Server Error: Invalid relationship: File[/var/lib/tftpboot/pxelinux.cfg/default] { notify => Service[tftp.service] }, because Service[tftp.service] doesn't seem to be in the catalog
   }
 
-# boot directory for unattended installs
+  # place our ipxe config files in the web root
+  file { '/var/www/html/vhosts/kam/boot.ipxe':
+    ensure => 'present',
+    source => 'puppet:///modules/profile/boot/boot.ipxe',
+    notify =>  Service['httpd'],
+  }
+
+  file { '/var/www/html/vhosts/kam/boot.ipxe.cfg':
+    ensure => 'present',
+    source => 'puppet:///modules/profile/boot/boot.ipxe.cfg',
+    notify =>  Service['httpd'],
+  }
+
+  file { '/var/www/html/vhosts/kam/menu.ipxe':
+    ensure => 'present',
+    source => 'puppet:///modules/profile/boot/menu.ipxe',
+    notify =>  Service['httpd'],
+  }
+
+  # boot directory for unattended installs
   file { '/var/www/html/vhosts/kam/boot':
     ensure => 'directory',
   }
 
-# ignition
+  # ignition
   file { '/var/www/html/vhosts/kam/boot/ignition.json':
     ensure => 'present',
     source => 'puppet:///modules/profile/boot/ignition.json',
