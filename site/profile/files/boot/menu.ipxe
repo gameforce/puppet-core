@@ -127,7 +127,7 @@ choose selected && goto ${selected} || goto start
 choose --timeout ${submenu-timeout} --default ${submenu-default} selected && goto ${selected} || goto start
 
 :WinPE
-set base-url amd64/media
+set base-url http://kam.gameforce.net/boot/winpe/amd64/media
 kernel wimboot
 initrd ${base-url}/bootmgr          bootmgr
 initrd ${base-url}/Boot/BCD         BCD
