@@ -129,9 +129,9 @@ choose --timeout ${submenu-timeout} --default ${submenu-default} selected && got
 :WinPE
 cpuid --ext 29 && set arch amd64 || set arch x86
 kernel wimboot
-initrd ${nfs-root}/winpe/${arch}/media/Boot/BCD                     BCD
-initrd ${nfs-root}/winpe/${arch}/media/Boot/boot.sdi                boot.sdi
-initrd ${nfs-root}/winpe/${arch}/media/sources/boot.wim             boot.wim || goto failed
+initrd ${boot-url}/${boot-dir}/winpe/${arch}/media/Boot/BCD                     BCD
+initrd ${boot-url}/${boot-dir}/winpe/${arch}/media/Boot/boot.sdi                boot.sdi
+initrd ${boot-url}/${boot-dir}/winpe/${arch}/media/sources/boot.wim             boot.wim || goto failed
 goto start
 
 :spinrite
