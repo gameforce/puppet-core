@@ -127,7 +127,7 @@ choose selected && goto ${selected} || goto start
 choose --timeout ${submenu-timeout} --default ${submenu-default} selected && goto ${selected} || goto start
 
 :WinPE
-set base-url winpe/amd64
+set base-url amd64
 kernel wimboot
 initrd ${base-url}/bootmgr          bootmgr
 initrd ${base-url}/Boot/BCD         BCD
