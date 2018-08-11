@@ -127,11 +127,12 @@ choose selected && goto ${selected} || goto start
 choose --timeout ${submenu-timeout} --default ${submenu-default} selected && goto ${selected} || goto start
 
 :WinPE
-cpuid --ext 29 && set arch amd64 || set arch x86
+set base-url winpe/amd64
 kernel wimboot
-initrd ${boot-url}${boot-dir}winpe/${arch}/media/Boot/BCD                     BCD
-initrd ${boot-url}${boot-dir}winpe/${arch}/media/Boot/boot.sdi                boot.sdi
-initrd ${boot-url}${boot-dir}winpe/${arch}/media/sources/boot.wim             boot.wim
+initrd ${base-url}/bootmgr          bootmgr
+initrd ${base-url}/Boot/BCD         BCD
+initrd ${base-url}/Boot/boot.sdi    boot.sdi
+initrd ${base-url}/sources/boot.wim boot.wim
 boot || goto failed
 goto start
 
