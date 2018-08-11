@@ -36,20 +36,21 @@ class profile::boot {
     notify =>  Service['httpd'],
   }
 
-  # boot directory for unattended installs
+  # boot directory for unattended installs links to /net/systems/boot
   file { '/var/www/html/vhosts/kam/boot':
-    ensure => 'directory',
+    ensure => 'symlink',
+    target => '/net/systems/boot',
   }
 
   # ignition
-  file { '/var/www/html/vhosts/kam/boot/ignition.json':
+  file { '/var/www/html/vhosts/kam/ignition.json':
     ensure => 'present',
     source => 'puppet:///modules/profile/boot/ignition.json',
     notify =>  Service['httpd'],
   }
 
   # kickstart
-  file { '/var/www/html/vhosts/kam/boot/centos.ks':
+  file { '/var/www/html/vhosts/kam/centos.ks':
     ensure => 'present',
     source => 'puppet:///modules/profile/boot/centos.ks',
     notify =>  Service['httpd'],
