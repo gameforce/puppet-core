@@ -4,6 +4,7 @@ class profile::base {
   # includes
   include ::openvmtools
   include ::ntp
+  include 'yum'
 
   # site specific environment
   $sitepath = '/net/systems/bin:/opt/puppetlabs/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'

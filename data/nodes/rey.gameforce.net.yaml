@@ -6,7 +6,6 @@
     - role::samba
     - role::vip
 
-  include 'yum'
   yum::managed_repos:
     - 'perforce_helix'
 
