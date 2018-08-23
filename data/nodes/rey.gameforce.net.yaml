@@ -5,7 +5,8 @@
     - role::mediastack
     - role::samba
     - role::vip
-
+    - role::helix::server
+    
   yum::managed_repos:
     - 'perforce_helix'
   yum::repos:
