@@ -1,6 +1,7 @@
-class profile::helix::server {
+class profile::helix::client {
 
-  # install helix server (p4d)
-  include helix::server
-    pkgname => 'helix-p4d',
+  # install helix client (p4)
+  class { 'helix::client':
+    pkgname => 'helix-cli',
+  }
 }
