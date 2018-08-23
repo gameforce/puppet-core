@@ -1,6 +1,9 @@
 ---
 message: "This is our common yaml file"
 
+yum::managed_repos:
+  - 'epel'
+
 ntp::restrict:
   - '-4 default kod nomodify notrap nopeer noquery'
   - '-6 default kod nomodify notrap nopeer noquery'
