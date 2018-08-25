@@ -8,7 +8,6 @@ $TTL 86400
                         86400 )    ; minimum TTL of 1 day
 
 @       IN      NS      rey.gameforce.net.
-        IN      MX      rey.gameforce.net.
 
 ;PTR
 2       IN      PTR     sith.gameforce.net.
