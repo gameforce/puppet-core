@@ -22,11 +22,16 @@ mod 'puppet-yum', '3.1.0'
 mod 'puppet-archive', '2.2.0'
 mod 'puppet-nginx', '0.9.0'
 
-# Third Party
+# Third party modules
 mod 'ajjahn-samba', '0.5.0'
 mod 'yuav-autofs', '1.2.5'
+mod 'saz-locales', '2.5.1'
 mod 'saz-sudo', '4.2.0'
+mod 'saz-ssh', '4.0.0'
+mod 'stahnma-epel', '1.3.1'
 mod 'razorsedge-openvmtools', '1.1.0'
 mod 'acjohnson-adcli', '0.0.2'
 mod 'walkamongus-realmd', '2.1.0'
 mod 'alanpetersen-helix', '0.2.2'
+mod 'thias-bind', '0.5.3'
+mod 'derdanne-nfs', '2.0.8'
