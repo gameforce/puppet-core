@@ -39,3 +39,11 @@ users:
       - docker
     ssh-authorized-keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClbJjehAJkP5n3CLY2OEKWgsXdSqd2p7WYtco0hvbxix0dX91rTHspffenahOaulvAIsbfZz5emyPffrWwpXVQKscDZbHapTwbMcc+igZ1VkXgaDvnz/PtcQEhcR9JMh/Bzk1/ySLUfA9Iz8xPXOcmgw50UjLIrcqIL5zgUagQ7ScvD/nN0DxPk93hjhzLWbxUzxsHgzY332y8PlmfliDsYbgof2vBccdlM20T5Mk7ivofICUCqSWJGkpFfJh/FniD+bEFB2uAyLjzml8p5pLDZxMYA86jSnzja0y7Dex1UXIeotX59xzfF/x+HmkGSW3IJIgw7K5PruhuO/YWQNUx
+
+
+      cp pki/ca.crt /etc/openvpn/ca.crt
+      cp pki/dh.pem /etc/openvpn/dh.pem
+      cp pki/issued/vpn-server.crt /etc/openvpn/server.crt
+      cp pki/private/vpn-server.key /etc/openvpn/server.key
+      cp pki/ta.key /etc/openvpn/ta.key
+      cp pki/crl.pem /etc/openvpn/crl.pem
