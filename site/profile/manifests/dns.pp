@@ -15,7 +15,7 @@ class profile::dns {
       ],
       '11.168.192.in-addr.arpa' => [
         'type master',
-        'file "11.168.192.in-addr.arpa.lan"',
+        'file "11.168.192.in-addr.arpa.net"',
       ],
     },
     keys              => {
