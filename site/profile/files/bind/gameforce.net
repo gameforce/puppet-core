@@ -1,7 +1,7 @@
 $ORIGIN gameforce.net.
 $TTL 86400
 @       IN      SOA     rey.gameforce.net.      hostmaster.gameforce.net. (
-                        2018082401 ; serial
+                        2018082402 ; serial
                         21600      ; refresh after 6 hours
                         3600       ; retry after 1 hour
                         604800     ; expire after 1 week
@@ -11,9 +11,10 @@ $TTL 86400
 
 ; server host definitions
 sith    IN      A       192.168.11.2
+sidious IN      A       192.168.11.3
 rey     IN      A       192.168.11.7
 netgear IN      A       192.168.11.254
-
+cloud   IN      A       54.157.38.81
 
 ; cnames
 puppet  IN      CNAME   sidious.gameforce.net.
