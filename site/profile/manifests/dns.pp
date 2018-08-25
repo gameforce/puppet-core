@@ -21,7 +21,7 @@ class profile::dns {
     keys              => {
       'rndc-key' => [
         'algorithm hmac-md5',
-        'secret "m6rlGOwKeHb0WEN54Fcjew=="',
+        'secret "IPVulhFsyya1gWgdbaUDTIZ4Wg7LraQGVhysrHo4cZg="',
       ],
     }
   }
