@@ -1,23 +1,23 @@
 $ORIGIN gameforce.net.
 $TTL 86400
 @	IN	SOA	rey.gameforce.net.	hostmaster.gameforce.net. (
-		        2001062501 ; serial
-		        21600      ; refresh after 6 hours
-		        3600       ; retry after 1 hour
-		        604800     ; expire after 1 week
-            86400 )    ; minimum TTL of 1 day
+						2001062501 ; serial
+						21600      ; refresh after 6 hours
+						3600       ; retry after 1 hour
+						604800     ; expire after 1 week
+						86400 )    ; minimum TTL of 1 day
 
-        		IN    NS	      rey.gameforce.net.
+						IN    NS	      rey.gameforce.net.
 
 ; server host definitions
-sith     		IN	  A  	      192.168.11.2
-rey     		IN	  A  	      192.168.11.7
-netgear     IN	  A  	      192.168.11.254
+sith		IN	A	192.168.11.2
+rey			IN	A	192.168.11.7
+netgear	IN	A	192.168.11.254
 
 
 ; cnames
-puppet			IN	CNAME	    sidious.gameforce.net.
-kam       	IN	CNAME			sidious.gameforce.net.
-sb0         IN	CNAME			sidious.gameforce.net.
-router      IN	CNAME			netgear.gameforce.net.
-vip         IN	CNAME			rey.gameforce.net.
+puppet	IN	CNAME	sidious.gameforce.net.
+kam			IN	CNAME	sidious.gameforce.net.
+sb0			IN	CNAME	sidious.gameforce.net.
+router	IN	CNAME	netgear.gameforce.net.
+vip			IN	CNAME	rey.gameforce.net.
