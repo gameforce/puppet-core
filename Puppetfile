@@ -20,7 +20,7 @@ mod 'puppetlabs-chocolatey', '3.0.0'
 mod 'puppet-r10k', '6.1.0'
 mod 'puppet-yum', '3.1.0'
 mod 'puppet-archive', '2.2.0'
-mod 'puppet-nginx', '0.9.0'
+mod 'puppet-nginx', '0.13.0'
 
 # Third party modules
 mod 'ajjahn-samba', '0.5.0'
