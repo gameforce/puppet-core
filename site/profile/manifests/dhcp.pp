@@ -25,7 +25,7 @@ class profile::dhcp {
     network        => '192.168.11.0',
     mask           => '255.255.255.0',
     range          => ['192.168.11.100 192.168.11.200'],
-    gateway        => '191.168.11.254',
+    gateway        => '192.168.11.254',
   }
 
   # ignored subnet (aws)
