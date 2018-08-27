@@ -7,18 +7,21 @@ $TTL 86400
                         604800     ; expire after 1 week
                         86400 )    ; minimum TTL of 1 day
 
-        IN      NS      rey.gameforce.net.
+          IN      NS      rey.gameforce.net.
 
 ; server host definitions
-sith    IN      A       192.168.11.2
-sidious IN      A       192.168.11.3
-rey     IN      A       192.168.11.7
-netgear IN      A       192.168.11.254
-cloud   IN      A       54.157.38.81
+sith      IN      A       192.168.11.2
+sidious   IN      A       192.168.11.3
+rey       IN      A       192.168.11.7
+netgear   IN      A       192.168.11.254
+cloud     IN      A       107.22.52.132
 
 ; cnames
-puppet  IN      CNAME   sidious.gameforce.net.
-kam     IN      CNAME   sidious.gameforce.net.
-sb0     IN      CNAME   sidious.gameforce.net.
-router  IN      CNAME   netgear.gameforce.net.
-vip     IN      CNAME   rey.gameforce.net.
+puppet    IN      CNAME   sidious.gameforce.net.
+kam       IN      CNAME   sidious.gameforce.net.
+sb0       IN      CNAME   sidious.gameforce.net.
+router    IN      CNAME   netgear.gameforce.net.
+vip       IN      CNAME   rey.gameforce.net.
+webhook   IN      CNAME   rey.gameforce.net.
+sickrage  IN      CNAME   rey.gameforce.net.
+transmission  IN      CNAME   rey.gameforce.net.
