@@ -22,7 +22,7 @@ class profile::dns {
     keys              => {
       'rndc-key' => [
         'algorithm hmac-md5',
-        'secret "IPVulhFsyya1gWgdbaUDTIZ4Wg7LraQGVhysrHo4cZg="',
+        'secret "TW2FVff7Urf0rcTDcgVfj7Wc75qInk24BtwntmgCJ1rRYRpjqdL0t25UynBVoP3Rhjpy7bko3h4APJugb5igMw=="',
       ],
     }
   }
