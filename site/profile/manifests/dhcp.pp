@@ -16,7 +16,7 @@ class profile::dhcp {
     pxeserver      => '192.168.11.10',
     pxefilename    => 'pxelinux.0',
     ipxe_filename  => 'undionly.kpxe',
-    ipxe_bootstrap => 'http://kickstart/boot.ipxe',
+    ipxe_bootstrap => 'http://kam/boot.ipxe',
     omapi_port     => 7911,
   }
 
@@ -34,6 +34,8 @@ class profile::dhcp {
     mask           => '255.255.0.0',
   }
 
-  # host reservations
-  # dhcp::host { 'server1': mac => '00:50:56:00:00:01', ip => '10.0.1.51', }
+  host reservations
+    dhcp::host { 'anakin': mac => '68:5b:35:bf:25:98', ip => '192.168.11.5', }
+    dhcp::host { 'obiwan': mac => '90:2b:34:31:da:a3', ip => '192.168.11.6', }
+    dhcp::host { 'rey': mac => 'd4:85:64:0e:87:9d', ip => '192.168.11.7', }
 }
