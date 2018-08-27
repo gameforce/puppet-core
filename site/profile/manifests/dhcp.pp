@@ -34,8 +34,9 @@ class profile::dhcp {
     mask           => '255.255.0.0',
   }
 
-  host reservations
+  host reservations{
     dhcp::host { 'anakin': mac => '68:5b:35:bf:25:98', ip => '192.168.11.5', }
     dhcp::host { 'obiwan': mac => '90:2b:34:31:da:a3', ip => '192.168.11.6', }
     dhcp::host { 'rey': mac => 'd4:85:64:0e:87:9d', ip => '192.168.11.7', }
+    }
 }
