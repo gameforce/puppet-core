@@ -24,7 +24,7 @@ class profile::dhcp {
   dhcp::pool{ 'pool.gameforce.net':
     network        => '192.168.11.0',
     mask           => '255.255.255.0',
-    range          => ['192.168.88.100 192.168.88.200'],
+    range          => ['192.168.11.100 192.168.11.200'],
     gateway        => '191.168.11.254',
   }
 
