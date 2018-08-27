@@ -7,7 +7,7 @@ class profile::dns {
     listen_on_v6_addr      => [ 'any' ],
     forwarders             => [ '75.153.176.1', '75.153.176.9', '8.8.8.8', '8.8.4.4' ],
     allow_query            => [ 'localnets' ],
-    extra_options          => [ 'allow-update { key "rndc-key"; };' ],
+    extra_options          => [ 'allow-update { key "rndc-key"; }' ],
     managed_keys_directory => "/var/named/dynamic",
     zones                  => {
       'gameforce.net' => [
