@@ -9,7 +9,6 @@ class profile::dhcp {
     ],
     nameservers    => ['192.168.11.7'],
     ntpservers     => ['centos.pool.ntp.org'],
-    router         => ['192.168.11.254'],
     interfaces     => ['eth0'],
     dnsupdatekey   => '/etc/rndc.key',
     dnskeyname     => 'rndc-key',
