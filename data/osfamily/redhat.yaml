@@ -1,3 +1,4 @@
 ---
     classes:
-        - role::helix::client
+      - role::base
+      - role::helix::client
