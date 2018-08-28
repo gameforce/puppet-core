@@ -8,7 +8,7 @@ class profile::common {
   # common users
   accounts::user { 'darf':
     uid      => '1001',
-    gid      => '1001',
+    gid      => '100',
     group    => 'darf',
     shell    => '/bin/zsh',
     password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
@@ -27,6 +27,7 @@ class profile::common {
     source   => 'https://github.com/gameforce/dotfiles.git',
     revision => 'master',
   }
+
   accounts::user { 'root':
     password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
     sshkeys => [
