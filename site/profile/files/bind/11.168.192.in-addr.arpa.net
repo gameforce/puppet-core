@@ -10,6 +10,5 @@ $TTL 86400
 @       IN      NS      rey.gameforce.net.
 
 ;PTR
-2       IN      PTR     sith.gameforce.net.
-3       IN      PTR     sidious.gameforce.net.
 7       IN      PTR     rey.gameforce.net.
+254     IN      PTR     netgear.gameforce.net.
