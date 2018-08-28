@@ -1,8 +1,0 @@
-# maps for data on sidious
-home     -fstype=nfs,rw  sb0:/data/home
-kids     -fstype=nfs,rw  sb0:/data/kids
-movies   -fstype=nfs,rw  sb0:/data/movies
-music    -fstype=nfs,rw  sb0:/data/music
-photos   -fstype=nfs,rw  sb0:/data/photos
-series   -fstype=nfs,rw  sb0:/data/series
-systems  -fstype=nfs,rw  sb0:/data/systems
