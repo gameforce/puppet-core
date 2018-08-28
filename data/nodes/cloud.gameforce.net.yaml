@@ -1,4 +1,5 @@
 ---
   classes:
-    profile::firewall::on
-    role::cloud
+    - role::cloud
+
+  firewall::ensure: 'running'

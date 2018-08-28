@@ -1,6 +1,6 @@
 ---
   classes:
-    profile::firewall::off
+    firewall::ensure: 'stopped'
 
 yum::managed_repos:
   - 'epel'
