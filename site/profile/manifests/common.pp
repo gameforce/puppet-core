@@ -27,33 +27,6 @@ class profile::common {
     source   => 'https://github.com/gameforce/dotfiles.git',
     revision => 'master',
   }
-
-  # Setup symlinks to dotfiles
-  file { '/home/darf/.zshrc':
-    ensure => 'symlink',
-    target => '/home/darf/.dotfiles/zshrc.linux',
-  }
-
-  file { '/home/darf/.vimrc':
-    ensure => 'symlink',
-    target => '/home/darf/.dotfiles/vimrc',
-  }
-
-  file { '/home/darf/.vim':
-    ensure => 'symlink',
-    target => '/home/darf/.dotfiles/vim/',
-  }
-
-  file { '/home/darf/.gitconfig':
-    ensure => 'symlink',
-    target => '/home/darf/.dotfiles/gitconfig',
-  }
-
-  file { '/home/darf/.screenrc':
-    ensure => 'symlink',
-    target => '/home/darf/.dotfiles/screenrc',
-  }
-
   accounts::user { 'root':
     password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
     sshkeys => [
