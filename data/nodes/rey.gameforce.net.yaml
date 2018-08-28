@@ -2,7 +2,6 @@
   classes:
     - role::kam
     - role::docker
-    - role::samba
     - role::helix::server
 
   yum::managed_repos:
