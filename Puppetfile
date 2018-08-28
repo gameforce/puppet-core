@@ -44,6 +44,7 @@ mod 'puppet-nginx', '0.13.0'
 # Third party modules
 mod 'saz-locales', '2.5.1'
 mod 'saz-ssh', '4.0.0'
+mod 'saz/sudo', '5.0.0'
 mod 'stahnma-epel', '1.3.1'
 mod 'alanpetersen-helix', '0.2.2'
 mod 'thias-bind', '0.5.3'
