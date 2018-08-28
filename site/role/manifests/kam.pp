@@ -6,7 +6,6 @@ class role::kam {
   include profile::puppet::puppetboard
   include profile::bind
   include profile::dhcp
-  include profile::tftp
   include profile::boot
   include profile::nfs::server
   include profile::samba::server
