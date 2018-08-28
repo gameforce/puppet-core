@@ -17,9 +17,9 @@ netgear   IN      A       192.168.11.254
 cloud     IN      A       107.22.52.132
 
 ; cnames
-puppet    IN      CNAME   sidious.gameforce.net.
-kam       IN      CNAME   sidious.gameforce.net.
-sb0       IN      CNAME   sidious.gameforce.net.
+puppet    IN      CNAME   rey.gameforce.net.
+kam       IN      CNAME   rey.gameforce.net.
+sb0       IN      CNAME   rey.gameforce.net.
 router    IN      CNAME   netgear.gameforce.net.
 vip       IN      CNAME   rey.gameforce.net.
 webhook   IN      CNAME   rey.gameforce.net.
