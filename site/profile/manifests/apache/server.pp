@@ -1,19 +1,17 @@
 class profile::apache::server {
 
-  # include apache
   class { 'apache':
-  default_vhost => false,
+    default_vhost => true,
+  }
+
+  # install additional mods
+  class { 'apache::mod::ssl': }
+  class { 'apache::mod::wsgi':
+    wsgi_socket_prefix => "/var/run/wsgi",
   }
 
   # Ensure the vhosts directory exists
   file { '/var/www/html/vhosts':
     ensure => 'directory',
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0755',
   }
-
-  # enable apache modules
-  class { 'apache::mod::ssl': }
-  class { 'apache::mod::wsgi': }
 }

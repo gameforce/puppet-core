@@ -1,4 +1,4 @@
-class profile::dns {
+class profile::bind {
 
   # bind config
   include bind

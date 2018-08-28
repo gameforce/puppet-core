@@ -1,12 +1,8 @@
 ---
   classes:
     - role::kam
-    - role::base
-    - role::dns
     - role::docker
-    - role::mediastack
     - role::samba
-    - role::vip
     - role::helix::server
 
   yum::managed_repos:
