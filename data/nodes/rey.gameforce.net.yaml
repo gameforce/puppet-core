@@ -1,7 +1,7 @@
 ---
   classes:
     - role::kam
-    - role:base
+    - role::base
     - role::dns
     - role::docker
     - role::mediastack
