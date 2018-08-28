@@ -9,7 +9,7 @@ class profile::common {
   accounts::user { 'darf':
     uid      => '1001',
     gid      => '100',
-    group    => 'darf',
+    group    => 'users',
     shell    => '/bin/zsh',
     password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
     sshkeys => [
