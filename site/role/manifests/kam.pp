@@ -7,8 +7,10 @@ class role::kam {
   include profile::bind
   include profile::dhcp
   include profile::tftp
-  include profile::apache
   include profile::boot
   include profile::nfs::server
   include profile::samba::server
+  include profile::apache::server
+  include profile::apache::vhosts:kam
+  include profile::apache::vhosts:puppetboard
 }
