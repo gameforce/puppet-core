@@ -6,7 +6,7 @@ file { '/etc/autofs.conf':
   owner  => 'root',
   group  => 'root',
   mode   => '0644',
-  source => 'puppet:///modules/profile/autofs.conf',
+  source => 'puppet:///modules/profile/autofs/autofs.conf',
   notify => Service['autofs'],
 }
 
