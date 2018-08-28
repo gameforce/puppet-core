@@ -36,21 +36,16 @@ class profile::common {
     locked   => false,
   }
 
-    # sshd config
-    include profile::ssh::server
-    include profile::ssh::client
+  # sshd config
+  include profile::ssh::server
+  include profile::ssh::client
 
-    exec {'shosts.equiv':
-      command => '/bin/cat /etc/ssh/ssh_known_hosts | /bin/grep -v "^#" | /bin/awk \'{print $1}\' | /bin/sed -e \'s/,/\n/g\' > /etc/ssh/shosts.equiv',
-      require => Class['ssh::knownhosts'],
+  exec {'shosts.equiv':
+    command => '/bin/cat /etc/ssh/ssh_known_hosts | /bin/grep -v "^#" | /bin/awk \'{print $1}\' | /bin/sed -e \'s/,/\n/g\' > /etc/ssh/shosts.equiv',
+    require => Class['ssh::knownhosts'],
   }
 
-    # disable firewall
-    class { 'firewall':
-      ensure => 'stopped',
-    }
-
-    # common packages needed everywhere
+  # common packages needed everywhere
     package {[
             'vim',
             'sudo',

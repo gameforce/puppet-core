@@ -1,6 +1,8 @@
 ---
 message: "This is our common yaml file"
 
+profile::firewall::off:
+
 yum::managed_repos:
   - 'epel'
 
