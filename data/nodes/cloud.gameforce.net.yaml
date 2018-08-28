@@ -1,5 +1,4 @@
 ---
   classes:
-    - role::cloud
-
     profile::firewall::on
+    role::cloud
