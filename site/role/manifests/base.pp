@@ -4,5 +4,5 @@ class role::base {
   include profile::accounts
   include profile::autofs
   include profile::sudo
-  #include profile::firewall
+  include profile::firewall
 }
