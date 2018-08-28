@@ -2,4 +2,5 @@
   classes:
     - role::cloud
 
-  firewall::ensure: 'running'
+  firewall::ensure:
+    - running

@@ -1,6 +1,7 @@
 ---
   classes:
-    firewall::ensure: 'stopped'
+    firewall::ensure:
+      - stopped
 
 yum::managed_repos:
   - 'epel'
