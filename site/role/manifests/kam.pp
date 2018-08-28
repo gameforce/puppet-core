@@ -12,5 +12,5 @@ class role::kam {
   include profile::samba::server
   include profile::apache::server
   include profile::apache::vhosts::kam
-  include profile::apache::vhosts::puppetboard
+  #include profile::apache::vhosts::puppetboard
 }
