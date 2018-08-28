@@ -19,7 +19,7 @@ forge 'https://forge.puppet.com'
 # Puppetlabs modules
 mod 'puppetlabs-inifile', '2.3.0'
 mod 'puppetlabs-stdlib', '4.25.1'
-mod 'puppetlabs-concat', '4.2.1'
+mod 'puppetlabs-concat', '5.0.0'
 mod 'puppetlabs-ntp', '7.2.0'
 mod 'puppetlabs-motd', '1.9.0'
 mod 'puppetlabs-aws', '2.1.0'
