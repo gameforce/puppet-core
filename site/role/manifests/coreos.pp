@@ -1,3 +1,3 @@
 class role::coreos {
-    include profile::base
+    include profile::common
   }
