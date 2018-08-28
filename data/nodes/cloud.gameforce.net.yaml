@@ -1,6 +1,3 @@
 ---
   classes:
     - role::cloud
-
-  firewall::ensure:
-    - running
