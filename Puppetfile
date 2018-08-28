@@ -52,10 +52,6 @@ mod 'thias-bind', '0.5.3'
 mod 'derdanne-nfs', '2.0.8'
 mod 'ajjahn-samba', '0.5.0'
 mod 'puppet-wget', '2.0.0'
-#mod 'eyp-systemd', '0.1.47'
-#mod 'eyp-eyplib', '0.1.16'
-mod 'flypenguin-mkdir', '1.0.4'
-mod 'flypenguin-teamcity', '0.6.1'
 
 # Github Modules
 # mod 'puppet-teamcity', :git => 'https://github.com/flypenguin/puppet-teamcity.git'
