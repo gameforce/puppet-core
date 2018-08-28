@@ -18,6 +18,7 @@ cloud     IN      A       107.22.52.132
 
 ; cnames
 puppet    IN      CNAME   rey.gameforce.net.
+sb0       IN      CNAME   rey.gameforce.net.
 kam       IN      CNAME   rey.gameforce.net.
 sb0       IN      CNAME   rey.gameforce.net.
 router    IN      CNAME   netgear.gameforce.net.
