@@ -17,7 +17,7 @@ services:
     image: linuxserver/sickrage
     restart: unless-stopped
     ports:
-      - "8081:8081"
+      - "8181:8181"
     environment:
       - TZ=America/Vancouver
       - PGID=100
