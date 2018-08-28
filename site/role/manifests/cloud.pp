@@ -1,4 +1,4 @@
-class role::nginx {
+class role::cloud {
   include profile::base
   include profile::packages
   include profile::accounts
