@@ -1,7 +1,7 @@
 class profile::samba::server {
 
   class {'samba::server':
-      workgroup     => 'owi',
+      workgroup     => 'gameforce',
       server_string => "Gameforce Samba Server",
       interfaces    => "eth0 lo",
       security      => 'user'
