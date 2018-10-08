@@ -9,6 +9,8 @@ class profile::bind {
     allow_query            => [ 'localnets', '172.31.0.0/16' ],
     extra_options          => [ 'allow-update { key "rndc-key";}' ],
     managed_keys_directory => "/var/named/dynamic",
+    dnssec_enable          => "no",
+    dnssec_validation      => "no",
     zones                  => {
       'gameforce.net' => [
         'type master',
