@@ -4,8 +4,8 @@ class role::kam {
   include profile::puppet::puppetdb
   include profile::puppet::r10k
   include profile::puppet::webhook
-  include profile::bind
-  include profile::dhcp
+  ##include profile::bind
+  ##include profile::dhcp
   include profile::boot
   include profile::nfs::server
   include profile::samba::server
