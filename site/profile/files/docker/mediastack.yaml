@@ -14,7 +14,7 @@ services:
       - /data/:/data
   sickrage:
     container_name: sickrage
-    image: linuxserver/sickrage
+    image: sickrage/sickrage
     restart: unless-stopped
     ports:
       - "8181:8181"
