@@ -11,6 +11,7 @@ services:
     volumes:
       - /data/systems/plex/database:/config
       - /data/systems/plex/temp:/transcode
+      - /tmp:/tmp 
       - /data/:/data
   sickrage:
     container_name: sickrage
