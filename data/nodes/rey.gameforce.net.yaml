@@ -2,16 +2,15 @@
   classes:
     - role::kam
     - role::docker
-    - role::helix::server
 
   yum::managed_repos:
-    - 'perforce_helix'
+#    - 'perforce_helix'
   yum::repos:
-    perforce_helix:
-      ensure: 'present'
-      enabled: true
-      descr: 'Perfoce Helix Core'
-      baseurl: 'http://package.perforce.com/yum/rhel/7/x86_64/'
-      gpgcheck: true
-      gpgkey: 'https://package.perforce.com/perforce.pubkey'
-      target: '/etc/yum.repos.d/perforce.repo'
+#    perforce_helix:
+#      ensure: 'present'
+#      enabled: true
+#      descr: 'Perfoce Helix Core'
+#      baseurl: 'http://package.perforce.com/yum/rhel/7/x86_64/'
+#      gpgcheck: true
+#      gpgkey: 'https://package.perforce.com/perforce.pubkey'
+#      target: '/etc/yum.repos.d/perforce.repo'
