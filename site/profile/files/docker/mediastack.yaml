@@ -5,27 +5,27 @@ services:
     image: plexinc/pms-docker:public
     restart: unless-stopped
     environment:
-      - TZ=America/Vancouver
+      - TZ=America/Montreal
       - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
     network_mode: host
     volumes:
       - /data/systems/plex/database:/config
       - /data/systems/plex/temp:/transcode
-      - /tmp:/tmp 
+      - /tmp:/tmp
       - /data/:/data
-  sickrage:
-    container_name: sickrage
-    image: sickrage/sickrage
+  sickchill:
+    container_name: sickchill
+    image: linuxserver/sickchill
     restart: unless-stopped
     ports:
       - "8181:8181"
     environment:
-      - TZ=America/Vancouver
+      - TZ=America/Montreal
       - PGID=100
       - PUID=1001
     network_mode: host
     volumes:
-      - /net/systems/sickrage/config:/config
+      - /net/systems/sickchill/config:/config
       - /net/systems/downloads:/downloads
       - /net/series:/series
   transmission:
@@ -36,7 +36,7 @@ services:
       - "9091:9091"
       - "51413:51413"
     environment:
-      - TZ=America/Vancouver
+      - TZ=America/Montreal
       - PGID=100
       - PUID=1001
     network_mode: host
