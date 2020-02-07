@@ -1,6 +1,6 @@
 ---
 classes:
-  - profile::base
+  - profile::common
 
 yum::managed_repos:
   - 'epel'
