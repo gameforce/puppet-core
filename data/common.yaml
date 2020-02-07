@@ -1,5 +1,6 @@
 ---
 classes:
+  - profile::base
 
 yum::managed_repos:
   - 'epel'
@@ -13,6 +14,5 @@ ntp::restrict:
 ntp::service_name: 'ntpd'
 
 ntp::servers:
-  - 'clock.gameforce.net'
   - '1.debian.pool.ntp.org'
   - '2.centos.pool.ntp.org'
