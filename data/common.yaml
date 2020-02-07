@@ -14,3 +14,5 @@ ntp::servers:
   - 'clock.gameforce.net'
   - '1.debian.pool.ntp.org'
   - '2.centos.pool.ntp.org'
+
+  classes: []
