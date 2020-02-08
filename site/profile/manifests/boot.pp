@@ -1,3 +1,4 @@
+# boot profile
 class profile::boot {
 
 # Ensure tftp server is installed
@@ -10,11 +11,11 @@ class profile::boot {
 
 # pxe default menu
   file { '/var/lib/tftpboot/pxelinux.cfg/default':
-    ensure => 'present',
-    source => 'puppet:///modules/profile/boot/default',
+    ensure  => 'present',
+    source  => 'puppet:///modules/profile/boot/default',
     require => File['/var/lib/tftpboot/pxelinux.cfg'],
     # notify =>  Service['tftp'],
-    # Server Error: Invalid relationship: File[/var/lib/tftpboot/pxelinux.cfg/default] { notify => Service[tftp.service] }, because Service[tftp.service] doesn't seem to be in the catalog
+    # Server Error: Invalid relationship
   }
 
   # place our ipxe config files in the web root

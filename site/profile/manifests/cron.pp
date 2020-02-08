@@ -1,3 +1,4 @@
+# cron profile
 class profile::cron {
 
   # puppet agent cron job
