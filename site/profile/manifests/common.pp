@@ -12,8 +12,8 @@ class profile::common {
 
   # common users
   accounts::user { 'darf':
-    uid      => '1001',
-    gid      => '100',
+    #uid      => '1001',
+    #gid      => '100',
     group    => 'users',
     shell    => '/bin/zsh',
     password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
