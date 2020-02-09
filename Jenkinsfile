@@ -3,11 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
+                sh 'echo "Validate the syntax of the puppetfile"'
+                    r10k puppetfile check -v
             }
         }
     }
