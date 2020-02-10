@@ -1,5 +1,5 @@
 podTemplate {
-  containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.8', command: 'cat', ttyEnabled: true)
+  containerTemplate(name: 'kubectl', image: 'jenkinsci/jnlp-slave')
     node(POD_LABEL) {
         stage('Run shell') {
             sh 'echo hello world'
