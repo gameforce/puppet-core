@@ -6,7 +6,7 @@ podTemplate(label: 'jnlp', containers: [
 
         stage('do some kubectl work') {
             container('kubectl') {
-                    sh "kubectl -n puppetserver exec -it puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f sh r10k puppetfile validate -v"
+                    sh "kubectl -n puppetserver exec -it puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- sh r10k puppetfile validate -v"
                 }
             }
         }
