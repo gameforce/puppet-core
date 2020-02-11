@@ -1,4 +1,4 @@
-podTemplate(label: 'jnlp', containers: [
+podTemplate(label: 'builder', containers: [
     containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.0', command: 'cat', ttyEnabled: true),
     ],) {
 
