@@ -36,7 +36,7 @@ spec:
         sh "echo ${PUPPET_CONTAINER}"
         print 'Sync environments with r10k...'
 
-        sh(script: "kubectl -n puppetserver -i ${PUPPET_CONTAINER} -- bash -c 'cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k deploy environment', returnStdout:true)
+        sh(script: "kubectl -n puppetserver -i ${PUPPET_CONTAINER} -- bash -c 'cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k deploy environment'", returnStdout:true)
       }
     }
 
