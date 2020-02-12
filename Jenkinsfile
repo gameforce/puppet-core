@@ -7,8 +7,8 @@ apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: kube
-    image: lachlanevenson/k8s-kubectl:v1.8.0
+  - name: r10kdep
+    image: darf/r10kdep:v1.1
     command: ['cat']
     tty: true
 """
@@ -18,7 +18,7 @@ spec:
   stages {
     stage('Check Kubernetes environments') {
       steps {
-        container('kube') {
+        container('r10kdep') {
           script {
             PUPPET_CONTAINER = sh (script: "kubectl -n puppetserver get pods --no-headers | grep cha-puppets | awk '{print \$1}'", returnStdout: true).trim()
           }
@@ -30,10 +30,10 @@ spec:
       }
     }
     
-    stage('Run kubectl') {
+    stage('Run r10k puppetfile validation') {
       steps {
-        container('kube') {
-          sh 'kubectl -n puppetserver exec -i puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- r10k version'
+        container('r10kdep') {
+          sh 'kubectl -n puppetserver exec -i puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- r10kdep /etc/puppetlabs/code/environments/$BRANCH_NAME/ puppetfile check -v'
         }
       }
     }
