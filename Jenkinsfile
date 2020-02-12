@@ -7,18 +7,18 @@ apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: maven
-    image: maven:3.3.9-jdk-8-alpine
+  - name: kube
+    image: lachlanevenson/k8s-kubectl:v1.8.0
     command: ['cat']
     tty: true
 """
     }
   }
   stages {
-    stage('Run maven') {
+    stage('Run kubectl') {
       steps {
-        container('maven') {
-          sh 'mvn -version'
+        container('kube') {
+          sh 'kubectl get pods'
         }
       }
     }

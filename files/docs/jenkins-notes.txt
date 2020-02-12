@@ -30,6 +30,8 @@ node {
   }
 }
 
+default image: jenkins/jnlp-slave:3.27-1
+
 podTemplate(label: 'builder', containers: [
     containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.0', command: 'cat', ttyEnabled: true),
     ],) {
@@ -55,6 +57,34 @@ podTemplate(containers: [
                       namespace: 'puppetserver'
                       ]) {
         sh 'kubectl get pods'
+      }
+    }
+  }
+}
+
+# Working example:
+pipeline {
+  agent {
+    kubernetes {
+      //cloud 'kubernetes'
+      yaml """
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: maven
+    image: maven:3.3.9-jdk-8-alpine
+    command: ['cat']
+    tty: true
+"""
+    }
+  }
+  stages {
+    stage('Run maven') {
+      steps {
+        container('maven') {
+          sh 'mvn -version'
+        }
       }
     }
   }
