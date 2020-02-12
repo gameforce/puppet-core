@@ -14,20 +14,22 @@ spec:
 """
     }
   }
-  
+
   stages {
     stage('Check Kubernetes environments') {
       steps {
-        script {
-          PUPPET_CONTAINER = sh (script: "kubectl -n puppetserver get pods --no-headers | grep cha-puppets | awk '{print \$1}'", returnStdout: true).trim()
+        container('kube') {
+          script {
+            PUPPET_CONTAINER = sh (script: "kubectl -n puppetserver get pods --no-headers | grep cha-puppets | awk '{print \$1}'", returnStdout: true).trim()
+          }
+            print 'Lookup master pod name...'
+            sh "echo ${PUPPET_CONTAINER}"
+            print 'Checking namespace existence...'
+            sh "kubectl get ns puppetserver"
         }
-          print 'Lookup master pod name...'
-          sh "echo ${PUPPET_CONTAINER}"
-          print 'Checking namespace existence...'
-          sh "kubectl get ns puppetserver"
       }
     }
-
+    
     stage('Run kubectl') {
       steps {
         container('kube') {
