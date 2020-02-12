@@ -18,7 +18,7 @@ spec:
     stage('Run kubectl') {
       steps {
         container('kube') {
-          sh 'kubectl get pods'
+          sh 'kubectl -n puppetserver exec -it puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- r10k version'
         }
       }
     }
