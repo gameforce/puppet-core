@@ -17,7 +17,7 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IlBCeTZLQmtMSHQzN3NyWUMxOXlNY2JMOC0wa2xhNmVjTi1rNV9B
 
 47de721e-510d-44c2-a26f-2421dfe348bc
 
-github token: bc2ae01f89106bb5b5774a425a270087fd264667
+github token: 77620bc892ef826b115db872f513503eb67da632
 
 node {
   stage('List pods') {
