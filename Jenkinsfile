@@ -30,10 +30,21 @@ spec:
       }
     }
     
+    stage('R10K check environments') {
+      steps{
+        print 'Lookup master pod name...'
+        sh "echo ${PUPPET_CONTAINER}"
+        print 'Sync environments with r10k...'
+
+        sh(script: "kubectl -n puppetserver -i ${PUPPET_CONTAINER} -- bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k deploy environment", returnStdout:true)
+      }
+    }
+
     stage('Run r10k puppetfile validation') {
       steps {
         container('r10kdep') {
-          sh 'kubectl -n puppetserver exec -i puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- bash -c "cd /etc/puppetlabs/code/environments/production;r10k puppetfile check -v"'
+          sh 'kubectl -n puppetserver exec -i $(PUPPET_CONTAINER) -- bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile check -v"'
+          sh 'kubectl -n puppetserver exec -i $(PUPPET_CONTAINER) -- bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile install --force -v"'
         }
       }
     }
