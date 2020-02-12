@@ -1,6 +1,6 @@
-podTemplate(label: 'jenkins-robot', containers: [
+podTemplate(containers: [
     containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.0', command: 'cat', ttyEnabled: true),
-    ],)
+  ]) {
 
 node {
   stage('List pods') {
