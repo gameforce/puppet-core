@@ -19,7 +19,7 @@ spec:
     stage('Check Kubernetes environments') {
       steps {
         script {
-          PUPPET_CONTAINER = sh (script: "kubectl -n puppetserver get pods -l name=puppetmaster --no-headers| awk '{print \$1}'", returnStdout: true).trim()
+          PUPPET_CONTAINER = sh (script: "kubectl -n puppetserver get pods --no-headers | grep cha-puppets | awk '{print \$1}'", returnStdout: true).trim()
         }
           print 'Lookup master pod name...'
           sh "echo ${PUPPET_CONTAINER}"
