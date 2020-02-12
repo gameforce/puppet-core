@@ -14,13 +14,25 @@ spec:
 """
     }
   }
+  
   stages {
+    stage('Check Kubernetes environments') {
+      steps {
+        script {
+          PUPPET_CONTAINER = sh (script: "kubectl -n puppetserver get pods -l name=puppetmaster --no-headers| awk '{print \$1}'", returnStdout: true).trim()
+        }
+          print 'Lookup master pod name...'
+          sh "echo ${PUPPET_CONTAINER}"
+          print 'Checking namespace existence...'
+          sh "kubectl get ns puppetserver"
+      }
+    }
+
     stage('Run kubectl') {
       steps {
         container('kube') {
-          sh 'kubectl -n puppetserver exec -it puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- r10k /etc/puppetlabs/code/environments/$BRANCH_NAME/ puppetfile check'
+          sh 'kubectl -n puppetserver exec -i puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- r10k version'
         }
       }
     }
   }
-}
