@@ -32,14 +32,16 @@ spec:
     
     stage('R10K check environments') {
       steps{
-        print 'Lookup master pod name...'
-        sh "echo ${PUPPET_CONTAINER}"
-        print 'Sync environments with r10k...'
+        container('r10kdep') {
+          print 'Lookup master pod name...'
+          sh "echo ${PUPPET_CONTAINER}"
+          print 'Sync environments with r10k...'
 
-        sh(script: "kubectl -n puppetserver -i ${PUPPET_CONTAINER} -- bash -c 'cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k deploy environment'", returnStdout:true)
+          sh(script: "kubectl -n puppetserver -i ${PUPPET_CONTAINER} -- bash -c 'cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k deploy environment'", returnStdout:true)
+        }
       }
     }
-
+    
     stage('Run r10k puppetfile validation') {
       steps {
         container('r10kdep') {
