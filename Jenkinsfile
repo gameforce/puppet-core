@@ -33,7 +33,7 @@ spec:
     stage('Run r10k puppetfile validation') {
       steps {
         container('r10kdep') {
-          sh 'kubectl -n puppetserver exec -i puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- r10kdep /etc/puppetlabs/code/environments/$BRANCH_NAME/ puppetfile check -v'
+          sh 'kubectl -n puppetserver exec -i puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- /usr/local/bin/r10kdep /etc/puppetlabs/code/environments/$BRANCH_NAME/ puppetfile check -v'
         }
       }
     }
