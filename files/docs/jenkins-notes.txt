@@ -31,6 +31,7 @@ node {
 }
 
 default image: jenkins/jnlp-slave:3.27-1
+r10k image: puppet/r10k:3.3.3
 
 podTemplate(label: 'builder', containers: [
     containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.0', command: 'cat', ttyEnabled: true),
