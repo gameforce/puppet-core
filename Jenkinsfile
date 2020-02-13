@@ -30,7 +30,7 @@ spec:
       }
     }
     
-    stage('R10K check environments') {
+    /*stage('R10K check environments') {
       steps{
         container('r10kdep') {
           print 'Lookup master pod name...'
@@ -41,7 +41,8 @@ spec:
         }
       }
     }
-
+    */
+    
     stage('Run r10k puppetfile validation') {
       steps {
         container('r10kdep') {
