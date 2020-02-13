@@ -7,10 +7,7 @@ apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: r10kdep
-    image: darf/r10kdep:v1.1
-    command: ['cat']
-    tty: true
+  - name: r10k-code
 """
     }
   }
@@ -18,7 +15,7 @@ spec:
   stages {
     stage('Check Kubernetes environments') {
       steps {
-        container('r10kdep') {
+        container('r10k-code') {
           script {
             PUPPET_CONTAINER = sh (script: "kubectl -n puppetserver get pods --no-headers | grep cha-puppets | awk '{print \$1}'", returnStdout: true).trim()
           }
@@ -45,7 +42,6 @@ spec:
     
     stage('Run r10k puppetfile validation') {
       steps {
-        podTemplate('r10k-code') {
             print 'Lookup master pod name...'
             sh "echo ${PUPPET_CONTAINER}"
             sh 'bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile check -v"'
@@ -53,4 +49,3 @@ spec:
         }
       }
     }
-  }
