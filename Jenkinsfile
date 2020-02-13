@@ -45,11 +45,10 @@ spec:
     
     stage('Run r10k puppetfile validation') {
       steps {
-        container('r10kdep') {
+        podTemplate('r10k-code') {
           print 'Lookup master pod name...'
           sh "echo ${PUPPET_CONTAINER}"
-          sh 'kubectl -n puppetserver exec -i \$(PUPPET_CONTAINER) -- bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile check -v"'
-          sh 'kubectl -n puppetserver exec -i \$(PUPPET_CONTAINER) -- bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile install --force -v"'
+          sh 'bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile check -v"'
         }
       }
     }
