@@ -1,0 +1,2 @@
+# home
+* -fstype=nfs,rw,nosuid,soft rey:/data/home/&

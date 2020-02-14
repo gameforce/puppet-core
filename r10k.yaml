@@ -1,0 +1,6 @@
+---
+:cachedir: /opt/puppetlabs/puppet/cache/r10k
+:sources:
+  puppet:
+    basedir: /etc/puppetlabs/code/environments
+    remote: git@github.com:gameforce/puppet-site.git

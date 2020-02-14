@@ -1,0 +1,14 @@
+$ORIGIN 11.168.192.in-addr.arpa.
+$TTL 86400
+@       IN      SOA     rey.gameforce.net.      admin.rey.gameforce.net. (
+                        2018082401 ; serial
+                        21600      ; refresh after 6 hours
+                        3600       ; retry after 1 hour
+                        604800     ; expire after 1 week
+                        86400 )    ; minimum TTL of 1 day
+
+@       IN      NS      rey.gameforce.net.
+
+;PTR
+7       IN      PTR     rey.gameforce.net.
+254     IN      PTR     netgear.gameforce.net.

@@ -1,6 +1,0 @@
----
-  classes:
-    - role::base
-    - role::puppet
-    - role::repo
-    - role::samba

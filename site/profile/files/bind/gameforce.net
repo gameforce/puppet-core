@@ -1,0 +1,24 @@
+$ORIGIN gameforce.net.
+$TTL 86400
+@       IN      SOA     rey.gameforce.net.      hostmaster.gameforce.net. (
+                        2018082402 ; serial
+                        21600      ; refresh after 6 hours
+                        3600       ; retry after 1 hour
+                        604800     ; expire after 1 week
+                        86400 )    ; minimum TTL of 1 day
+
+          IN      NS      rey.gameforce.net.
+
+; server host definitions
+rey           IN      A       192.168.11.7
+netgear       IN      A       192.168.11.254
+cloud         IN      A       107.22.52.132
+
+; cnames
+puppet        IN      CNAME   rey.gameforce.net.
+kam           IN      CNAME   rey.gameforce.net.
+router        IN      CNAME   netgear.gameforce.net.
+vip           IN      CNAME   rey.gameforce.net.
+webhook       IN      CNAME   cloud.gameforce.net.
+sickrage      IN      CNAME   cloud.gameforce.net.
+transmission  IN      CNAME   cloud.gameforce.net.

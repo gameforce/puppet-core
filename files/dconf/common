@@ -1,0 +1,14 @@
+# dconf: Managed by puppet
+
+[org/gnome/settings-daemon/plugins/power]
+button-power=""
+
+[system/proxy]
+mode=""
+autoconfig-url=""
+
+[org/gnome/desktop/screensaver]
+lock-enabled=1
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'

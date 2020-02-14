@@ -1,3 +1,7 @@
 class role::puppet {
-  include profile::puppet
+  #All roles should include the common profile
+  include profile::puppet::puppetdb
+  include profile::puppet::r10k
+  include profile::puppet::webhook
+  include profile::puppet::puppetboard
 }

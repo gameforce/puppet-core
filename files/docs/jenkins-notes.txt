@@ -1,0 +1,92 @@
+# Create a ServiceAccount named `jenkins-robot` in a given namespace.
+kubectl -n default create serviceaccount jenkins-robot
+
+# The next line gives `jenkins-robot` administator permissions for this namespace.
+# * You can make it an admin over all namespaces by creating a `ClusterRoleBinding` instead of a `RoleBinding`.
+# * You can also give it different permissions by binding it to a different `(Cluster)Role`.
+kubectl -n default create rolebinding jenkins-robot-binding --clusterrole=cluster-admin --serviceaccount=default:jenkins-robot
+
+# Get the name of the token that was automatically generated for the ServiceAccount `jenkins-robot`.
+kubectl -n default get serviceaccount jenkins-robot -o go-template --template='{{range .secrets}}{{.name}}{{"\n"}}{{end}}'
+
+
+# Retrieve the token and decode it using base64.
+kubectl -n default get secrets jenkins-robot-token-xxx -o go-template --template '{{index .data "token"}}' | base64 -d
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6IlBCeTZLQmtMSHQzN3NyWUMxOXlNY2JMOC0wa2xhNmVjTi1rNV9BOXFUeHMifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImplbmtpbnMtcm9ib3QtdG9rZW4tbDdneHYiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiamVua2lucy1yb2JvdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjE4ZjYxYTU4LTNlNjktNDdmZC04YmMzLWU0NDBiMWY1YzI2MyIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmplbmtpbnMtcm9ib3QifQ.1iNREFnpJU7fB4YzkEfqseB7eRcq6hmL0Q3knmoIy1YFyBJu22U7qXYH3FzA-tAfwZWWf_tE8YXsb414Z3zYu5V_pvoJNmTzs8NfHKZm_lOp_V9Ot69pGdSauApo1E8qR_C5UubQ8lKVGmHfQ0x91JX3wMOJbQSjgrrqXUgGVY6GVORjqdglN56jPxwUhM3dS5ox_S0XSNo3tL3F9narLvVLfe61Y9Th2YFc6Tq_uA_kvYTCfIvk-nwRW-NSk7Ft1YvDSXJHf5i5zM7bwcelouxemofxXNmHqAR-kns_Cu53vyUVHCWa5dshwAbZrBa6yfio4tKJCopQvsrRhvprAg
+
+47de721e-510d-44c2-a26f-2421dfe348bc
+
+github token: 77620bc892ef826b115db872f513503eb67da632
+
+node {
+  stage('List pods') {
+    withKubeConfig([credentialsId: '47de721e-510d-44c2-a26f-2421dfe348bc',
+                    serverUrl: 'https://192.168.11.20:6443',
+                    namespace: 'puppetserver'
+                    ]) {
+      sh 'kubectl get pods'
+    }
+  }
+}
+
+default image: jenkins/jnlp-slave:3.27-1
+r10k image: puppet/r10k:3.3.3
+
+podTemplate(label: 'builder', containers: [
+    containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.0', command: 'cat', ttyEnabled: true),
+    ],) {
+
+    node('jnlp') {
+
+        stage('do some kubectl work') {
+            container('kubectl') {
+                    sh "kubectl -n puppetserver exec -it puppetserver-puppetserver-helm-cha-puppetserver-56c4c9975-fkm2f -- r10k puppetfile validate -v"
+                }
+            }
+        }
+}
+
+podTemplate(containers: [
+    containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.0', command: 'cat', ttyEnabled: true),
+  ]) {
+
+  node {
+    stage('List pods') {
+      withKubeConfig([credentialsId: '47de721e-510d-44c2-a26f-2421dfe348bc',
+                      serverUrl: 'https://192.168.11.20:6443',
+                      namespace: 'puppetserver'
+                      ]) {
+        sh 'kubectl get pods'
+      }
+    }
+  }
+}
+
+# Working example:
+pipeline {
+  agent {
+    kubernetes {
+      //cloud 'kubernetes'
+      yaml """
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: maven
+    image: maven:3.3.9-jdk-8-alpine
+    command: ['cat']
+    tty: true
+"""
+    }
+  }
+  stages {
+    stage('Run maven') {
+      steps {
+        container('maven') {
+          sh 'mvn -version'
+        }
+      }
+    }
+  }
+}

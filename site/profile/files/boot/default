@@ -1,0 +1,29 @@
+# This file is managed by puppet do not edit
+# /var/lib/tftpboot/pxelinux.cfg/default
+
+DEFAULT menu.c32
+PROMPT 0
+TIMEOUT 300
+ONTIMEOUT localdisk
+MENU TITLE PXE Network Boot
+
+LABEL localdisk
+    MENU LABEL ^Local Hard Drive
+    MENU DEFAULT
+    LOCALBOOT 0
+
+LABEL install_coreos
+    MENU LABEL ^CoreOS Stable 1800.5.0
+    KERNEL coreos/coreos_production_pxe.vmlinuz
+    INITRD coreos/coreos_production_pxe_image.cpio.gz
+    APPEND coreos.first_boot=1 coreos.config.url=http://kickstart/pxe-config.ign
+
+LABEL install_centos
+    MENU LABEL ^CentOS 7.5
+    KERNEL centos/x86_64/vmlinuz
+    APPEND ks=http://kickstart/centos-server.ks initrd=centos/x86_64/initrd.img ipv6.disable=1 net.ifnames=0 ramdisk_size=100000
+
+LABEL install_sysrescd
+    MENU LABEL SystemRescueCD 5.2.2
+    kernel srcd/rescue64
+    append initrd=srcd/initram.igz fetch=http://192.168.11.3/srcd/sysrcd.dat
