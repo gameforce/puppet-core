@@ -1,12 +1,9 @@
-// define a variable with random UUID, so that pod label is different on each run
-def label = "worker-${UUID.randomUUID().toString()}"
-
-podTemplate(label: 'kubernetes', containers: [
+podTemplate(label: 'master', containers: [
     containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.8', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'helm', image: 'lachlanevenson/k8s-helm:latest', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'r10k', image: 'puppet/r10k', command: 'cat', ttyEnabled: true)
   ]) {
-    node('kubernetes') {
+    node('master') {
         container('kubectl') {
             stage('Run Command') {
                 sh 'kubectl get pods -n puppet'
