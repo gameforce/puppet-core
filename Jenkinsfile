@@ -22,8 +22,13 @@ node(label) {
         sh "helm list"
       }
     }
-    stage ('Send Discord Notification') {
-      discordSend description: 'puppet-core', footer: 'footerlol', image: '', link: 'env.BUILD_URL', result: 'currentBuild.currentResult', thumbnail: '', title: 'env.JOB_NAME', webhookURL: 'https://discordapp.com/api/webhooks/682246868323139706/7oE92uLnkoIG-tfpPeGUUZLhW5CymU5f4bqjhDcbaNNfKSXgpSyEQaAOSwMh5tw_njIz'
+    stage ('Build') {
+      steps {
+        echo "During Build result: ${currentBuild.result}"
+        echo "During Build currentResult: ${currentBuild.currentResult}"
+        sh 'exit 1'
+    }
+      discordSend description: 'puppet-core', footer: 'footerlol', image: '', link: 'env.BUILD_URL', result: currentBuild.currentResult, thumbnail: '', title: 'env.JOB_NAME', webhookURL: 'https://discordapp.com/api/webhooks/682246868323139706/7oE92uLnkoIG-tfpPeGUUZLhW5CymU5f4bqjhDcbaNNfKSXgpSyEQaAOSwMh5tw_njIz'
     }
   }
 }
