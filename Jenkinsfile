@@ -11,7 +11,7 @@
     hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
   ]) {
   
-  pipeline(label) {
+  node(label) {
       stage('Run kubectl') {
         container('kubectl') {
           sh "kubectl get pods"
