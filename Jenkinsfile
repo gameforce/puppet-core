@@ -6,7 +6,7 @@ podTemplate(label: 'kubernetes', containers: [
     containerTemplate(name: 'helm', image: 'lachlanevenson/k8s-helm:latest', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'r10k', image: 'puppet/r10k', command: 'cat', ttyEnabled: true)
   ]) {
-    node('label') {
+    node('kubernetes') {
         container('kubectl') {
             stage('Run Command') {
                 sh 'kubectl get pods -n puppet'
