@@ -7,10 +7,7 @@ apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: r10kdep
-    image: darf/r10kdep:v1.1
-    command: ['cat']
-    tty: true
+  - name: r10k-code
 """
     }
   }
@@ -18,7 +15,7 @@ spec:
   stages {
     stage('Check Kubernetes environments') {
       steps {
-        container('r10kdep') {
+        container('r10k-code') {
           script {
             PUPPET_CONTAINER = sh (script: "kubectl -n puppetserver get pods --no-headers | grep cha-puppets | awk '{print \$1}'", returnStdout: true).trim()
           }
@@ -30,7 +27,7 @@ spec:
       }
     }
     
-    stage('R10K check environments') {
+    /*stage('R10K check environments') {
       steps{
         container('r10kdep') {
           print 'Lookup master pod name...'
@@ -41,14 +38,15 @@ spec:
         }
       }
     }
-
+    */
+    
     stage('Run r10k puppetfile validation') {
       steps {
-        container('r10kdep') {
-          sh 'kubectl -n puppetserver exec -i $(PUPPET_CONTAINER) -- bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile check -v"'
-          sh 'kubectl -n puppetserver exec -i $(PUPPET_CONTAINER) -- bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile install --force -v"'
+            print 'Lookup master pod name...'
+            sh "echo ${PUPPET_CONTAINER}"
+            sh 'bash -c "cd /etc/puppetlabs/code/environments/$BRANCH_NAME/;r10k puppetfile check -v"'
+          }
         }
       }
     }
-  }
-}
+discordSend description: 'puppet-core', footer: 'footerlol', image: 'http://74.57.163.156/static/23b8663c/images/headshot.png', link: 'env.BUILD_URL', result: 'SUCCESS|UNSTABLE|FAILURE|ABORTED', thumbnail: '', title: 'env.JOB_NAME', webhookURL: 'https://discordapp.com/api/webhooks/682246868323139706/7oE92uLnkoIG-tfpPeGUUZLhW5CymU5f4bqjhDcbaNNfKSXgpSyEQaAOSwMh5tw_njIz'
