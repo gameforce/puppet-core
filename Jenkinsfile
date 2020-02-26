@@ -20,4 +20,5 @@ pipeline {
       }
     }
   }
+  discordSend link: 'env.BUILD_URL', result: currentBuild.currentResult, title: 'env.JOB_NAME', webhookURL: "https://discordapp.com/api/webhooks/682246868323139706/7oE92uLnkoIG-tfpPeGUUZLhW5CymU5f4bqjhDcbaNNfKSXgpSyEQaAOSwMh5tw_njIz"
 }
