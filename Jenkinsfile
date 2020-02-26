@@ -49,3 +49,4 @@ spec:
         }
       }
     }
+discordSend description: 'puppet-core', footer: 'footerlol', image: 'http://74.57.163.156/static/23b8663c/images/headshot.png', link: 'env.BUILD_URL', result: 'SUCCESS|UNSTABLE|FAILURE|ABORTED', thumbnail: '', title: 'env.JOB_NAME', webhookURL: 'https://discordapp.com/api/webhooks/682246868323139706/7oE92uLnkoIG-tfpPeGUUZLhW5CymU5f4bqjhDcbaNNfKSXgpSyEQaAOSwMh5tw_njIz'
