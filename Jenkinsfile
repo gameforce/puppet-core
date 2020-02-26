@@ -2,7 +2,8 @@ def label = "worker-${UUID.randomUUID().toString()}"
 
 pipeline {
   agent {
-    node(label) {
+    node {
+      label 'master'
     }
   } 
     podTemplate(label: label, containers: [
