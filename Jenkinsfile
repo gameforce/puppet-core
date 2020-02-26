@@ -1,10 +1,12 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+  podTemplate(label: label, containers: containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
     stages {
         stage('build') {
+          container(docker) {
             steps {
                 sh 'mvn --version'
-            }
-        }
-    }
+              }
+          }
+      }
+  }
 }
