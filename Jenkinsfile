@@ -1,5 +1,3 @@
-pipeline {
-
   // define a variable with random UUID, so that pod label is different on each run
   def label = "worker-${UUID.randomUUID().toString()}"
 
@@ -13,7 +11,7 @@ pipeline {
     hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
   ]) {
   
-  node(label) {
+  pipeline(label) {
       stage('Run kubectl') {
         container('kubectl') {
           sh "kubectl get pods"
