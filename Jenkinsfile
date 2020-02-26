@@ -1,5 +1,6 @@
+def label = "worker-${UUID.randomUUID().toString()}"
+
 pipeline {
-    def label = "worker-${UUID.randomUUID().toString()}"
     podTemplate(label: label, containers: [
     containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.8', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'helm', image: 'lachlanevenson/k8s-helm:latest', command: 'cat', ttyEnabled: true),
