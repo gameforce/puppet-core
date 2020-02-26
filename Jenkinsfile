@@ -1,3 +1,5 @@
+def label = "worker-${UUID.randomUUID().toString()}"
+
 pipeline {
   agent {
     kubernetes {
