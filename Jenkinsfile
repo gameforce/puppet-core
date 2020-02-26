@@ -1,7 +1,5 @@
+// define a variable with random UUID, so that pod label is different on each run
 def label = "worker-${UUID.randomUUID().toString()}"
-
-// Send discord notification
-discordSend description: 'puppet-core', footer: 'footerlol', image: 'http://74.57.163.156/static/23b8663c/images/headshot.png', link: 'env.BUILD_URL', result: currentBuild.currentResult, thumbnail: '', title: 'env.JOB_NAME', webhookURL: 'https://discordapp.com/api/webhooks/682246868323139706/7oE92uLnkoIG-tfpPeGUUZLhW5CymU5f4bqjhDcbaNNfKSXgpSyEQaAOSwMh5tw_njIz'
 
 podTemplate(label: label, containers: [
   containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.8', command: 'cat', ttyEnabled: true),
@@ -23,6 +21,9 @@ node(label) {
       container('helm') {
         sh "helm list"
       }
+    }
+    stage ('Send Discord Notification') {
+      discordSend description: 'puppet-core', footer: 'footerlol', image: 'http://74.57.163.156/static/23b8663c/images/headshot.png', link: 'env.BUILD_URL', result: currentBuild.currentResult, thumbnail: '', title: 'env.JOB_NAME', webhookURL: 'https://discordapp.com/api/webhooks/682246868323139706/7oE92uLnkoIG-tfpPeGUUZLhW5CymU5f4bqjhDcbaNNfKSXgpSyEQaAOSwMh5tw_njIz'
     }
   }
 }
