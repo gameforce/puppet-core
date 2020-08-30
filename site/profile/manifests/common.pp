@@ -8,7 +8,7 @@ class profile::common {
   }
 
   # standard includes
-  include epel
+  # include epel (removed - deprecated)
 
   # common users
   accounts::user { 'darf':
