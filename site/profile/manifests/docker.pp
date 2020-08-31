@@ -1,7 +1,8 @@
 class profile::docker {
   class { 'docker':
-    use_upstream_package_source => true,
-    #version => '1.2.13-2-0~focal',
+    use_upstream_package_source => false,
+    version                     => 'latest',
+    docker_users                => 'darf',
 }
 
   # ensure docker-compose is present
