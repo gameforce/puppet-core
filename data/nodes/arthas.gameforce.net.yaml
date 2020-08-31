@@ -1,6 +1,5 @@
 ---
   classes:
-    - role::kam
     - role::docker
 
   yum::managed_repos:
