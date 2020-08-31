@@ -1,7 +1,7 @@
 class profile::docker {
   class { 'docker':
     use_upstream_package_source => false,
-    version                     => '20.04.1~ce~3-0~focal',
+    version                     => '19.03.12~3-0~ubuntu-focal',
 }
 
   # ensure docker-compose is present
