@@ -21,8 +21,8 @@ services:
       - "8181:8181"
     environment:
       - TZ=America/Montreal
-      - PGID=100
-      - PUID=1001
+      - PGID=1000
+      - PUID=1000
     network_mode: host
     volumes:
       - /net/data/systems/sickchill/config:/config
@@ -37,8 +37,8 @@ services:
       - "51413:51413"
     environment:
       - TZ=America/Montreal
-      - PGID=100
-      - PUID=1001
+      - PGID=1000
+      - PUID=1000
     network_mode: host
     volumes:
       - /net/data/systems/transmission/config:/config
