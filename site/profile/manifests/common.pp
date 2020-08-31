@@ -14,11 +14,22 @@ class profile::common {
   accounts::user { 'darf':
     #uid      => '1001',
     #gid      => '100',
-    group    => 'users',
+    groups   => [
+    'users',
+    'sudo',
+  ],
     shell    => '/bin/zsh',
     password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
-    sshkeys => [
-      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClbJjehAJkP5n3CLY2OEKWgsXdSqd2p7WYtco0hvbxix0dX91rTHspffenahOaulvAIsbfZz5emyPffrWwpXVQKscDZbHapTwbMcc+igZ1VkXgaDvnz/PtcQEhcR9JMh/Bzk1/ySLUfA9Iz8xPXOcmgw50UjLIrcqIL5zgUagQ7ScvD/nN0DxPk93hjhzLWbxUzxsHgzY332y8PlmfliDsYbgof2vBccdlM20T5Mk7ivofICUCqSWJGkpFfJh/FniD+bEFB2uAyLjzml8p5pLDZxMYA86jSnzja0y7Dex1UXIeotX59xzfF/x+HmkGSW3IJIgw7K5PruhuO/YWQNUx',
+    sshkeys  => [
+      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClbJjehAJkP5n3CLY2OEKWgsXdSqd2p7WYtco0hvbxix0dX91rTHspffenahOaulvAIsbfZz5emyPffrWwpXVQKscDZbHapTwbMcc+igZ1VkXgaDvnz/PtcQEhcR9JMh/Bzk1/ySLUfA9Iz8xPXOcmgw50UjLIrcqIL5zgUagQ7ScvD/nN0DxPk93hjhzLWbxUzxsHgzY332y8PlmfliDsYbgof2vBccdlM20T5Mk7ivofICUCqSWJGkpFfJh/FniD+bEFB2uAyLjzml8p5pLDZxMYA86jSnzja0y7Dex1UXIeotX59xzfF/x+HmkGSW3IJIgw7K5PruhuO/YWQNUx== darf@gameforce.net',
+      ],
+    locked   => false,
+  }
+
+  accounts::user { 'root':
+    password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
+    sshkeys  => [
+      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDstox0gov/Ecnbc9i6IpwN5nUwwmiZvDvU+9RVTMLODC/LA5kbwjyKf8UXeQHdg2pvDE6bilaR4vUh+rSFZgUVIyOp92eDpDqQvkcXy4+S7Qjnxc9ONZotB9SR4+ghK2hYRGr333WOjJ/VWrXg5sQfugZ+YFMSQpA+pps4BMXh8SPfvFaVYd/GnvRR3/Uo2UC09OLw2y/toRL8Cj0GU6LqRZqo+Sv5Y/tk3bvaK9Pilt41iPZ6sUekuhQqM262yJi3lfPfaBVx0otO20nDteiwUKucPaP7axqWNy/FHarU9NrnxkuzMBaT8dso9nVweTQDUruIbuMkDmbhZ62hX+Xj root@rey== darf@gameforce.net',
       ],
     locked   => false,
   }
@@ -31,14 +42,6 @@ class profile::common {
     group    => 'users',
     source   => 'https://github.com/gameforce/dotfiles.git',
     revision => 'master',
-  }
-
-  accounts::user { 'root':
-    password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
-    sshkeys => [
-      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDstox0gov/Ecnbc9i6IpwN5nUwwmiZvDvU+9RVTMLODC/LA5kbwjyKf8UXeQHdg2pvDE6bilaR4vUh+rSFZgUVIyOp92eDpDqQvkcXy4+S7Qjnxc9ONZotB9SR4+ghK2hYRGr333WOjJ/VWrXg5sQfugZ+YFMSQpA+pps4BMXh8SPfvFaVYd/GnvRR3/Uo2UC09OLw2y/toRL8Cj0GU6LqRZqo+Sv5Y/tk3bvaK9Pilt41iPZ6sUekuhQqM262yJi3lfPfaBVx0otO20nDteiwUKucPaP7axqWNy/FHarU9NrnxkuzMBaT8dso9nVweTQDUruIbuMkDmbhZ62hX+Xj root@rey',
-      ],
-    locked   => false,
   }
 
   # sshd config
