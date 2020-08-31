@@ -9,10 +9,10 @@ services:
       - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
     network_mode: host
     volumes:
-      - /data/systems/plex/database:/config
-      - /data/systems/plex/temp:/transcode
+      - /net/data/systems/plex/database:/config
+      - /net/data/systems/plex/temp:/transcode
       - /tmp:/tmp
-      - /data/:/data
+      - /net/data/:/data
   sickchill:
     container_name: sickchill
     image: linuxserver/sickchill
@@ -25,9 +25,9 @@ services:
       - PUID=1001
     network_mode: host
     volumes:
-      - /net/systems/sickchill/config:/config
-      - /net/systems/downloads:/downloads
-      - /net/series:/series
+      - /net/data/systems/sickchill/config:/config
+      - /net/data/systems/downloads:/downloads
+      - /net/media/series:/series
   transmission:
     container_name: transmission
     image: linuxserver/transmission
@@ -41,6 +41,6 @@ services:
       - PUID=1001
     network_mode: host
     volumes:
-      - /net/systems/transmission/config:/config
-      - /net/systems/downloads:/downloads
-      - /net/systems/downloads/watch:/watch
+      - /net/data/systems/transmission/config:/config
+      - /net/data/systems/downloads:/downloads
+      - /net/data/systems/downloads/watch:/watch
