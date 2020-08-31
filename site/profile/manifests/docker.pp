@@ -1,10 +1,11 @@
 class profile::docker {
-  include 'docker'
-    use_upstream_package_source => false,
+  class { 'docker':
+  use_upstream_package_source => false,
+}
 
   # ensure docker-compose is present
   class {'docker::compose':
-    ensure => present,
+    ensure  => present,
     version => '1.9.0',
   }
 }
