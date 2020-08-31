@@ -1,5 +1,6 @@
 class profile::docker {
   include 'docker'
+    use_upstream_package_source => false,
 
   # ensure docker-compose is present
   class {'docker::compose':
