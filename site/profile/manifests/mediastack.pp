@@ -2,8 +2,8 @@ class profile::mediastack {
   include 'docker'
 
   docker_compose { 'mediastack':
-    ensure => present,
-    name   => '/mediastack/mediastack.yaml',
+    compose_files => ['/mediastack/mediastack.yaml'],
+    ensure        => present,
   }
 
   file { '/mediastack':
