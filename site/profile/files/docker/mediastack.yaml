@@ -50,8 +50,9 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=America/Montreal
       - UMASK_SET=022 #optional
+    network_mode: host
     volumes:
       - /net/data/systems/sonarr/config:/config
       - /net/media/series:/series
