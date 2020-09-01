@@ -44,3 +44,18 @@ services:
       - /net/data/systems/transmission/config:/config
       - /net/data/systems/downloads:/downloads
       - /net/data/systems/downloads/watch:/watch
+   sonarr:
+    image: linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - UMASK_SET=022 #optional
+    volumes:
+      - /net/data/systems/sonarr/config:/config
+      - /net/media/series:/series
+      - /net/data/systems/downloads:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
