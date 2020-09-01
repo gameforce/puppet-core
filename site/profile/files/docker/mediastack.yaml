@@ -85,8 +85,7 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /net/data/systems/emby/:/config
-      - /net/media/series:/data/series
-      - /net/medua/movies:/data/movies
+      - /net/media:/media
       - /net/data/systems/emby:/transcode #optional
       #- /opt/vc/lib:/opt/vc/lib #optional
     ports:
