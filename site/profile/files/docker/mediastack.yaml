@@ -68,7 +68,7 @@ services:
       - PGID=1000
       - TZ=America/Montreal
       - AUTO_UPDATE=true #optional
-      - RUN_OPTS=run options here #optional
+      - RUN_OPTS= #optional
     volumes:
       - /net/data/systems/jackett/config:/config
       - /net/data/systems/downloads:/downloads
