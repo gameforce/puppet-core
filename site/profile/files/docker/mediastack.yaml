@@ -60,7 +60,7 @@ services:
     ports:
       - 8989:8989
     restart: unless-stopped
-jackett:
+  jackett:
     image: linuxserver/jackett
     container_name: jackett
     environment:
