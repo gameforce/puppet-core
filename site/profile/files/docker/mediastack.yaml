@@ -54,7 +54,7 @@ services:
       - UMASK_SET=022 #optional
     network_mode: host
     volumes:
-      - /net/data/systems/sonarr/config:/config
+      - /net/data/systems/sonarr:/config
       - /net/media/series:/series
       - /net/data/systems/downloads:/downloads
     ports:
