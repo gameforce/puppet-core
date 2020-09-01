@@ -87,7 +87,7 @@ services:
       - /net/data/systems/emby/:/config
       - /net/media/movies:/movies
       - /net/media/series:/series
-      - /net/data/systems/emby:/transcode #optional
+      - /tmp:/transcode #optional
       #- /opt/vc/lib:/opt/vc/lib #optional
     ports:
       - 8096:8096
