@@ -2,15 +2,12 @@ class profile::mediastack {
   include 'docker'
 
   docker_compose { 'mediastack':
-    compose_files => ['/mediastack/mediastack.yaml'],
     ensure        => present,
+    compose_files => ['/tmp/mediastack.yaml'],
+    up_args       => '--remove-orphans',
   }
 
-  file { '/mediastack':
-    ensure => directory,
-  }
-
-  file { '/mediastack/mediastack.yaml':
+  file { '/tmp/mediastack.yaml':
     ensure => file,
     source => 'puppet:///modules/profile/docker/mediastack.yaml',
   }

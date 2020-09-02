@@ -8,6 +8,5 @@ class profile::docker {
   class {'docker::compose':
     ensure  => present,
     #version => '1.9.0',
-    up_args => '--remove-orphans',
   }
 }
