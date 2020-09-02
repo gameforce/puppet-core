@@ -13,21 +13,21 @@ services:
       - /net/data/systems/plex/temp:/transcode
       - /tmp:/tmp
       - /net/media/:/media
-  #sickchill:
-  #  container_name: sickchill
-  #  image: linuxserver/sickchill
-  #  restart: unless-stopped
-  #  ports:
-  #    - "8181:8181"
-  #  environment:
-  #    - TZ=America/Montreal
-  #    - PGID=1000
-  #    - PUID=1000
-  #  network_mode: host
-  #  volumes:
-  #  - /net/data/systems/sickchill/config:/config
-  #    - /net/data/systems/downloads:/downloads
-  #    - /net/media/series:/series
+  radarr:
+    image: linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Montreal
+      - UMASK_SET=022 #optional
+    volumes:
+      - /net/data/radarr:/config
+      - /net/media/movies:/movies
+      - /net/data/systems/downloads/complete:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
   transmission:
     container_name: transmission
     image: linuxserver/transmission
@@ -56,7 +56,7 @@ services:
     volumes:
       - /net/data/systems/sonarr:/config
       - /net/media/series:/series
-      - /net/data/systems/downloads:/downloads
+      - /net/data/systems/downloads/complete:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -70,8 +70,8 @@ services:
       - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
     volumes:
-      - /net/data/systems/jackett/config:/config
-      - /net/data/systems/downloads:/downloads
+      - /net/data/systems/jackett:/config
+      - /net/data/systems/downloads/complete:/downloads
     ports:
       - 9117:9117
     restart: unless-stopped
