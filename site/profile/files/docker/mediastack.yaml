@@ -24,7 +24,7 @@ services:
     volumes:
       - /net/data/systems/radarr:/config
       - /net/media/movies:/movies
-      - /net/data/systems/downloads/complete:/downloads
+      - /net/data/systems/downloads:/downloads
     ports:
       - 7878:7878
     restart: unless-stopped
