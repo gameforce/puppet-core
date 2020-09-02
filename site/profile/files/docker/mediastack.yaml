@@ -13,21 +13,21 @@ services:
       - /net/data/systems/plex/temp:/transcode
       - /tmp:/tmp
       - /net/media/:/media
-  sickchill:
-    container_name: sickchill
-    image: linuxserver/sickchill
-    restart: unless-stopped
-    ports:
-      - "8181:8181"
-    environment:
-      - TZ=America/Montreal
-      - PGID=1000
-      - PUID=1000
-    network_mode: host
-    volumes:
-      - /net/data/systems/sickchill/config:/config
-      - /net/data/systems/downloads:/downloads
-      - /net/media/series:/series
+  #sickchill:
+  #  container_name: sickchill
+  #  image: linuxserver/sickchill
+  #  restart: unless-stopped
+  #  ports:
+  #    - "8181:8181"
+  #  environment:
+  #    - TZ=America/Montreal
+  #    - PGID=1000
+  #    - PUID=1000
+  #  network_mode: host
+  #  volumes:
+  #  - /net/data/systems/sickchill/config:/config
+  #    - /net/data/systems/downloads:/downloads
+  #    - /net/media/series:/series
   transmission:
     container_name: transmission
     image: linuxserver/transmission
