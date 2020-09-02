@@ -22,7 +22,7 @@ services:
       - TZ=America/Montreal
       - UMASK_SET=022 #optional
     volumes:
-      - /net/data/radarr:/config
+      - /net/data/systems/radarr:/config
       - /net/media/movies:/movies
       - /net/data/systems/downloads/complete:/downloads
     ports:
