@@ -1,3 +1,4 @@
+# puppet-autofs module
 class profile::autofs {
   include autofs
 

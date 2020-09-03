@@ -7,9 +7,6 @@ class profile::common {
     ensure => 'stopped',
   }
 
-  # standard includes
-  # include epel (removed - deprecated)
-
   # common users
   accounts::user { 'darf':
     #uid      => '1001',
