@@ -15,6 +15,6 @@
     home:
       path: '/etc/auto.systems'
       mappings:
-        - key: '*'
+        #- key: '*'
           options: 'rw,soft,intr'
           fs: '192.168.11.10:/share/data/systems'
