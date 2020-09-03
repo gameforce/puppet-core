@@ -1,6 +1,5 @@
-# maps for data on sidious
-home     -fstype=nfs,rw  rey:/data/home
-kids     -fstype=nfs,rw  rey:/data/kids
-movies   -fstype=nfs,rw  rey:/data/movies
-series   -fstype=nfs,rw  rey:/data/series
-systems  -fstype=nfs,rw  rey:/data/systems
+# maps for data on uther
+home     -fstype=nfs,rw  192.168.11.10:/share/home
+movies   -fstype=nfs,rw  192.168.11.10:/share/media/movies
+series   -fstype=nfs,rw  192.168.11.10:/share/media/series
+systems  -fstype=nfs,rw  192.168.11.10:/share/data/systems
