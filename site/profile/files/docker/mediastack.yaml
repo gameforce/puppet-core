@@ -44,7 +44,6 @@ services:
       - /net/data/systems/transmission/config:/config
       - /net/data/systems/downloads:/downloads
       - /net/data/systems/downloads/watch:/watch
-      - /usr/local/bin:/config/bin
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
