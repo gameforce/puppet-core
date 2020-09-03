@@ -3,14 +3,18 @@
     - role::default
     #- role::docker
 
-  yum::managed_repos:
-#    - 'perforce_helix'
-  yum::repos:
-#    perforce_helix:
-#      ensure: 'present'
-#      enabled: true
-#      descr: 'Perfoce Helix Core'
-#      baseurl: 'http://package.perforce.com/yum/rhel/7/x86_64/'
-#      gpgcheck: true
-#      gpgkey: 'https://package.perforce.com/perforce.pubkey'
-#      target: '/etc/yum.repos.d/perforce.repo'
+  lookup_options:
+    autofs::mounts:
+      merge: hash
+  autofs::mounts:
+    home:
+      mount: '/net/systems'
+      mapfile: '/etc/auto.systems'
+      options: '--timeout=120'
+  autofs::mapfiles:
+    home:
+      path: '/etc/auto.systems'
+      mappings:
+        - key: '*'
+          options: 'rw,soft,intr'
+          fs: '192.168.11.10:/net/data/systems'
