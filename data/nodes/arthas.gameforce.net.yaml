@@ -6,15 +6,37 @@
   lookup_options:
     autofs::mounts:
       merge: hash
+  
   autofs::mounts:
-    home:
-      mount: '/net/data'
+    data:
+      mount: '/data'
       mapfile: '/etc/auto.data'
       options: '--timeout=120'
+  
+  autofs::mounts:
+    media:
+      mount: '/media'
+      mapfile: '/etc/auto.media'
+      options: '--timeout=120'
+  
   autofs::mapfiles:
-    home:
+    data:
       path: '/etc/auto.data'
       mappings:
         - key: '*'
           options: 'rw,soft,intr'
           fs: '192.168.11.10:/share/data'
+  autofs::mapfiles:
+    media:
+      path: '/etc/auto.media'
+      mappings:
+        - key: '*'
+          options: 'rw,soft,intr'
+          fs: '192.168.11.10:/share/media'
+  autofs::mapfiles:
+    home:
+      path: '/etc/auto.home'
+      mappings:
+        - key: '*'
+          options: 'rw,soft,intr'
+          fs: '192.168.11.10:/share/home'
