@@ -8,13 +8,13 @@
       merge: hash
   autofs::mounts:
     home:
-      mount: '/net/systems'
-      mapfile: '/etc/auto.systems'
+      mount: '/net/data'
+      mapfile: '/etc/auto.data'
       options: '--timeout=120'
   autofs::mapfiles:
     home:
-      path: '/etc/auto.systems'
+      path: '/etc/auto.data'
       mappings:
-        - key: ''
+        - key: '*'
           options: 'rw,soft,intr'
-          fs: '192.168.11.10:/share/data/systems'
+          fs: '192.168.11.10:/share/data'
