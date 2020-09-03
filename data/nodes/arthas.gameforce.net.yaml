@@ -1,6 +1,7 @@
 ---
   classes:
-    - role::docker
+    - role::default
+    #- role::docker
 
   yum::managed_repos:
 #    - 'perforce_helix'
