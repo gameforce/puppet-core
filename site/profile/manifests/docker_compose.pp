@@ -1,16 +1,16 @@
 class profile::docker_compose {
 
   # ensure our compose file exists
-  file { '/tmp/docker-compose.yaml':
+  file { '/tmp/gameforce.yaml':
     ensure => file,
-    source => 'puppet:///modules/profile/docker_compose/docker-compose.yaml',
+    source => 'puppet:///modules/profile/docker_compose/gameforce.yaml',
   }
 
   # start docker-compose
   include 'docker'
-  docker_compose { 'docker-compose':
+  docker_compose { 'gameforce':
     ensure        => present,
-    compose_files => ['/tmp/docker-compose.yaml'],
+    compose_files => ['/tmp/gameforce.yaml'],
     up_args       => '--remove-orphans',
   }
 }
