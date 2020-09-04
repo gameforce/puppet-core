@@ -22,7 +22,7 @@ class profile::common {
     shell    => '/bin/zsh',
     password => '$1$yXAObsJr$RjHlgtKcFrOur4e2tq3HX/',
     sshkeys  => [
-      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClbJjehAJkP5n3CLY2OEKWgsXdSqd2p7WYtco0hvbxix0dX91rTHspffenahOaulvAIsbfZz5emyPffrWwpXVQKscDZbHapTwbMcc+igZ1VkXgaDvnz/PtcQEhcR9JMh/Bzk1/ySLUfA9Iz8xPXOcmgw50UjLIrcqIL5zgUagQ7ScvD/nN0DxPk93hjhzLWbxUzxsHgzY332y8PlmfliDsYbgof2vBccdlM20T5Mk7ivofICUCqSWJGkpFfJh/FniD+bEFB2uAyLjzml8p5pLDZxMYA86jSnzja0y7Dex1UXIeotX59xzfF/x+HmkGSW3IJIgw7K5PruhuO/YWQNUx== darf@gameforce.net',
+      'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDD9lGQHLLhjD6lR+hRn7cMxcsie3JInL7uU40Q3nkJQwT5SpUSOIJQwg4M//ROiQRo0LfSXPRb89sN0ubtOsJpf5PLyYgbDyO/7o0I0FmkJV2hx/NfSs7UC/ZMPx24l4jXEMOM+tKulTQP3CRf/890IliTAKORISPJXZIgDHu3e/6A2p3TSAQhYnova/30OP0VfPD+g1kMP57ec9R3nnWBzE/S8yPpplGuJxgasrnx9rTqamFVsulVxSl4glKUEIoFA1YhWQbzC7cpikWM8Ad79vAqYj246UbCNnOuRDW9XxtVYRDqKJk8hCPxklLZIE9XtnngKc1FRScMhznfHYeF darf@gameforce.net',
       ],
     locked   => false,
   }
