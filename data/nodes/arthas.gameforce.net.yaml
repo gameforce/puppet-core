@@ -1,7 +1,8 @@
 ---
   classes:
     - role::default
-    - role::docker
+    - role::docker::mediastack
+    - role::docker::devstack
 
   lookup_options:
     autofs::mounts:
