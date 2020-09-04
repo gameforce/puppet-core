@@ -54,16 +54,6 @@ class profile::common {
     require => Class['ssh::knownhosts'],
   }
 
-  # common packages needed everywhere
-    package {[
-            'vim',
-            'sudo',
-            'screen',
-            'zsh'
-        ]:
-        ensure => present,
-    }
-
     # site specific environment
     $sitepath = '/net/systems/bin:/opt/puppetlabs/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
     file { '/etc/profile.d/site.sh':
