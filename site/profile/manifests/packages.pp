@@ -3,8 +3,6 @@
 class profile::packages {
 
   if $facts['osfamily'] == 'Debian' {
-    package { 'bind9utils': ensure => 'installed', }
-    package { 'nfs-common': ensure => 'installed', }
     package { 'nmap': ensure => 'installed', }
     package { 'zsh':  ensure => 'installed', }
     package { 'tmux': ensure => 'installed', }
@@ -15,8 +13,6 @@ class profile::packages {
 
   elsif $facts['osfamily'] == 'RedHat'  {
     package { 'epel-release': ensure => 'installed', }
-    package { 'bind-utils': ensure   => 'installed', }
-    package { 'nfs-utils': ensure    => 'installed', }
     package { 'nmap': ensure         => 'installed', }
     package { 'zsh': ensure          => 'installed', }
     package { 'tmux': ensure       => 'installed', }
