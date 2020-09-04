@@ -1,3 +1,4 @@
+# helix server
 class profile::helix::server {
 
   # install helix server (p4d)
