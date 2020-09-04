@@ -3,7 +3,7 @@ class profile::docker_compose {
   # ensure our compose file exists
   file { '/tmp/docker-compose.yaml':
     ensure => file,
-    source => 'puppet:///modules/profile/docker/docker-compose.yaml',
+    source => 'puppet:///modules/profile/docker_compose/docker-compose.yaml',
   }
 
   # start docker-compose
