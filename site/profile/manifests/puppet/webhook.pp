@@ -9,7 +9,7 @@ class profile::puppet::webhook {
   }
 
   class { '::r10k::webhook':
-    user    => 'puppet',
-    group   => 'puppet',
+    user  => 'puppet',
+    group => 'puppet',
   }
 }
