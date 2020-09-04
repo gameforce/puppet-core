@@ -99,4 +99,17 @@ services:
       #- /dev/video11:/dev/video11 #optional
       #- /dev/video12:/dev/video12 #optional
     restart: unless-stopped
-  
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Montreal
+    network_mode: host
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - /net/data/systems/jenkins/:/var/jenkins_home
