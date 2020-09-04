@@ -9,6 +9,7 @@ class profile::packages {
     package { 'vim':  ensure => 'installed', }
     package { 'wget': ensure => 'installed', }
     package { 'htop': ensure => 'installed', }
+    package { 'keychain': ensure => 'installed', }
   }
 
   elsif $facts['osfamily'] == 'RedHat'  {
@@ -19,6 +20,7 @@ class profile::packages {
     package { 'vim-enhanced': ensure => 'installed', }
     package { 'wget': ensure         => 'installed', }
     package { 'htop': ensure         => 'installed', }
+    package { 'keychain': ensure => 'installed', }
   }
   else {}
 }
