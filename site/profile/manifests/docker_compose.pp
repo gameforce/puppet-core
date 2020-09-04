@@ -9,8 +9,8 @@ class profile::docker_compose {
   # start docker-compose
   include 'docker'
   docker_compose { 'gameforce':
-    ensure        => present,
     compose_files => ['/tmp/gameforce.yaml'],
-    up_args       => '--remove-orphans',
+    ensure        => present,
+    #up_args       => '--remove-orphans',
   }
 }
