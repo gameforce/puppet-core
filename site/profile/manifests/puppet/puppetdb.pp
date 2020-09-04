@@ -2,8 +2,8 @@ class  profile::puppet::puppetdb {
 
   # Configure puppetdb and its underlying database
   class { 'puppetdb':
-    listen_address =>  '0.0.0.0',
-    disable_ssl    =>  'true',
+    #listen_address =>  '0.0.0.0',
+    disable_ssl    =>  true,
     #ssl_listen_port => '8081',
   }
 
