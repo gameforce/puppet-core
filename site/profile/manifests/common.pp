@@ -1,6 +1,10 @@
 class profile::common {
 
-  # Config common to all nodes
+  # Common classes to all nodes
+  include profile::sudo
+  include profile::packages
+  include profile::cron
+
 
   # disable firewall
   class { 'firewall':

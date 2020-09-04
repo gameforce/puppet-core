@@ -6,9 +6,9 @@ class profile::packages {
     package { 'bind9utils': ensure => 'installed', }
     package { 'nfs-common': ensure => 'installed', }
     package { 'nmap': ensure => 'installed', }
-    package { 'zsh': ensure => 'installed', }
-    package { 'screen': ensure => 'installed', }
-    package { 'vim-nox': ensure => 'installed', }
+    package { 'zsh':  ensure => 'installed', }
+    package { 'tmux': ensure => 'installed', }
+    package { 'vim':  ensure => 'installed', }
     package { 'wget': ensure => 'installed', }
     package { 'htop': ensure => 'installed', }
   }
@@ -19,7 +19,7 @@ class profile::packages {
     package { 'nfs-utils': ensure    => 'installed', }
     package { 'nmap': ensure         => 'installed', }
     package { 'zsh': ensure          => 'installed', }
-    package { 'screen': ensure       => 'installed', }
+    package { 'tmux': ensure       => 'installed', }
     package { 'vim-enhanced': ensure => 'installed', }
     package { 'wget': ensure         => 'installed', }
     package { 'htop': ensure         => 'installed', }
