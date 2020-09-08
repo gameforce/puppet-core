@@ -1,3 +1,4 @@
+# common 
 class profile::common {
 
   # disable firewall

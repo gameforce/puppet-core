@@ -1,3 +1,4 @@
+# puppetserver role
 class role::puppet {
   #All roles should include the common profile
   include profile::common

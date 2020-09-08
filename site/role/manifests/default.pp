@@ -1,3 +1,4 @@
+# Linux default role
 class role::default {
   #All roles should include the common profile
   include profile::common
