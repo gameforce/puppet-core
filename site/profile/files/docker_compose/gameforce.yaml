@@ -1,5 +1,5 @@
 # docker-compose file is managed by puppet
-# 
+# fix permissions for webhook test
 version: '2'
 services:
   plex:
