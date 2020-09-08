@@ -9,6 +9,7 @@ sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
 ### Install puppet server, don't start it yet
 ```
 install puppetserver
+If installing on centos 8 run update-crypto-policies --set LEGACY
 ```
 
 ### Clone this repo
