@@ -1,7 +1,6 @@
 # Linux default role
 class role::default {
-  #All roles should include the common profile
-  include profile::common
+  include profile::firewall
   include profile::autofs
   include profile::ssh
   include profile::users

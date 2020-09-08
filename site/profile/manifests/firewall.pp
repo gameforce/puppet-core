@@ -1,5 +1,5 @@
-# common 
-class profile::common {
+# firewall 
+class profile::firewall {
 
   # disable firewall
   class { 'firewall':
