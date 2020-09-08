@@ -1,3 +1,4 @@
+# nfs server profile
 class profile::nfs::server {
   class { '::nfs':
     server_enabled => true,
