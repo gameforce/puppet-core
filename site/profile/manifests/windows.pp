@@ -4,7 +4,7 @@ class profile::windows {
   exec { 'Set PowerShell execution policy unrestricted':
     command  => 'Set-ExecutionPolicy Unrestricted -Force',
     unless   => 'if ((Get-ExecutionPolicy -Scope LocalMachine).ToString() -eq "Unrestricted") { exit 0 } else { exit 1 }',
-    provider => powershell
+    provider => powershell,
   }
 
   # install telnet client TODO: install puppetlabs-dism for this https://github.com/puppetlabs/puppetlabs-dism
