@@ -78,7 +78,7 @@ services:
     restart: unless-stopped
   jenkins:
     container_name: jenkins
-    image: jenkins/jenkins:lts
+    image: jenkins/jenkins
     restart: unless-stopped
     environment:
       - PUID=1000
