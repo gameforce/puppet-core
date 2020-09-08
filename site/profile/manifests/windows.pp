@@ -9,7 +9,7 @@ class profile::windows {
   # install telnet client TODO: install puppetlabs-dism for this https://github.com/puppetlabs/puppetlabs-dism
   exec { 'TelnetClient':
     command  => 'Enable-WindowsOptionalFeature -Online -FeatureName "TelnetClient"',
-    unless   => "if (Get-WindowsOptionalFeature -Online -FeatureName TelnetClient) { exit 1 } else { exit 0 }",
+    unless   => 'if (Get-WindowsOptionalFeature -Online -FeatureName TelnetClient) { exit 1 } else { exit 0 }',
     provider => powershell,
 }
   # for windows server use windowsfeature
