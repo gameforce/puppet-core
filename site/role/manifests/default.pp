@@ -7,4 +7,5 @@ class role::default {
   include profile::common
   include profile::autofs
   include profile::ssh
+  include profile::users
 }
