@@ -11,4 +11,8 @@ file { '/etc/autofs.conf':
   source => 'puppet:///modules/profile/autofs/autofs.conf',
   notify => Service['autofs'],
   }
+# remove auto.net and use our own
+file { '/etc/auto.net':
+  ensure => 'absent',
+  }
 }
