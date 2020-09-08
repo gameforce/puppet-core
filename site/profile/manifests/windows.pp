@@ -1,7 +1,5 @@
 class profile::windows {
 
-  include ::openvmtools
-
   # Setting Powershell Execution Policy to unrestricted
   exec { 'Set PowerShell execution policy unrestricted':
     command  => 'Set-ExecutionPolicy Unrestricted -Force',
