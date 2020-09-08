@@ -13,7 +13,7 @@ services:
       - /opt/plex:/config
       - /opt/plex/temp:/transcode
       - /tmp:/tmp
-      - /net/media/:/media
+      - /net/media/:/data
   radarr:
     image: linuxserver/radarr
     container_name: radarr
