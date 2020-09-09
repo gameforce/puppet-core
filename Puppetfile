@@ -43,7 +43,7 @@ mod 'puppet-dhcp', '4.0.1'
 mod 'puppet-archive', '4.6.0'
 mod 'puppet-yum', '4.3.0'
 mod 'puppet-nginx', '1.1.0'
-#mod 'puppet-wget', '2.0.1'
+mod 'puppet-wget', '2.0.1'
 
 # Third party modules
 mod 'saz/locales', '2.5.1'
@@ -53,6 +53,7 @@ mod 'alanpetersen/helix', '0.2.2'
 mod 'thias/bind', '0.5.4'
 mod 'derdanne/nfs', '2.1.5'
 mod 'ajjahn/samba', '0.5.0'
+mod 'walkamongus-sssd', '2.0.1'
 
 # Github Modules
 # mod 'puppet-teamcity', :git => 'https://github.com/flypenguin/puppet-teamcity.git'
