@@ -1,4 +1,5 @@
 puppet {
+  PUPPET_VERSION = '6'
   RUBY_VERSION = 'ruby-2.3.8'
   RUBY_GEMSET = 'puppet'
   TEST_RESULTS_DIR = 'testresults'
