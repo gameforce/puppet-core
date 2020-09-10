@@ -2,7 +2,7 @@
 /* Using a version specifier, such as branch, tag, etc */
 puppet {
   PUPPET_VERSION = '6'
-  RUBY_VERSION = 'ruby-2.3.8'
+  RUBY_VERSION = "ruby-2.3.8"
   RUBY_GEMSET = 'puppet'
   TEST_RESULTS_DIR = 'testresults'
   RUN_ACCEPTANCE = 'false'
