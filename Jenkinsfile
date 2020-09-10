@@ -1,6 +1,6 @@
 puppet {
   PUPPET_VERSION = '6'
-  RUBY_VERSION = '2.3.8'
+  RUBY_VERSION = ''
   RUBY_GEMSET = 'puppet'
   TEST_RESULTS_DIR = 'testresults'
   RUN_ACCEPTANCE = 'false'
