@@ -14,7 +14,7 @@ puppet {
     failFast: false
   ]
   DEPLOY_WITH_R10K = 'true'
-  R10K_DEPLOY_URL = 'http://vipgameforce.net:8088'
+  R10K_DEPLOY_URL = 'http://vip.gameforce.net:8088'
   R10K_DEPLOY_BASIC_AUTH_CRED_ID = ''
   R10K_DEPLOY_BRANCH = ['production', 'staging']
   SLACK_CHANNEL = '#puppet'
