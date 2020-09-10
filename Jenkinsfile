@@ -1,9 +1,10 @@
 puppet {
   PUPPET_VERSION = '6'
-  RUBY_VERSION = 'ruby-1.8.7'
+  RUBY_VERSION = 'ruby-2.3.8'
   RUBY_GEMSET = 'puppet'
   TEST_RESULTS_DIR = 'testresults'
   RUN_ACCEPTANCE = 'false'
+  ACCEPTANCE_TESTS = 'false'
   DEPLOY_WITH_R10K = 'true'
   R10K_DEPLOY_URL = 'http://vip.gameforce.net:8088'
   R10K_DEPLOY_BASIC_AUTH_CRED_ID = ''
