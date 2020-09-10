@@ -6,7 +6,7 @@ puppet {
   R10K_DEPLOY_URL = 'http://vip.gameforce.net:8088'
   R10K_DEPLOY_BASIC_AUTH_CRED_ID = ''
   R10K_DEPLOY_BRANCH = ['production', 'staging']
-  DEBUG = 'false'
+  DEBUG = 'true'
   SLACK_CHANNEL = '#puppet'
   DOCKER_REGISTRY_CREDS_ID = 'creds_id_to_registry' 
   DOCKER_REGISTRY_URL = 'https://hub.docker.io'
