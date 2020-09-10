@@ -2,8 +2,8 @@
 /* Using a version specifier, such as branch, tag, etc */
 puppet {
   PUPPET_VERSION = '6'
-  env.RUBY_VERSION = 'ruby-2.3.0'
-  env.RUBY_GEMSET = 'puppet'
+  RUBY_VERSION = 'ruby-2.3.0'
+  RUBY_GEMSET = 'puppet'
   TEST_RESULTS_DIR = 'testresults'
   RUN_ACCEPTANCE = 'false'
   ACCEPTANCE_TESTS = 'false'
