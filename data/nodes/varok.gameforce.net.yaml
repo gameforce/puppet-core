@@ -20,4 +20,4 @@
             options: 'rw,soft,intr,nolock'
             fs: '192.168.11.10:/share/home'
   classes:
-    - role::default
+    - role::linux
