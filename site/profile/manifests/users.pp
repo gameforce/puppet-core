@@ -1,5 +1,13 @@
   class profile::users {
   #common users
+
+  # Add sudo group
+    group { 'resource title':
+      name                 => 'sudo',
+      ensure               => 'present',
+      gid                  => '1010'
+    }
+
   accounts::user { 'darf':
     #uid      => '1001',
     #gid      => '100',
