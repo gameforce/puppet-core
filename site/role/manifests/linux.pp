@@ -1,5 +1,5 @@
 # Linux default role
-class role::default {
+class role::linux {
   include profile::firewall
   include profile::autofs
   include profile::ssh
