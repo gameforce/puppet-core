@@ -1,19 +1,6 @@
 # docker-compose file is managed by puppet
 version: '2'
 services:
-  plex:
-    container_name: plex
-    image: plexinc/pms-docker:public
-    restart: unless-stopped
-    environment:
-      - TZ=America/Montreal
-      - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
-    network_mode: host
-    volumes:
-      - /opt/plex:/config
-      - /opt/plex/temp:/transcode
-      - /tmp:/tmp
-      - /net/media/:/data
   radarr:
     image: linuxserver/radarr
     container_name: radarr
@@ -76,17 +63,3 @@ services:
     ports:
       - 9117:9117
     restart: unless-stopped
-  jenkins:
-    container_name: jenkins
-    image: jenkins/jenkins
-    restart: unless-stopped
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Montreal
-    network_mode: host
-    ports:
-      - 8080:8080
-      - 50000:50000
-    volumes:
-      - /net/data/systems/jenkins/:/var/jenkins_home
