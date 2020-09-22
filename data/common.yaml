@@ -1,4 +1,7 @@
 ---
+  classes:
+    - role::default
+  
   ntp::restrict:
     - '-4 default kod nomodify notrap nopeer noquery'
     - '-6 default kod nomodify notrap nopeer noquery'
