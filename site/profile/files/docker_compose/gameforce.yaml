@@ -5,8 +5,8 @@ services:
     image: linuxserver/radarr
     container_name: radarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=1011
+      - PGID=1011
       - TZ=America/Montreal
       - UMASK_SET=022 #optional
     volumes:
@@ -25,8 +25,8 @@ services:
       - "51413:51413"
     environment:
       - TZ=America/Montreal
-      - PGID=1000
-      - PUID=1000
+      - PGID=1011
+      - PUID=1011
     network_mode: host
     volumes:
       - /net/data/systems/transmission/config:/config
@@ -36,8 +36,8 @@ services:
     image: linuxserver/sonarr
     container_name: sonarr
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=1011
+      - PGID=1011
       - TZ=America/Montreal
       - UMASK_SET=022 #optional
     network_mode: host
@@ -52,8 +52,8 @@ services:
     image: linuxserver/jackett
     container_name: jackett
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=1011
+      - PGID=1011
       - TZ=America/Montreal
       - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
