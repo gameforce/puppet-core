@@ -1,6 +1,7 @@
 ---
   classes:
     - role::linux
+    - profile::autofs
 
   lookup_options:
       autofs::mounts:
