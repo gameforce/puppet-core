@@ -23,8 +23,8 @@ autofs::mapfile { 'nas':
   path     => '/etc/auto.nas',
   mappings => [
     { 'key' => 'data', 'options' => 'rw,soft,intr', 'fs' => '192.168.11.10:/share/data' }
-    #{ 'key' => 'media', 'options' => 'rw,soft,intr', 'fs' => '192.168.11.10:/share/media' },
-    #{ 'key' => 'home', 'options' => 'rw,soft,intr', 'fs' => '192.168.11.10:/share/home' },
+    { 'key' => 'media', 'options' => 'rw,soft,intr', 'fs' => '192.168.11.10:/share/media' }
+    { 'key' => 'home', 'options' => 'rw,soft,intr', 'fs' => '192.168.11.10:/share/home' }
   ]
   }
 }
