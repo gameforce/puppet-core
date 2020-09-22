@@ -1,12 +1,12 @@
 ---
   classes:
-    include profile::firewall
-    include profile::autofs
-    include profile::ssh
-    include profile::users
-    include profile::sudo
-    include profile::packages
-    include profile::cron
+    - profile::firewall
+    - profile::autofs
+    - profile::ssh
+    - profile::users
+    - profile::sudo
+    - profile::packages
+    - profile::cron
   
   ntp::restrict:
     - '-4 default kod nomodify notrap nopeer noquery'
