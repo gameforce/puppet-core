@@ -11,7 +11,7 @@ class profile::packages {
     package { 'htop': ensure => 'installed', }
     package { 'keychain': ensure => 'installed', }
     package { 'git': ensure => 'installed', }
-    package { 'python': ensure => 'installed', }
+    package { 'python3': ensure => 'installed', }
   }
 
   elsif $facts['osfamily'] == 'RedHat'  {
@@ -24,7 +24,7 @@ class profile::packages {
     package { 'htop': ensure         => 'installed', }
     package { 'keychain': ensure => 'installed', }
     package { 'git': ensure => 'installed', }
-    package { 'python': ensure => 'installed', }
+    package { 'python3': ensure => 'installed', }
   }
   else {}
 }
