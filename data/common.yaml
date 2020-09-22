@@ -1,13 +1,4 @@
 ---
-  classes:
-    - profile::firewall
-    - profile::autofs
-    - profile::ssh
-    - profile::users
-    - profile::sudo
-    - profile::packages
-    - profile::cron
-  
   ntp::restrict:
     - '-4 default kod nomodify notrap nopeer noquery'
     - '-6 default kod nomodify notrap nopeer noquery'
