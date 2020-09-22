@@ -1,4 +1,4 @@
 ---
   classes:
-    - role::default
+    - role::linux
     - role::puppet
