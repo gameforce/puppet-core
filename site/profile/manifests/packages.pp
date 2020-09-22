@@ -25,6 +25,7 @@ class profile::packages {
     package { 'keychain': ensure => 'installed', }
     package { 'git': ensure => 'installed', }
     package { 'python3': ensure => 'installed', }
+    package { 'nfs-utils': ensure => 'installed', }
   }
   else {}
 }

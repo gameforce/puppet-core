@@ -1,6 +1,6 @@
 class profile::docker {
   class { 'docker':
-    use_upstream_package_source => false,
+    use_upstream_package_source => true,
     #version                     => '5:19.03.12~3-0~ubuntu-focal',
 }
 
