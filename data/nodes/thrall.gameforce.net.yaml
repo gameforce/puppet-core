@@ -1,6 +1,6 @@
 ---
   classes:
-    - role::default
+    - role::linux
     - role::docker
 
   lookup_options:
@@ -9,11 +9,11 @@
         autofs::mounts:
       data:
         mount: '/net'
-        mapfile: '/etc/auto.net'
+        mapfile: '/etc/auto.data'
         options: '--timeout=120'
       autofs::mapfiles:
       net:
-        path: '/etc/auto.net'
+        path: '/etc/auto.data'
         mappings:
           - key: 'data'
             options: 'rw,soft,intr,nolock'
