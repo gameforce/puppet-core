@@ -9,8 +9,8 @@
     }
 
   accounts::user { 'darf':
-    #uid      => '1001',
-    #gid      => '100',
+    uid      => '1011',
+    gid      => '1011',
     groups   => [
     'users',
     'sudo',
