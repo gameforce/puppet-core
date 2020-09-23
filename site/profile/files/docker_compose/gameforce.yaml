@@ -70,12 +70,12 @@ services:
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'https://gitlab.gameforce.net'
-        gitlab_rails['gitlab_shell_ssh_port'] = 2224
+      # gitlab_rails['gitlab_shell_ssh_port'] = 2224
       # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '80:80'
       - '443:443'
-      - '22:22'
+      #- '22:22'
     volumes:
       - '/net/data/systems/gitlab/config:/etc/gitlab'
       - '/net/data/systems/gitlab/logs:/var/log/gitlab'
