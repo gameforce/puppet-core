@@ -63,3 +63,19 @@ services:
     ports:
       - 9117:9117
     restart: unless-stopped
+  gitlab:
+    image: 'gitlab/gitlab-ee:latest'
+    restart: always
+    hostname: 'gitlab.gameforce.net'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://gitlab.gameforce.net'
+      # Add any other gitlab.rb configuration here, each on its own line
+    ports:
+      - '80:80'
+      - '443:443'
+      - '22:22'
+    volumes:
+      - '/net/data/systems/gitlab/config:/etc/gitlab'
+      - '/net/data/systems/gitlab/logs:/var/log/gitlab'
+      - '/net/data/systems/gitlab/data:/var/opt/gitlab'
