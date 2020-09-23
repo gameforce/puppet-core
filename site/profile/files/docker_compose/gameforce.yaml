@@ -64,7 +64,7 @@ services:
       - 9117:9117
     restart: unless-stopped
   gitlab:
-    image: 'gitlab/gitlab-ee:latest'
+    image: 'gitlab/gitlab-ce:latest'
     restart: always
     hostname: 'gitlab.gameforce.net'
     environment:
