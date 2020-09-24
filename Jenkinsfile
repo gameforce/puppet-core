@@ -1,4 +1,4 @@
-/* @Library('puppet-jenkins-shared-libraries@#4_ruby_version branch') _
+@Library('puppet-jenkins-shared-libraries@#4_ruby_version branch') _
 /* Using a version specifier, such as branch, tag, etc */
 puppet {
   PUPPET_VERSION = '6'
