@@ -3,6 +3,6 @@ class profile::kubernetes::master {
 
     # install master node
     class {'kubernetes':
-    master => true,
+    controller => true,
   }
 }
