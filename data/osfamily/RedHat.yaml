@@ -1,4 +1,3 @@
-
 kubernetes::kubernetes_version: 1.19.2
 kubernetes::kubernetes_package_version: 
 kubernetes::container_runtime: docker
