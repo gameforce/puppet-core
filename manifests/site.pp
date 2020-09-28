@@ -13,6 +13,14 @@ Package {
   allow_virtual => true,
 }
 
-node default {
-  ## use of site.pp is deprecated
+node 'kube-master' {
+  include role::kubernetes::master
+}
+
+node /^kube-replica-master/ {
+  include role::kubernetes::controller
+}
+
+node /^kube-node/  {
+  include role::kubernetes::worker
 }

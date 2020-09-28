@@ -41,3 +41,13 @@ kubeadm join 192.168.11.47:6443 --token 07277i.5off8q9fik9gxpf4 --discovery-toke
 kubectl label node hostname node-role.kubernetes.io/node=
 # reboot
 # kubectl get nodes
+
+# env file for puppet module
+OS=centos
+VERSION=8.2.2004
+CONTAINER_RUNTIME=docker
+CNI_PROVIDER=weave
+ETCD_INITIAL_CLUSTER=kube-master:192.168.11.47,kube-node-1:192.168.11.48,kube-node-2:192.168.11.49
+ETCD_IP="%{networking.ip}"
+KUBE_API_ADVERTISE_ADDRESS="%{networking.ip}"
+INSTALL_DASHBOARD=true
