@@ -1,6 +1,13 @@
 ---
   classes:
     - role::kubernetes::worker
+  
+  # override docker-ce package
+  kubernetes::docker_yum_baseurl: "https://download.docker.com/linux/centos/8/x86_64/stable/"
+  kubernetes::docker_yum_gpgkey: "https://download.docker.com/linux/centos/gpg"
+  kubernetes::docker_package_name: "docker-ce"
+  kubernetes::docker_version: "19.03.13-3.el8"
+  kubernetes::etcd_version: "3.2.18"
     
   kubernetes::etcdserver_crt: |
     -----BEGIN CERTIFICATE-----
