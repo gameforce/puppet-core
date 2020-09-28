@@ -12,11 +12,3 @@ File { backup => 'main' }
 Package {
   allow_virtual => true,
 }
-
-node 'kube-master' {
-  include role::kubernetes::master
-}
-
-node /^kube-node$/ {
-  include role::kubernetes::worker
-}
