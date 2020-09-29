@@ -8,8 +8,8 @@ kubernetes::etcd_peers:
 - 192.168.11.47
 - 192.168.11.48
 - 192.168.11.49
-kubernetes::etcd_ip: 192.168.11.47
-kubernetes::kube_api_advertise_address: 192.168.11.47
+kubernetes::etcd_ip: "%{networking.ip}"
+kubernetes::kube_api_advertise_address: "%{networking.ip}"
 kubernetes::api_server_count: 3
 kubernetes::install_dashboard: true
 kubernetes::controller_address: 192.168.11.47:6443
