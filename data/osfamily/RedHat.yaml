@@ -3,8 +3,7 @@ kubernetes::kubernetes_package_version:
 kubernetes::container_runtime: docker
 kubernetes::cni_network_provider: https://cloud.weave.works/k8s/net?k8s-version=1.19.2
 kubernetes::cni_pod_cidr: 10.32.0.0/12
-kubernetes::etcd_initial_cluster: kube-master.gameforce.net=https://192.168.11.47:2380
-#,kube-node-1.gameforce.net=https://192.168.11.48:2380,kube-node-2.gameforce.net=https://192.168.11.49:2380
+kubernetes::etcd_initial_cluster: kube-master=https://192.168.11.47:2380,kube-node-1=https://192.168.11.48:2380,kube-node-2=https://192.168.11.49:2380
 kubernetes::etcd_peers:
 - 192.168.11.47
 - 192.168.11.48
