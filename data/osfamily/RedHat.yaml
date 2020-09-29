@@ -5,7 +5,7 @@ kubernetes::cni_network_provider: https://cloud.weave.works/k8s/net?k8s-version=
 kubernetes::cni_pod_cidr: 10.32.0.0/12
 kubernetes::etcd_initial_cluster: kube-master=https://192.168.11.47
 # ,kube-node-1:https://192.168.11.48,kube-node-2:https://192.168.11.49
-#kubernetes::etcd_peers:
+kubernetes::etcd_peers:
 #- 192.168.11.47
 #- 192.168.11.48
 #- 192.168.11.49
