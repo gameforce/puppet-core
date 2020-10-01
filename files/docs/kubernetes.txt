@@ -51,3 +51,10 @@ ETCD_INITIAL_CLUSTER=kube-master:192.168.11.47,kube-node-1:192.168.11.48,kube-no
 ETCD_IP="%{networking.ip}"
 KUBE_API_ADVERTISE_ADDRESS="%{networking.ip}"
 INSTALL_DASHBOARD=true
+
+# reset cluster
+kubeadm reset
+rm -rf /etc/kubernetes/*
+etcdctl del "" --prefix
+iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
+
