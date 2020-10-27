@@ -89,7 +89,7 @@ services:
       - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
     network_mode: host
     volumes:
-      - /opt/plex:/config
-      - /opt/plex/temp:/transcode
+      - /net/data/systems/plex:/config
+      - /net/data/systems/plex/temp:/transcode
       - /tmp:/tmp
       - /net/media/:/media
