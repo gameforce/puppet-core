@@ -92,4 +92,4 @@ services:
       - /opt/plex:/config
       - /opt/plex/temp:/transcode
       - /tmp:/tmp
-      - /net/media/:/medi
+      - /net/media/:/media
