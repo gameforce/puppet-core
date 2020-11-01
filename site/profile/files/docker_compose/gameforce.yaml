@@ -80,3 +80,16 @@ services:
       - '/net/data/systems/gitlab/config:/etc/gitlab'
       - '/net/data/systems/gitlab/logs:/var/log/gitlab'
       - '/net/data/systems/gitlab/data:/var/opt/gitlab'
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker:public
+    restart: unless-stopped
+    environment:
+      - TZ=America/Montreal
+      - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
+    network_mode: host
+    volumes:
+      - /net/data/systems/plex:/config
+      - /net/data/systems/plex/temp:/transcode
+      - /tmp:/tmp
+      - /net/media/:/media
