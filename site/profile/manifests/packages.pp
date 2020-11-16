@@ -3,26 +3,29 @@
 class profile::packages {
 
   if $facts['osfamily'] == 'Debian' {
-    package { 'bind9utils': ensure => 'installed', }
-    package { 'nfs-common': ensure => 'installed', }
     package { 'nmap': ensure => 'installed', }
-    package { 'zsh': ensure => 'installed', }
-    package { 'screen': ensure => 'installed', }
-    package { 'vim-nox': ensure => 'installed', }
+    package { 'zsh':  ensure => 'installed', }
+    package { 'tmux': ensure => 'installed', }
+    package { 'vim':  ensure => 'installed', }
     package { 'wget': ensure => 'installed', }
     package { 'htop': ensure => 'installed', }
+    package { 'keychain': ensure => 'installed', }
+    package { 'git': ensure => 'installed', }
+    package { 'python3': ensure => 'installed', }
   }
 
   elsif $facts['osfamily'] == 'RedHat'  {
     package { 'epel-release': ensure => 'installed', }
-    package { 'bind-utils': ensure   => 'installed', }
-    package { 'nfs-utils': ensure    => 'installed', }
     package { 'nmap': ensure         => 'installed', }
     package { 'zsh': ensure          => 'installed', }
-    package { 'screen': ensure       => 'installed', }
+    package { 'tmux': ensure       => 'installed', }
     package { 'vim-enhanced': ensure => 'installed', }
     package { 'wget': ensure         => 'installed', }
     package { 'htop': ensure         => 'installed', }
+    package { 'keychain': ensure => 'installed', }
+    package { 'git': ensure => 'installed', }
+    package { 'python3': ensure => 'installed', }
+    package { 'nfs-utils': ensure => 'installed', }
   }
   else {}
 }

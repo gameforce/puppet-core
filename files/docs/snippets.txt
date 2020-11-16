@@ -6,44 +6,5 @@ ip link set eth0 up
 # hiera debugging
 puppet lookup --debug --explain --node sidious role::kickstart
 
-# get puppet-agent on CoreOS
-docker run -v /tmp:/tmp -v /etc:/etc -v /var:/var -v /usr:/usr -v /lib64:/lib64 -d --net=host puppet/puppet-agent-centos agent --verbose --no-daemonize --logdest=console --server=puppet --environment=production --summarize
-
-# install coreos to disk
-coreos-install -d /dev/sda -C stable -c cloud-config.yaml
-
-#cloud-config
-hostname: rey
-
-coreos:
-  etcd:
-    addr: $public_ipv4:4001
-    peer-addr: $private_ipv4:7001
-  units:
-    - name: etcd.service
-      command: start
-    - name: fleet.service
-      command: start
-    - name: dhcp.network
-      content: |
-        [Match]
-        Name=eth0
-
-        [Network]
-        DHCP=yes
-users:
-  - name: systems
-    passwd: $1$GameForc$5aLg3YmOPfKApjeLWr./5/
-    groups:
-      - sudo
-      - docker
-    ssh-authorized-keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClbJjehAJkP5n3CLY2OEKWgsXdSqd2p7WYtco0hvbxix0dX91rTHspffenahOaulvAIsbfZz5emyPffrWwpXVQKscDZbHapTwbMcc+igZ1VkXgaDvnz/PtcQEhcR9JMh/Bzk1/ySLUfA9Iz8xPXOcmgw50UjLIrcqIL5zgUagQ7ScvD/nN0DxPk93hjhzLWbxUzxsHgzY332y8PlmfliDsYbgof2vBccdlM20T5Mk7ivofICUCqSWJGkpFfJh/FniD+bEFB2uAyLjzml8p5pLDZxMYA86jSnzja0y7Dex1UXIeotX59xzfF/x+HmkGSW3IJIgw7K5PruhuO/YWQNUx
-
-
-      cp pki/ca.crt /etc/openvpn/ca.crt
-      cp pki/dh.pem /etc/openvpn/dh.pem
-      cp pki/issued/vpn-server.crt /etc/openvpn/server.crt
-      cp pki/private/vpn-server.key /etc/openvpn/server.key
-      cp pki/ta.key /etc/openvpn/ta.key
-      cp pki/crl.pem /etc/openvpn/crl.pem
+# get puppet-agent on CentOS
+dnf install -y http://yum.puppetlabs.com/puppet6-release-el-8.noarch.rpm && dnf install -y puppet

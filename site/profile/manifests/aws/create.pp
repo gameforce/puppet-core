@@ -10,7 +10,7 @@ ec2_instance { 'teamcity.owi.test':
     key_name          => 'OffworldSystems',
     subnet            => 'Private Subnet', # private subnet
     security_groups   => ['systems-all'],
-    block_devices       => [ {"delete_on_termination"=>"true", "device_name"=>"/dev/sdc", "volume_size"=>100, "encrypted"=>"Yes",}, {"delete_on_termination"=>"true", "device_name"=>"/dev/sde", "volume_size"=>1000, "encrypted"=>"Yes",}, ],
+    block_devices     => [ {'delete_on_termination'=>'true', 'device_name'=>'/dev/sdc', 'volume_size'=>100, 'encrypted'=>'Yes',}, {'delete_on_termination'=>'true', 'device_name'=>'/dev/sde', 'volume_size'=>1000, 'encrypted'=>'Yes',}, ],
     tags              => {
       tag_name => 'value',
     },

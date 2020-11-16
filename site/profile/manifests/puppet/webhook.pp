@@ -1,6 +1,6 @@
+# webook config for github
 class profile::puppet::webhook {
 
-  # webook config for github
   class { '::r10k::webhook::config':
     protected        => false,
     use_mcollective  => false,
@@ -9,7 +9,7 @@ class profile::puppet::webhook {
   }
 
   class { '::r10k::webhook':
-    user    => 'puppet',
-    group   => 'puppet',
+    user  => 'puppet',
+    group => 'puppet',
   }
 }

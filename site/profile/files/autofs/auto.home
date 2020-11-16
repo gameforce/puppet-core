@@ -1,2 +1,2 @@
 # home
-* -fstype=nfs,rw,nosuid,soft rey:/data/home/&
+* -fstype=nfs,rw,nosuid,soft 192.168.11.10:/share/home&

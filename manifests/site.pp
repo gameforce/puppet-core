@@ -12,7 +12,3 @@ File { backup => 'main' }
 Package {
   allow_virtual => true,
 }
-
-node default {
-  ## use of site.pp is deprecated
-}

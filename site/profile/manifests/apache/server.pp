@@ -7,7 +7,7 @@ class profile::apache::server {
   # install additional mods
   class { 'apache::mod::ssl': }
   class { 'apache::mod::wsgi':
-    wsgi_socket_prefix => "/var/run/wsgi",
+    wsgi_socket_prefix => '/var/run/wsgi',
   }
 
   # Ensure the vhosts directory exists

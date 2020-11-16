@@ -1,4 +1,6 @@
+# puppet-autofs module
 class profile::autofs {
+  include autofs
 
 # enable browse mode in autofs.conf
 file { '/etc/autofs.conf':
@@ -8,18 +10,21 @@ file { '/etc/autofs.conf':
   mode   => '0644',
   source => 'puppet:///modules/profile/autofs/autofs.conf',
   notify => Service['autofs'],
-}
+  }
 
-class { 'autofs':
-  mount_files => {
-    home => {
-      mountpoint  => '/home',
-      file_source => 'puppet:///modules/profile/autofs/auto.home',
-      },
-    net  => {
-    mountpoint  => '/net',
-    file_source => 'puppet:///modules/profile/autofs/auto.net',
-      }
-    }
+# mounts
+autofs::mount { 'nas':
+  mount       => '/net',
+  mapfile     => '/etc/auto.nas',
+  options     => '--timeout=120'
+  }
+
+autofs::mapfile { 'nas':
+  path     => '/etc/auto.nas',
+  mappings => [
+    { 'key' => 'data', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/data' },
+    { 'key' => 'media', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/media' },
+    { 'key' => 'home', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/home' },
+  ]
   }
 }
