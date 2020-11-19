@@ -32,7 +32,7 @@
   }
 
   # clone our dotfiles repo
-  vcsrepo { '/home/darf/.dotfiles':
+  vcsrepo { '$HOME/.dotfiles':
     ensure   => 'latest',
     provider => 'git',
     owner    => 'darf',
