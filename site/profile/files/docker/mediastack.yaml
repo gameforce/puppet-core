@@ -1,0 +1,46 @@
+version: '2'
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker:public
+    restart: unless-stopped
+    environment:
+      - TZ=America/Montreal
+      - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
+    network_mode: host
+    volumes:
+      - /data/systems/plex/database:/config
+      - /data/systems/plex/temp:/transcode
+      - /tmp:/tmp
+      - /data/:/data
+  sickchill:
+    container_name: sickchill
+    image: linuxserver/sickchill
+    restart: unless-stopped
+    ports:
+      - "8181:8181"
+    environment:
+      - TZ=America/Montreal
+      - PGID=100
+      - PUID=1001
+    network_mode: host
+    volumes:
+      - /net/systems/sickchill/config:/config
+      - /net/systems/downloads:/downloads
+      - /net/series:/series
+  transmission:
+    container_name: transmission
+    image: linuxserver/transmission
+    restart: unless-stopped
+    ports:
+      - "9091:9091"
+      - "51413:51413"
+    environment:
+      - TZ=America/Montreal
+      - PGID=100
+      - PUID=1001
+    network_mode: host
+    volumes:
+      - /net/systems/transmission/config:/config
+      - /net/systems/downloads:/downloads
+      - /net/systems/downloads/watch:/watch

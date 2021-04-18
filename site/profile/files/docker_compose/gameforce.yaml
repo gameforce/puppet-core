@@ -1,8 +1,8 @@
 # docker-compose file is managed by puppet
-version: '2'
+version: '3.5'
 services:
   radarr:
-    image: linuxserver/radarr
+    image: 'hotio/radarr:release'
     container_name: radarr
     environment:
       - PUID=1011
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
   transmission:
     container_name: transmission
-    image: linuxserver/transmission
+    image: 'linuxserver/transmission:latest'
     restart: unless-stopped
     ports:
       - "9091:9091"
@@ -33,7 +33,7 @@ services:
       - /net/data/systems/downloads:/downloads
       - /net/data/systems/downloads/watch:/watch
   sonarr:
-    image: linuxserver/sonarr
+    image: 'linuxserver/sonarr:latest'
     container_name: sonarr
     environment:
       - PUID=1011
@@ -42,14 +42,14 @@ services:
       - UMASK_SET=022 #optional
     network_mode: host
     volumes:
-      - /net/data/systems/sonarr:/config
+      - /opt/sonarr:/config
       - /net/media/series:/series
       - /net/data/systems/downloads:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
   jackett:
-    image: linuxserver/jackett
+    image: 'linuxserver/jackett:latest'
     container_name: jackett
     environment:
       - PUID=1011
@@ -80,3 +80,16 @@ services:
       - '/net/data/systems/gitlab/config:/etc/gitlab'
       - '/net/data/systems/gitlab/logs:/var/log/gitlab'
       - '/net/data/systems/gitlab/data:/var/opt/gitlab'
+  #plex:
+  #  container_name: plex
+  #  image: plexinc/pms-docker:public
+  #  restart: unless-stopped
+  #  environment:
+  #    - TZ=America/Montreal
+  #    - PLEX_CLAIM=claim-5oxrtYxamn3CqWfgzoNa
+  #  network_mode: host
+  #  volumes:
+  #    - /net/data/systems/plex:/config
+  #    - /net/data/systems/plex/temp:/transcode
+  #    - /tmp:/tmp
+  #    - /net/media/:/media
