@@ -13,18 +13,18 @@ file { '/etc/autofs.conf':
   }
 
 # mounts
-autofs::mount { 'nas':
-  mount   => '/net',
-  mapfile => '/etc/auto.nas',
-  options => '--timeout=120'
-  }
-
-autofs::mapfile { 'nas':
-  path     => '/etc/auto.nas',
-  mappings => [
-    { 'key' => 'data', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/data' },
-    { 'key' => 'media', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/media' },
-    { 'key' => 'home', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/home' },
-  ]
-  }
+#autofs::mount { 'nas':
+#  mount   => '/net',
+#  mapfile => '/etc/auto.nas',
+#  options => '--timeout=120'
+#  }
+#
+#autofs::mapfile { 'nas':
+#  path     => '/etc/auto.nas',
+#  mappings => [
+#    { 'key' => 'data', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/data' },
+#    { 'key' => 'media', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/media' },
+#    { 'key' => 'home', 'options' => 'rw,soft,intr,nolock', 'fs' => '192.168.11.10:/share/home' },
+#  ]
+#  }
 }
