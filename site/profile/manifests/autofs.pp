@@ -14,9 +14,9 @@ file { '/etc/autofs.conf':
 
 # mounts
 autofs::mount { 'nas':
-  mount       => '/net',
-  mapfile     => '/etc/auto.nas',
-  options     => '--timeout=120'
+  mount   => '/net',
+  mapfile => '/etc/auto.nas',
+  options => '--timeout=120'
   }
 
 autofs::mapfile { 'nas':
