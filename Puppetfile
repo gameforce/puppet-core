@@ -16,7 +16,7 @@
 #  :git    => 'https://github.com/puppetlabs/puppetlabs-apache',
 #  :branch => 'docs_experiment'
 # Puppetlabs modules
-mod 'puppetlabs-inifile', '4.2.0'
+mod 'puppetlabs-inifile','5.0.1'
 mod 'puppetlabs-stdlib','6.4.0'
 mod 'puppetlabs-concat','6.2.0'
 mod 'puppetlabs-ntp','8.3.0'
