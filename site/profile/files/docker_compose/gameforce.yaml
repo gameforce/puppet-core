@@ -80,6 +80,16 @@ services:
       - '/net/data/systems/gitlab/config:/etc/gitlab'
       - '/net/data/systems/gitlab/logs:/var/log/gitlab'
       - '/net/data/systems/gitlab/data:/var/opt/gitlab'
+  ddclient:
+    image: ghcr.io/linuxserver/ddclient
+    container_name: ddclient
+    environment:
+      - PUID=1011
+      - PGID=1011
+      - TZ=Europe/London
+    volumes:
+      - /net/data/systems/ddclient/:/config
+    restart: unless-stopped
   #plex:
   #  container_name: plex
   #  image: plexinc/pms-docker:public
