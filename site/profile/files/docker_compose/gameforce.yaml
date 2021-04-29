@@ -86,7 +86,7 @@ services:
     environment:
       - PUID=1011
       - PGID=1011
-      - TZ=Europe/London
+      - TZ=Europe/Montreal
     volumes:
       - /net/data/systems/ddclient/:/config
     restart: unless-stopped
