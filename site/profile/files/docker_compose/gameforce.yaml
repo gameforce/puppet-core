@@ -2,7 +2,7 @@
 version: '3.5'
 services:
   radarr:
-    image: linuxserver/radarr
+    image: 'hotio/radarr:release'
     container_name: radarr
     environment:
       - PUID=1011
@@ -11,14 +11,14 @@ services:
       - UMASK_SET=022 #optional
     volumes:
       - /net/data/systems/radarr:/config
-      - /net/media/movies:/movies
+      - /net/data/media/movies:/movies
       - /net/data/systems/downloads:/downloads
     ports:
       - 7878:7878
     restart: unless-stopped
   transmission:
     container_name: transmission
-    image: linuxserver/transmission
+    image: 'linuxserver/transmission:latest'
     restart: unless-stopped
     ports:
       - "9091:9091"
@@ -33,7 +33,7 @@ services:
       - /net/data/systems/downloads:/downloads
       - /net/data/systems/downloads/watch:/watch
   sonarr:
-    image: linuxserver/sonarr
+    image: 'linuxserver/sonarr:latest'
     container_name: sonarr
     environment:
       - PUID=1011
@@ -42,14 +42,14 @@ services:
       - UMASK_SET=022 #optional
     network_mode: host
     volumes:
-      - /net/data/systems/sonarr:/config
-      - /net/media/series:/series
+      - /opt/sonarr:/config
+      - /net/data/media/series:/series
       - /net/data/systems/downloads:/downloads
     ports:
       - 8989:8989
     restart: unless-stopped
   jackett:
-    image: linuxserver/jackett
+    image: 'linuxserver/jackett:latest'
     container_name: jackett
     environment:
       - PUID=1011
@@ -80,6 +80,16 @@ services:
       - '/net/data/systems/gitlab/config:/etc/gitlab'
       - '/net/data/systems/gitlab/logs:/var/log/gitlab'
       - '/net/data/systems/gitlab/data:/var/opt/gitlab'
+  ddclient:
+    image: ghcr.io/linuxserver/ddclient
+    container_name: ddclient
+    environment:
+      - PUID=1011
+      - PGID=1011
+      - TZ=Europe/Montreal
+    volumes:
+      - /net/data/systems/ddclient/:/config
+    restart: unless-stopped
   #plex:
   #  container_name: plex
   #  image: plexinc/pms-docker:public
@@ -92,4 +102,4 @@ services:
   #    - /net/data/systems/plex:/config
   #    - /net/data/systems/plex/temp:/transcode
   #    - /tmp:/tmp
-  #    - /net/media/:/media
+  #    - /net/data/media/:/media
