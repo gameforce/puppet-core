@@ -2,7 +2,7 @@
 version: '3.5'
 services:
   radarr:
-    image: linuxserver/radarr
+    image: hotio/radarr
     container_name: radarr
     environment:
       - PUID=1011
