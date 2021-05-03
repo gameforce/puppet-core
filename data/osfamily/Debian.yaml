@@ -4,7 +4,7 @@
 
   autofs::mounts:
     nas:
-      mount: '/net'
+      mount: '/-'
       mapfile: '/etc/auto.nas'
       options: '--timeout=120'
     
@@ -12,6 +12,6 @@
     nas:
       path: '/etc/auto.nas'
       mappings:
-        - key: '*'
+        - key: '/net'
           options: 'rw,soft,intr,nolock'
           fs: '192.168.11.10:/share/data'
