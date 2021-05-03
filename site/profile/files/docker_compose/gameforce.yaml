@@ -48,21 +48,21 @@ services:
     ports:
       - 8989:8989
     restart: unless-stopped
-  jackett:
-    image: linuxserver/jackett
-    container_name: jackett
-    environment:
-      - PUID=1011
-      - PGID=1011
-      - TZ=America/Montreal
-      - AUTO_UPDATE=true #optional
-      - RUN_OPTS= #optional
-    volumes:
-      - /net/systems/jackett:/config
-      - /net/systems/downloads:/downloads
-    ports:
-      - 9117:9117
-    restart: unless-stopped
+  #jackett:
+  #  image: linuxserver/jackett
+  #  container_name: jackett
+  #  environment:
+  #    - PUID=1011
+  #    - PGID=1011
+  #    - TZ=America/Montreal
+  #    - AUTO_UPDATE=true #optional
+  #    - RUN_OPTS= #optional
+  #  volumes:
+  #    - /net/systems/jackett:/config
+  #    - /net/systems/downloads:/downloads
+  #  ports:
+  #    - 9117:9117
+  #  restart: unless-stopped
   #plex:
   #  container_name: plex
   #  image: plexinc/pms-docker:public
