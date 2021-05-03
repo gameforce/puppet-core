@@ -9,7 +9,7 @@ class profile::samba::server {
 
   samba::server::share {'data':
     comment        => 'Data',
-    path           => '/share',
+    path           => '/share/data',
     browsable      => true,
     writable       => true,
     create_mask    => 774,
