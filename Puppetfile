@@ -34,7 +34,7 @@ mod 'puppetlabs-puppetdb','7.6.0'
 mod 'puppetlabs-postgresql','6.7.0'
 mod 'puppetlabs-git','0.5.0'
 mod 'puppetlabs-accounts', '6.2.0'
-mod 'puppetlabs-kubernetes', '5.3.0'
+mod 'puppetlabs-kubernetes', '6.0.0'
 mod 'puppetlabs-apt', '7.6.0'
 mod 'puppetlabs-translate', '2.2.0'
 
