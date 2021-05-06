@@ -1,23 +1,20 @@
----
-  classes:
-    - role::linux
-
-  autofs::mounts:
-    nas:
-      mount: '/-'
-      mapfile: '/etc/auto.nas'
-      options: '--timeout=120'
-
-  autofs::mapfiles:
-    nas:
-      path: '/etc/auto.nas'
-      mappings:
-        - key: '/net'
-          options: 'rw,soft,intr,nolock'
-          fs: '192.168.11.10:/share/data'
+classes:
+  - role::linux
+autofs::mounts:
+  nas:
+    mount: '/-'
+    mapfile: '/etc/auto.nas'
+    options: '--timeout=120'
+autofs::mapfiles:
+  nas:
+    path: '/etc/auto.nas'
+    mappings:
+      - key: '/net'
+        options: 'rw,soft,intr,nolock'
+        fs: '192.168.11.10:/share/data'
 
 kubernetes::kubernetes_version: 1.19.2
-kubernetes::kubernetes_package_version: 
+kubernetes::kubernetes_package_version:
 kubernetes::container_runtime: docker
 kubernetes::cni_network_provider: https://cloud.weave.works/k8s/net?k8s-version=1.19.2
 kubernetes::cni_pod_cidr: 10.32.0.0/12
