@@ -36,7 +36,6 @@ mod 'puppetlabs-git','0.5.0'
 mod 'puppetlabs-accounts', '6.2.0'
 mod 'puppetlabs-kubernetes', '6.0.0'
 mod 'puppetlabs-apt', '7.6.0'
-mod 'puppetlabs-translate', '2.2.0'
 
 # not certified
 mod 'puppet-autofs', '6.0.0'
@@ -48,7 +47,6 @@ mod 'puppet-dhcp', '4.0.1'
 mod 'puppet-archive', '4.6.0'
 mod 'puppet-yum', '4.3.0'
 mod 'puppet-nginx', '1.1.0'
-#mod 'puppet-wget', '2.0.1'
 
 # Third party modules
 mod 'saz/locales', '2.5.1'
@@ -62,6 +60,3 @@ mod 'walkamongus-sssd', '2.0.1'
 mod 'herculesteam-augeasproviders_sysctl', '2.5.0'
 mod 'herculesteam-augeasproviders_core', '2.6.0'
 mod 'camptocamp-kmod', '2.5.0'
-
-# Github Modules
-# mod 'puppet-teamcity', :git => 'https://github.com/flypenguin/puppet-teamcity.git'
