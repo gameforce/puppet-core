@@ -1,4 +1,4 @@
-class profile::common {
+class profile::base {
 
   # standard includes
   include epel
