@@ -1,2 +1,3 @@
 ---
-role::puppet:
+  classes:
+  - role::puppet
