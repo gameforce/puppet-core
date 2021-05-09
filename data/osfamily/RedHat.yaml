@@ -1,5 +1,5 @@
-classes:
-  - role::linux
+#classes:
+#  - role::linux
 autofs::mounts:
   nas:
     mount: '/-'
