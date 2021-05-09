@@ -1,7 +1,6 @@
-lookup_options:
-  classes:
-    - profile::common
-    - profile::firewall
+classes:
+  - profile::base
+  - profile::firewall
 
 autofs::mounts:
   nas:
