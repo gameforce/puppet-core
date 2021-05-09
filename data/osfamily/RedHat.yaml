@@ -1,5 +1,8 @@
-classes:
-  - role::linux
+---
+  classes:
+    - profile::common
+    - profile::firewall
+
 autofs::mounts:
   nas:
     mount: '/-'
