@@ -1,5 +1,5 @@
 ---
   classes:
     - role::puppet
-    - profile::firewall
-#puppetdb::manage_firewall: 'false'
+
+puppetdb::manage_firewall: false
