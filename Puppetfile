@@ -48,7 +48,7 @@ mod 'puppet-dhcp', '4.0.1'
 mod 'puppet-archive', '4.6.0'
 mod 'puppet-yum', '4.3.0'
 mod 'puppet-nginx', '1.1.0'
-mod 'puppet-wget', '2.0.1'
+#mod 'puppet-wget', '2.0.1'
 
 # Third party modules
 mod 'saz/locales', '2.5.1'
