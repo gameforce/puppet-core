@@ -1,8 +1,5 @@
 class profile::base {
 
-  # standard includes
-  include epel
-
   # common users
   accounts::user { 'darf':
     #uid      => '1001',
