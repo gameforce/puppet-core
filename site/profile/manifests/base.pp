@@ -1,4 +1,6 @@
 class profile::base {
+  # packages
+  include profile::packages
 
   # sshd config
   include profile::ssh::server
