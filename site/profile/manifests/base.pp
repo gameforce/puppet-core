@@ -2,6 +2,11 @@ class profile::base {
   # packages
   include profile::packages
 
+  # disable firewall
+  class { 'firewall':
+    ensure => 'stopped',
+  }
+
   # sshd config
   include profile::ssh::server
   include profile::ssh::client
