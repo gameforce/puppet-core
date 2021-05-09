@@ -65,6 +65,5 @@ class profile::base {
       lc_all           => 'C',
       #lc_messages    => 'de_DE.UTF-8',
       #lc_collate     => 'de_DE.UTF-8',
-      lc_lang          => 'C',
   }
 }
