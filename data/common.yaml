@@ -1,17 +1,14 @@
----
-  classes:
-    - profile::common
-    - profile::firewall
+profile::firewall:
   
-  ntp::restrict:
-    - '-4 default kod nomodify notrap nopeer noquery'
-    - '-6 default kod nomodify notrap nopeer noquery'
-    - '127.0.0.1'
-    - '::1'
+ntp::restrict:
+  - '-4 default kod nomodify notrap nopeer noquery'
+  - '-6 default kod nomodify notrap nopeer noquery'
+  - '127.0.0.1'
+  - '::1'
 
-  ntp::service_name: 'ntpd'
+ntp::service_name: 'ntpd'
 
-  ntp::servers:
-    - '1.debian.pool.ntp.org'
-    - '2.centos.pool.ntp.org'
+ntp::servers:
+  - '1.debian.pool.ntp.org'
+  - '2.centos.pool.ntp.org'
   

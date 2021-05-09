@@ -1,4 +1,4 @@
----
+lookup_options:
   classes:
     - profile::common
     - profile::firewall
