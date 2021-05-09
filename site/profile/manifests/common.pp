@@ -75,6 +75,6 @@ class profile::common {
       lc_all         => 'en_US.UTF-8',
       #lc_messages    => 'de_DE.UTF-8',
       #lc_collate     => 'de_DE.UTF-8',
-      lang           => 'en_US.UTF-8'
+      lang           => 'en_US.UTF-8',
   }
 }
