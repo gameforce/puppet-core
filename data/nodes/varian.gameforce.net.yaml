@@ -3,3 +3,5 @@
     - role::puppet
 
 puppetdb::server::manage_firewall: 'false'
+puppetdb::database::manage_firewall: 'false'
+puppetdb::manage_firewall: 'false'
