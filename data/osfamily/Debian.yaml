@@ -1,6 +1,6 @@
 ---  
   classes:
-    - role::linux
+    - profile::base
 
   autofs::mounts:
     nas:

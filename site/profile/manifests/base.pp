@@ -22,7 +22,5 @@ class profile::base {
     class { 'locales':
       default_locale   => 'en_US.UTF-8',
       locales          => ['en_US.UTF-8','en_CA.UTF-8'],
-#      lc_ctype         => 'en_US.UTF-8',
-#      lc_all           => '',
   }
 }
