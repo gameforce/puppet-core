@@ -1,12 +1,5 @@
 class profile::common {
 
-  # Config common to all nodes
-
-  # disable firewall
-  class { 'firewall':
-    ensure => 'stopped',
-  }
-
   # standard includes
   include epel
 
