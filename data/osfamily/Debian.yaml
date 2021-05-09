@@ -1,6 +1,7 @@
 ---  
   classes:
     - profile::base
+    - profile::firewall
 
   autofs::mounts:
     nas:
