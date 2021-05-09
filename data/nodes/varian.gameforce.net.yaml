@@ -1,5 +1,3 @@
 ---
   classes:
     - role::puppet
-
-puppetdb::manage_firewall: false
