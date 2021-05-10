@@ -13,5 +13,5 @@
       path: '/etc/auto.nas'
       mappings:
         - key: '/net'
-          options: 'rw,soft,intr,nolock'
+          options: 'rw,soft,async,nolock'
           fs: '192.168.11.10:/share/data'
