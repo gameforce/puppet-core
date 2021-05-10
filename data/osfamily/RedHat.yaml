@@ -1,4 +1,4 @@
-kubernetes::kubernetes_version: 1.19.2
+kubernetes::kubernetes_version: 1.21.0
 kubernetes::kubernetes_package_version: 
 kubernetes::container_runtime: docker
 kubernetes::cni_network_provider: https://cloud.weave.works/k8s/net?k8s-version=1.19.2
