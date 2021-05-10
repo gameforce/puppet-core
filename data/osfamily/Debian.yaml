@@ -1,0 +1,17 @@
+---  
+  classes:
+    - profile::base
+
+  autofs::mounts:
+    nas:
+      mount: '/-'
+      mapfile: '/etc/auto.nas'
+      options: '--timeout=120'
+    
+  autofs::mapfiles:
+    nas:
+      path: '/etc/auto.nas'
+      mappings:
+        - key: '/net'
+          options: 'rw,soft,async,nolock'
+          fs: '192.168.11.10:/share/data'

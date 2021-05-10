@@ -1,19 +1,3 @@
 ---
   classes:
-    - role::linux
-    - role::docker
-  
-  autofs::mounts:
-    nas:
-      mount: '/net'
-      mapfile: '/etc/auto.nas'
-      options: '--timeout=120'
-    
-  autofs::mapfiles:
-    nas:
-      path: '/etc/auto.nas'
-      mappings:
-        - key: '*'
-          options: 'rw,soft,intr,nolock'
-          fs: '192.168.11.10:/share/data'
-
+#    - role::docker

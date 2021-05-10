@@ -1,4 +1,4 @@
 ---
   classes:
-    - role::linux
     - role::storage
+    - role::docker
