@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-kubernetes::kubernetes_version: 1.21.0
-kubernetes::kubernetes_package_version: 
-=======
+---
 classes:
   - profile::base
 
@@ -20,7 +17,6 @@ autofs::mapfiles:
 
 kubernetes::kubernetes_version: 1.21.0
 kubernetes::kubernetes_package_version:
->>>>>>> ef3dc917c97521cefc134226d56e3641f7de8af5
 kubernetes::container_runtime: docker
 kubernetes::cni_network_provider: https://cloud.weave.works/k8s/net?k8s-version=1.21.0
 kubernetes::cni_pod_cidr: 10.32.0.0/12
