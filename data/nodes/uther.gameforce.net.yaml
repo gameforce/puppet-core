@@ -2,3 +2,4 @@
   classes:
     - role::storage
     - role::docker
+    - role::puppet
