@@ -40,7 +40,7 @@ mod 'puppetlabs-apt', '7.6.0'
 # not certified
 mod 'puppet-autofs', '6.0.0'
 mod 'puppet-windowsfeature', '3.2.2'
-#mod 'puppet-r10k', '9.0.0'
+mod 'puppet-r10k', '9.0.0'
 mod 'puppet-puppetboard', '4.1.0'
 mod 'puppet-python', '4.1.1'
 mod 'puppet-dhcp', '4.0.1'
